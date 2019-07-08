@@ -1,110 +1,139 @@
----
-title: Wall Follow Lab (Hardware)
-layout: post
----
+## Introduction
 
-It's time to use the actual racecar!
-In this lab you will be taking the wall following code that you ran in
-simulation and running it on the car. You will also be building a safety
-controller to prevent your racecar from crashing into obstacles.
+In this lab, you will be implementing a wall follower on a simulated version of
+the racecar. Your goal is to make an autonomous controller that drives the
+racecar forwards while maintaining a constant distance from a wall on either
+its left or right (chosen on the fly). It should also be robust to uneven
+surfaces and small errors in the LIDAR data, and it should be able to recover
+from small deviations from the desired state; being too far, too close, or
+too angled.
 
-## Part 1: Review Hardware
-The racecar platform is exciting and fast but it is not a toy.
-The hardware we have on board
-[is](https://www.amazon.com/NVIDIA-Jetson-TX2-Development-Kit/dp/B06XPFH939)
-[extremely](https://www.spar3d.com/news/lidar/velodyne-cuts-vlp-16-lidar-price-4k/)
-[expensive](https://www.robotshop.com/en/hokuyo-ust-10lx-scanning-laser-rangefinder.html?gclid=Cj0KCQiAq6_UBRCEARIsAHyrgUxYmgjfz734t-zWCqa2U4l7LAVsZ1_cp2CuvuD3WalcBQ9tCp2_WmMaAjbAEALw_wcB)
-and it is your responsibility to keep it in good condition for future classes.  The racecar can survive a couple light bumps but if it goes flying into a wall it can be destroyed. The whole frame can split in half, the lidar can get scratched, the TX2 can get damaged, etc. Any one of these repairs can cost hundreds if not thousands of dollars in addition to the dozens of hours repair time.
+This lab is to be done individually. In the next lab, you will join your team
+to get your wall follower working on the real racecar. You will be reusing the
+code you write for this lab so make sure it is clean and presentable to your
+teammates!
 
-If your car develops hardware issues for any reason, please tell an instrutor immediately and we will do our best to repair it. Over the course of a full semester, most teams will probably have some sort of hardware issue and it is typically not a big deal.  That being said, do not exhibit obviously reckless behavior!
+We have made a series of tests to evaluate the performance of your wall
+follower. In order to test your code properly you must start out with the
+template starter code. The template is still very sparse and you have plenty of
+freedom to implement any algorithm you'd like so long as the inputs and outputs
+are the same.
 
-Before continuing, please review a full breakdown of the hardware
-[here](./hardware).
+## Download the wall follower lab
 
-## Part 2: Wall Following
+Clone this repository into your catkin workspace:
 
-Use ```scp``` or ```git clone``` to get one of your team members' wall following code from the simulated lab onto the car.
-Just like in the simulated lab the wall follower should live in the ```src``` folder of your
-workspace, ```~/racecar_ws/src/[WALL_FOLLOWER_CODE]```.
-```catkin_make``` in the root of your workspace to rebuild it and then
-```source ~/racecar_ws/devel/setup.bash```.
+    cd ~/racecar_ws/src
+    git clone https://github.com/mit-rss/wall_follower_sim.git
 
-Before running the ```wall_follower``` change the ```drive_topic``` param to
-```/vesc/ackermann_cmd_mux/input/navigation```. See the
-[muxes section below](https://github.com/mit-rss/wall_follower#muxes) for more
-details. Get the car into a safe location and make sure ```teleop``` is running.
-In another terminal launch
+Your directory structure should now look like
+
+- ```[YOUR_WORKSPACE]/src/```
+  - ```CMakeLists.txt```
+  - ```racecar_simulator/```
+  - ```wall_follower_sim/```
+
+Then rebuild your workspace with ``catkin_make```:
+
+    cd ~/racecar_ws
+    catkin_make
+    source devel/setup.bash
+
+## Simulator
+
+First take a look at the simulator. You can launch it by running:
+
+    roslaunch racecar_simulator simulate.launch
+    
+To see the simulated car, you will need to open
+[```rviz```](http://wiki.ros.org/rviz) by typing
+
+    rviz
+
+_If you are using the Docker image, rviz should already be configured properly!_
+
+In the left panel on the bottom click the "Add" button, and then in the
+"By display type" tab click "RobotModel". You should see a small blue car
+appear. Then click "Add" again and in the "By topic" tab click add the "/map"
+topic and then repeat to add the laser scan topic. Under added LaserScan
+dropdown menu there should be a field called "Size (m)". Change this to 0.1 so
+you can see the laser scan more clearly. The checkboxes turn on and off display
+types which may be useful as you add topics to visualize.
+
+![Add button](https://i.imgur.com/85tY4tZ.png)
+
+You should see a car in a map (walls are black, empty space is grey) and points
+on that map representing the points hit by the car's lidar.
+
+![The racecar in the starting position](https://raw.githubusercontent.com/mit-racecar/racecar_simulator/master/media/racecar_simulator_rviz_1.png)
+
+You can move the car around by plugging in a joystick into your computer, or by
+clicking the "2D Pose Estimate" button on top of rviz and dragging somewhere on
+the map.
+
+Note that the simulator does not include collision detection.
+
+## Autonomous driving
+
+In order to make the car drive autonomously you will need to publish messages of
+type [```AckermannDriveStamped```](http://docs.ros.org/jade/api/ackermann_msgs/html/msg/AckermannDriveStamped.html) to the ```/drive``` topic.
+    
+Import the ```AckermannDriveStamped``` type like this in your wall_follower.py file:
+
+    from ackermann_msgs.msg import AckermannDriveStamped
+    
+## LIDAR
+
+The racecar (and it’s simulation) are equipped a with LIDAR sensor that measures
+the distance from the racecar to its surroundings with high accuracy. All of the
+LIDAR data is published to the ```/scan``` topic.
+
+The data is of type [```LaserScan```](http://docs.ros.org/api/sensor_msgs/html/msg/LaserScan.html). You can import the type in python using:
+
+    from sensor_msgs.msg import LaserScan
+
+The ```ranges``` data entry in the ```LaserScan``` message  is an array of the
+distances from the lidar sensor to the nearest obstacle. The measurements are
+taken at regular intervals, ```angle_increment```, from the angle
+```angle_min``` to the angle ```angle_max```.
+
+The rainbow points in this image below are the laser scan as visualized in
+```rviz```. The color simply corresponds to the intensity of the scan. In the
+simulator this is simply the distance, but on the actual lidar it gives you an
+indication of how reflective the object you are scanning is. Note that there is
+no data in the quadrant behind the car because on the actual car that area is
+occluded.
+
+![The racecar in a cubicle](https://raw.githubusercontent.com/mit-racecar/racecar_simulator/master/media/racecar_simulator_rviz_2.png)
+
+## Steps to Success
+How you implement the wall follower is entirely up to you. However implementing
+the following may get you started in the right direction:
+
+* __Set up ROS structure__: Set up your wall follower node so that it subscribes to laser messages and publishes steering commands. Make sure you can at least make the racecar move fowards at a constant speed and turning angle before working on your controller.
+* __Slice up the scan__: Consider slicing the ```ranges``` data into more useful pieces. A majority of the data won’t be useful to you if you only care about a wall to one side. When you can, try to use [```numpy```](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html) operations rather than for loops in your code. [Multidimensional slicing](https://docs.scipy.org/doc/numpy-1.13.0/reference/arrays.indexing.html) and [broadcasting](https://docs.scipy.org/doc/numpy-1.13.0/user/basics.broadcasting.html) can make your code cleaner and much more efficient. You can turn any array into a ```numpy``` array with [```np.array```](https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.array.html), or you can integrate it directly with ros like in [this tutorial](http://wiki.ros.org/rospy_tutorials/Tutorials/numpy).
+* __Find the wall__: There are many ways to detect a wall in a laser scan. In a perfect world you might be able to detect it using a single sample of the LIDAR data. However with noisy data and uneven surfaces this might not be enough. A [least squares regression](https://en.wikipedia.org/wiki/Simple_linear_regression) is an easy way to account for more noise. The [RANSAC](https://en.wikipedia.org/wiki/Random_sample_consensus) algorithm can “upgrade” an existing model (like least squares) to be more robust to outliers. _Note: Attempt RANSAC only if you've already built a functional wall follower. It might be overkill_
+* __Use a PD or PID__: A robust wall follower algorithm that can handle wavy wall contours and corners should probably use some sort of [PD or PID control](https://en.wikipedia.org/wiki/PID_controller#Discrete_implementation). Simple P (proportional) control is often not enough to create a responsive and stable system. Think about the geometry of the wall following problem and how you could use it to get a better approximation of the D (derivative) term than if you used finite differences.
+
+## Starter Code
+
+We have some start code for you in here:
+
+    src/wall_follower.py
+
+However if you want to add more python files to keep your code organized, feel
+free to do so.
+
+The template code specifies a couple useful parameters which you can use to make your code more flexible:
+
+You must use the following ROS parameters in your follower:
+
+* ```desired_distance```: The distance in meters the racecar should maintain from the wall
+* ```velocity```: The speed the racecar should move in meters per second.
+* ```side```: The side the wall is following represented as an integer. +1 represents the left wall and -1 represents the right wall. We chose this convention because typically we will assume the car is pointing in the positive _x_ direction. That means the left side of the car will point to the positive _y_ axis and the right side will point to the negative _y_ axis. 
+
+To run your wall follower launch:
 
     roslaunch wall_follower wall_follower.launch
-    
-Hopefully this will work without any changes!
-To activate the wall follower, hold down the right bumper on the joystick
-If necessary, tune the parameters in the wall follower so that it works well in real life. Combine ideas from multiple team members' implementations of the wall follower to make a more robust controller.
 
-Consider how to quantify how well a controller performs, and techniques to improve controller performance.
-
-### Some reasons it may not be working
-
-- The number of lidar beams is different than in the simulator
-- The field of view is different than in the simulator. 
-- If you have a velodyne car, the lidar is not pointed forwards, it is rotated by 60 degrees.
-
-### Part 3: Safety Controller
-
-Now that you’ve got your wall follower working we want you to build a safety controller. In future labs the racecar will be moving at high speeds so we need you to build a system that protects it from crashes.  
-
-Create a new package for your safety controller (place it
-in ```~/racecar_ws/src```).
-Your goal is to make a node in this pacakge that prevents the racecar from
-crashing into obstacles.
-
-We want you to be able to demonstrate that your safety controller is robust. You should be able to attempt to crash the racecar in a variety of scenarios and have the safety controller prevent the crashes. You should also be able to walk in front of the racecar without it running into you. 
-
-At the same time your racecar should not be "scared". You should still be able to drive close to walls, turn around corners, go fast etc. without the racecar freezing in its tracks. You will be required to run your safety controller in all future labs so don't cripple yourself with something overprotective.
-
-__Please be careful when you are testing__. Always have your joystick ready to stop the racecar and start very slow. 
-
-### Muxes
-
-The racecar has a command mux with different levels of priority that you will need in building your safety controller.
-
-![Muxes](https://i.imgur.com/Y8oQCLe.png)
-
-The navigation topic you have been publishing to is an alias for the highest priority navigation topic in the mux ([defined here](https://github.mit.edu/2018-RSS/racecar_base_ros_install/blob/vm/racecar/racecar/launch/mux.launch)):
-
-    /vesc/ackermann_cmd_mux/input/navigation -> /vesc/high_level/ackermann_cmd_mux/input/nav_0
-
-For brevity we will refer to
-```/vesc/high_level/ackermann_cmd_mux/input/nav_i``` as ```.../nav_i``` in this
-handout (_this doesn't work on the actual racecar_).
-Driving commands sent to ```.../nav_0``` override driving commands sent to
-```.../nav_1```, ```.../nav_2```, etc.
-Likewise driving commands sent to ```.../nav_1``` override driving commands sent
-to ```.../nav_2```, ```.../nav_3```, etc.
-You can use this structure to layer levels of control.
-
-For example, a robot whose job it is to explore randomly and collect minerals as it finds them could use 2 muxes.
-The controller that explores randomly could publish to a lower priority topic
-like ```.../nav_1```.
-Whenever the vision system detects minerals, it could begin to publish commands to a higher priority topic like ```.../nav_0```. ```.../nav_0``` would override ```.../nav_1``` until the minerals have been depleted and commands stopped being published to```.../nav_0```.
-
-The navigation command with the highest priority is then published to
-```/vesc/high_level/ackermann_cmd_mux/output```. This topic is then piped to
-```/vesc/low_level/ackermann_cmd_mux/input/navigation``` and fed into another
-mux with the following priorities (from highest to lowest):
-
-    /vesc/low_level/ackermann_cmd_mux/input/teleop
-    /vesc/low_level/ackermann_cmd_mux/input/safety
-    /vesc/low_level/ackermann_cmd_mux/input/navigation
-
-```.../teleop``` is the topic that the joystick publishes to.
-This will always have the highest priority.
-```.../safety``` has the next highest priority. It will override anything
-published to ```.../navigation```. This is where your safety controller will
-publish.
-
-So for your safety controller this means:
-
-- Subscribe to ```/vesc/high_level/ackermann_cmd_mux/output``` to intercept the driving command that is being published.
-- Subscribe to sensors like ```/scan```.
-- Publish to ```/vesc/low_level/ackermann_cmd_mux/input/safety``` if the command being published to the navigation topic is in danger of crashing the racecar.
+<br/>
