@@ -78,12 +78,13 @@ Make the code:
     source devel/setup.bash
 
 ## Setup (Docker)
-### Step 1: Install Docker Community Edition (CE)
+### Step 1: Install Docker 
 Based on your OS, follow the linked installation instructions below.
 
 * Windows
-    * [Instructions](https://docs.docker.com/docker-for-windows/install/)
-    * [Installer](https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe)
+    * Follow these instructions until Step 3, item 2:
+    * [Installer](https://docs.docker.com/toolbox/toolbox_install_windows/)
+    
 * [MacOS](https://docs.docker.com/docker-for-mac/install/)
 * [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
 * [Debian](https://docs.docker.com/install/linux/docker-ce/debian/)
@@ -92,7 +93,7 @@ Based on your OS, follow the linked installation instructions below.
 ### Step 2: Create a Mount Folder
 Create a folder to connect your Docker image to:
 
-    # Windows
+    # Windows (using Powershell)
     mkdir C:\Users\YOUR_USER_NAME\mount
     mkdir C:\Users\YOUR_USER_NAME\mount\jupyter_ws
 
@@ -119,4 +120,6 @@ This will download the docker image the first time it is run and will cache it f
 
 On some operating systems (OS X?) the `--net=host` flag does not properly forward ports. This can be fixed by manually specifying:
 
-    sudo docker run -tip 6080:6080 -p 5900:5900 fishberg/racecar
+    sudo docker run -tip 6080:6080 -p 5900:5900 racecar/racecar
+
+For more instructions on using the docker image see [here](https://github.com/mit-racecar/racecar_docker/blob/master/README.md).
