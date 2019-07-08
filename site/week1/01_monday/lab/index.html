@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Monday - Racecar</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Monday";
+    var mkdocs_page_input_path = "week1/01_monday/lab.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> Racecar</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Week 1</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../setup/">Setup</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Monday</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#part-1-review-hardware">Part 1: Review Hardware</a></li>
+    
+
+    <li class="toctree-l3"><a href="#part-2-wall-following">Part 2: Wall Following</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#some-reasons-it-may-not-be-working">Some reasons it may not be working</a></li>
+        
+            <li><a class="toctree-l4" href="#part-3-safety-controller">Part 3: Safety Controller</a></li>
+        
+            <li><a class="toctree-l4" href="#muxes">Muxes</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../lab2/">Hardware</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../02_tuesday/lab/">Tuesday</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../03_midweek/lab/">Mid-Week Challenge</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../04_eow/lab/">End-of-Week Challenge</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Week 2</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../week2/01_monday/lab/">Monday</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../week2/02_tuesday/lab/">Tuesday</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../week2/03_midweek/lab/">Mid-Week Challenge</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../week2/04_eow/lab/">End-of-Week Challenge</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Week 3</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../week3/01_monday/lab/">Monday</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../week3/02_tuesday/lab/">Tuesday</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../week3/03_midweek/lab/">Mid-Week Challenge</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../week3/04_eow/lab/">End-of-Week Challenge</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../../week4/coming-soon/">Week 4</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Racecar Parts</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../racecar-parts/lidar/">Lidar</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../racecar-parts/zed/">ZED</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Cheatsheets</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../../cheatsheets/python/">Python</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../cheatsheets/opencv/">OpenCV</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../cheatsheets/racecar/">Racecar</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../../cheatsheets/ros/">ROS</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">Racecar</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Week 1 &raquo;</li>
+        
+      
+    
+    <li>Monday</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>It's time to use the actual racecar!
+In this lab you will be taking the wall following code that you ran in
+simulation and running it on the car. You will also be building a safety
+controller to prevent your racecar from crashing into obstacles.</p>
+<h2 id="part-1-review-hardware">Part 1: Review Hardware</h2>
+<p>The racecar platform is exciting and fast but it is not a toy.
+The hardware we have on board
+<a href="https://www.amazon.com/NVIDIA-Jetson-TX2-Development-Kit/dp/B06XPFH939">is</a>
+<a href="https://www.spar3d.com/news/lidar/velodyne-cuts-vlp-16-lidar-price-4k/">extremely</a>
+<a href="https://www.robotshop.com/en/hokuyo-ust-10lx-scanning-laser-rangefinder.html?gclid=Cj0KCQiAq6_UBRCEARIsAHyrgUxYmgjfz734t-zWCqa2U4l7LAVsZ1_cp2CuvuD3WalcBQ9tCp2_WmMaAjbAEALw_wcB">expensive</a>
+and it is your responsibility to keep it in good condition for future classes.  The racecar can survive a couple light bumps but if it goes flying into a wall it can be destroyed. The whole frame can split in half, the lidar can get scratched, the TX2 can get damaged, etc. Any one of these repairs can cost hundreds if not thousands of dollars in addition to the dozens of hours repair time.</p>
+<p>If your car develops hardware issues for any reason, please tell an instrutor immediately and we will do our best to repair it. Over the course of a full semester, most teams will probably have some sort of hardware issue and it is typically not a big deal.  That being said, do not exhibit obviously reckless behavior!</p>
+<p>Before continuing, please review a full breakdown of the hardware
+<a href="./hardware">here</a>.</p>
+<h2 id="part-2-wall-following">Part 2: Wall Following</h2>
+<p>Use <code>scp</code> or <code>git clone</code> to get one of your team members' wall following code from the simulated lab onto the car.
+Just like in the simulated lab the wall follower should live in the <code>src</code> folder of your
+workspace, <code>~/racecar_ws/src/[WALL_FOLLOWER_CODE]</code>.
+<code>catkin_make</code> in the root of your workspace to rebuild it and then
+<code>source ~/racecar_ws/devel/setup.bash</code>.</p>
+<p>Before running the <code>wall_follower</code> change the <code>drive_topic</code> param to
+<code>/vesc/ackermann_cmd_mux/input/navigation</code>. See the
+<a href="https://github.com/mit-rss/wall_follower#muxes">muxes section below</a> for more
+details. Get the car into a safe location and make sure <code>teleop</code> is running.
+In another terminal launch</p>
+<pre><code>roslaunch wall_follower wall_follower.launch
+</code></pre>
+<p>Hopefully this will work without any changes!
+To activate the wall follower, hold down the right bumper on the joystick
+If necessary, tune the parameters in the wall follower so that it works well in real life. Combine ideas from multiple team members' implementations of the wall follower to make a more robust controller.</p>
+<p>Consider how to quantify how well a controller performs, and techniques to improve controller performance.</p>
+<h3 id="some-reasons-it-may-not-be-working">Some reasons it may not be working</h3>
+<ul>
+<li>The number of lidar beams is different than in the simulator</li>
+<li>The field of view is different than in the simulator. </li>
+<li>If you have a velodyne car, the lidar is not pointed forwards, it is rotated by 60 degrees.</li>
+</ul>
+<h3 id="part-3-safety-controller">Part 3: Safety Controller</h3>
+<p>Now that you’ve got your wall follower working we want you to build a safety controller. In future labs the racecar will be moving at high speeds so we need you to build a system that protects it from crashes.  </p>
+<p>Create a new package for your safety controller (place it
+in <code>~/racecar_ws/src</code>).
+Your goal is to make a node in this pacakge that prevents the racecar from
+crashing into obstacles.</p>
+<p>We want you to be able to demonstrate that your safety controller is robust. You should be able to attempt to crash the racecar in a variety of scenarios and have the safety controller prevent the crashes. You should also be able to walk in front of the racecar without it running into you. </p>
+<p>At the same time your racecar should not be "scared". You should still be able to drive close to walls, turn around corners, go fast etc. without the racecar freezing in its tracks. You will be required to run your safety controller in all future labs so don't cripple yourself with something overprotective.</p>
+<p><strong>Please be careful when you are testing</strong>. Always have your joystick ready to stop the racecar and start very slow. </p>
+<h3 id="muxes">Muxes</h3>
+<p>The racecar has a command mux with different levels of priority that you will need in building your safety controller.</p>
+<p><img alt="Muxes" src="https://i.imgur.com/Y8oQCLe.png" /></p>
+<p>The navigation topic you have been publishing to is an alias for the highest priority navigation topic in the mux (<a href="https://github.mit.edu/2018-RSS/racecar_base_ros_install/blob/vm/racecar/racecar/launch/mux.launch">defined here</a>):</p>
+<pre><code>/vesc/ackermann_cmd_mux/input/navigation -&gt; /vesc/high_level/ackermann_cmd_mux/input/nav_0
+</code></pre>
+<p>For brevity we will refer to
+<code>/vesc/high_level/ackermann_cmd_mux/input/nav_i</code> as <code>.../nav_i</code> in this
+handout (<em>this doesn't work on the actual racecar</em>).
+Driving commands sent to <code>.../nav_0</code> override driving commands sent to
+<code>.../nav_1</code>, <code>.../nav_2</code>, etc.
+Likewise driving commands sent to <code>.../nav_1</code> override driving commands sent
+to <code>.../nav_2</code>, <code>.../nav_3</code>, etc.
+You can use this structure to layer levels of control.</p>
+<p>For example, a robot whose job it is to explore randomly and collect minerals as it finds them could use 2 muxes.
+The controller that explores randomly could publish to a lower priority topic
+like <code>.../nav_1</code>.
+Whenever the vision system detects minerals, it could begin to publish commands to a higher priority topic like <code>.../nav_0</code>. <code>.../nav_0</code> would override <code>.../nav_1</code> until the minerals have been depleted and commands stopped being published to<code>.../nav_0</code>.</p>
+<p>The navigation command with the highest priority is then published to
+<code>/vesc/high_level/ackermann_cmd_mux/output</code>. This topic is then piped to
+<code>/vesc/low_level/ackermann_cmd_mux/input/navigation</code> and fed into another
+mux with the following priorities (from highest to lowest):</p>
+<pre><code>/vesc/low_level/ackermann_cmd_mux/input/teleop
+/vesc/low_level/ackermann_cmd_mux/input/safety
+/vesc/low_level/ackermann_cmd_mux/input/navigation
+</code></pre>
+<p><code>.../teleop</code> is the topic that the joystick publishes to.
+This will always have the highest priority.
+<code>.../safety</code> has the next highest priority. It will override anything
+published to <code>.../navigation</code>. This is where your safety controller will
+publish.</p>
+<p>So for your safety controller this means:</p>
+<ul>
+<li>Subscribe to <code>/vesc/high_level/ackermann_cmd_mux/output</code> to intercept the driving command that is being published.</li>
+<li>Subscribe to sensors like <code>/scan</code>.</li>
+<li>Publish to <code>/vesc/low_level/ackermann_cmd_mux/input/safety</code> if the command being published to the navigation topic is in danger of crashing the racecar.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../lab2/" class="btn btn-neutral float-right" title="Hardware">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../setup/" class="btn btn-neutral" title="Setup"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../setup/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../lab2/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

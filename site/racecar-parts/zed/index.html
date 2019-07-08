@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>ZED - Racecar</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "ZED";
+    var mkdocs_page_input_path = "racecar-parts/zed.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Racecar</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Week 1</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../week1/01_monday/setup/">Setup</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../week1/01_monday/lab/">Monday</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../week1/01_monday/lab2/">Hardware</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../week1/02_tuesday/lab/">Tuesday</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../week1/03_midweek/lab/">Mid-Week Challenge</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../week1/04_eow/lab/">End-of-Week Challenge</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Week 2</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../week2/01_monday/lab/">Monday</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../week2/02_tuesday/lab/">Tuesday</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../week2/03_midweek/lab/">Mid-Week Challenge</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../week2/04_eow/lab/">End-of-Week Challenge</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Week 3</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../week3/01_monday/lab/">Monday</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../week3/02_tuesday/lab/">Tuesday</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../week3/03_midweek/lab/">Mid-Week Challenge</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../week3/04_eow/lab/">End-of-Week Challenge</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../week4/coming-soon/">Week 4</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Racecar Parts</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../lidar/">Lidar</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">ZED</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#camera-sensor">Camera Sensor</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#hardware">Hardware</a></li>
+        
+            <li><a class="toctree-l4" href="#usage-in-ros">Usage in ROS</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Cheatsheets</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../cheatsheets/python/">Python</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../cheatsheets/opencv/">OpenCV</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../cheatsheets/racecar/">Racecar</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../cheatsheets/ros/">ROS</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Racecar</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Racecar Parts &raquo;</li>
+        
+      
+    
+    <li>ZED</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="camera-sensor">Camera Sensor</h1>
+<h2 id="hardware">Hardware</h2>
+<p>Each car has a <strong>ZED stereo camera</strong>. It can output a standard video stream, or it can output a depth estimate stream.
+<center>
+<img src="/img/ZED_photo.png" alt="the physical sensor" width="750"/>
+</center>
+<details><summary>Specs </summary>
+<ul>
+<li> Wiring: <ul>
+  <li> Sends data and receives power via USB </li> </ul>
+<li> Data: <ul>
+  <li> Frames per second &amp; resolution: 60fps @ 720p </li>
+  <li> Field of view: 110° </li>
+  <li> Depth range: 0.5 - 20 m </li>
+  <li> Can calculate <a href="#" data-toggle="tooltip" title="changes in position/rotation">odometry</a> based on visual data </li> </ul>
+</ul>
+</details></p>
+<p><em>This sensor has an MSRP of</em> <strong>0.5 US kilodollars</strong>. <em>Be aware of this as you conduct your testing.</em></p>
+<h2 id="usage-in-ros">Usage in ROS</h2>
+<ul>
+<li>To use the ZED's data in ROS, first <a href="#" data-toggle="tooltip" title="(this initializes camera-related nodes; see “ROS: Running nodes” page for details)">run `startZED` on the car's terminal</a>.</li>
+
+<li>Beyond that, you usually will not have to interact with ZED data directly. Rather, we will often give you programs that process the ZED’s data.<br>
+
+<font color="A0A0A0">For instance, in <a href="https://github.mit.edu/2019-BWSI/Writeups/blob/master/week2/day2/zed.py"/> ZED.py </a>, the “image_converter” class takes in the raw data and converts it to CV2 format, which helps us greatly <a href="#" data-toggle="tooltip" title="with color segmentation, for instance">to process the image.</a></font></li>
+
+<li> <details><summary> For the curious though, we can get ZED data like we get other sensor data</summary> 
+<ul>
+<li> The ZED nodes publish different data to different topics. There are left/right camera topics and a depth topic. We often use `/zed/rgb/image_rect_color` .</li>
+<li> Each message is of the type `Image`.
+<li> For a full list of `Image` message attributes, see <a href=http://docs.ros.org/api/sensor_msgs/html/msg/Image.html>ros.org</a>.</li>
+</ul></details></li>
+</ul>
+
+<details><summary>How to visualize the data onscreen.</summary>
+
+<ul> 
+<li>If you're ssh-ed into the car:<ol type="1">
+  <li> on the car's terminal  (i.e. ssh-in), run `startZED` </li>
+  <li> on the computer's terminal, run `rqt_image_view`</li> 
+  <li> select the topic you would like to view </li> </ol> </li>
+
+<li>If you have a monitor directly plugged in:<ol type="1">
+  <li> Run `startZEDviz` in the terminal for a totally awesome visualization in RVIZ. </li>
+  <li> Be sure to click on "DepthCloud" for the full effect.</li></ol></li></ul>
+</details>
+
+<p><br></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../cheatsheets/python/" class="btn btn-neutral float-right" title="Python">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../lidar/" class="btn btn-neutral" title="Lidar"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../lidar/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../cheatsheets/python/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

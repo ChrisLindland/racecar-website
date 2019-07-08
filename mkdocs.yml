@@ -1,0 +1,30 @@
+site_name: Racecar
+nav:
+    - Home: index.md
+    - Week 1: 
+        - Setup: week1/01_monday/setup.md
+        - Monday: week1/01_monday/lab.md
+        - Hardware: week1/01_monday/lab2.md
+        - Tuesday: week1/02_tuesday/lab.md
+        - Mid-Week Challenge: week1/03_midweek/lab.md
+        - End-of-Week Challenge: week1/04_eow/lab.md
+    - Week 2: 
+        - Monday: week2/01_monday/lab.md
+        - Tuesday: week2/02_tuesday/lab.md
+        - Mid-Week Challenge: week2/03_midweek/lab.md
+        - End-of-Week Challenge: week2/04_eow/lab.md
+    - Week 3: 
+        - Monday: week3/01_monday/lab.md
+        - Tuesday: week3/02_tuesday/lab.md
+        - Mid-Week Challenge: week3/03_midweek/lab.md
+        - End-of-Week Challenge: week3/04_eow/lab.md
+    - Week 4: week4/coming-soon.md
+    - Racecar Parts:
+        - Lidar: racecar-parts/lidar.md
+        - ZED: racecar-parts/zed.md
+    - Cheatsheets:
+        - Python: cheatsheets/python.md
+        - OpenCV: cheatsheets/opencv.md
+        - Racecar: cheatsheets/racecar.md
+        - ROS: cheatsheets/ros.md
+theme: readthedocs
