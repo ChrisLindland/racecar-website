@@ -33,7 +33,7 @@ Your directory structure should now look like
   - ```racecar_simulator/```
   - ```wall_follower_sim/```
 
-Then rebuild your workspace with ``catkin_make```:
+Then rebuild your workspace with ```catkin_make```:
 
     cd ~/racecar_ws
     catkin_make

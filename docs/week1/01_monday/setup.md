@@ -11,6 +11,7 @@ it is new and thus untested with our platform.)
 Despite its name, the Robot _Operating System_ is not actually a bona fide OS. Rather it is a set of robotics middleware built on top of GNU/Linux. ROS is most commonly used in conjunction with
 [Ubuntu](https://www.ubuntu.com/), as ROS releases are tied to Ubuntu releases.
 For example:
+
 - Ubuntu 18.04, Bionic Beaver → ROS Melodic Morenia
 - Ubuntu 16.04, Xenial Xerus → ROS Kinetic Kame
 
@@ -22,6 +23,7 @@ with some handy libraries and visualization tools.
 
 ## Setup
 The next few sections will walk you through getting your personal machine setup with ROS as either a native install, Docker install, or Virtual Machine.
+
 * If you have a GNU/Linux machine (especially Ubuntu or Debian) and are
 comfortable on it, a native install will give you the best performance.
 * If you are on Windows, MacOS, or an unsupported flavor of GNU/Linux, BSD,
@@ -37,6 +39,7 @@ Native ROS Install section._
 ## Setup (Native ROS - Ubuntu/Debian)
 ### Step 1: Install ROS
 Based on your flavor of GNU/Linux, follow the linked installation instructions below. Be sure to install the `ros-VERSION-desktop-full` version of ROS.
+
 * [Install ROS on Ubuntu 18.04](https://wiki.ros.org/melodic/Installation/Ubuntu)
 * [Install ROS on Ubuntu 16.04](https://wiki.ros.org/kinetic/Installation/Ubuntu)
 * [Install ROS on Debian Stretch](https://wiki.ros.org/melodic/Installation/Debian)
@@ -77,6 +80,7 @@ Make the code:
 ## Setup (Docker)
 ### Step 1: Install Docker Community Edition (CE)
 Based on your OS, follow the linked installation instructions below.
+
 * Windows
     * [Instructions](https://docs.docker.com/docker-for-windows/install/)
     * [Installer](https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe)
