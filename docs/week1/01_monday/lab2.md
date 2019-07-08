@@ -48,7 +48,7 @@ In order to access the files on the car, we're going to be using SSHFS to mount 
 4. In order to make the mount permanent (so you don't have to do this every time you restart the car), we have to edit your `/etc/fstab` file. Type `sudo vim /etc/fstab/`. If this file isn't empty, go to the bottom by pressing `G$`. Press `i`, make a new line, and type in `sshfs#racecar@racecar:/home/racecar /path/yourDirectory`. Press `esc` then type `:wq` to quit.
 
 #### Windows:
-1. Install the latest versions of WinFSP and win-sshfs
+1. Install the latest versions of [WinFSP](https://github.com/billziss-gh/winfsp/releases/tag/v1.4.19049) and [win-sshfs](https://github.com/billziss-gh/sshfs-win/releases/tag/v2.7.17334)
 2. In file explorer, right click on This PC and choose Map network drive. Choose a local drive to mount, and in the Folder field type \\sshfs\racecar@racecar\home\racecar. Check the Connect Using Different Credentials box and connect. The password is racecar@mit.
 
 
