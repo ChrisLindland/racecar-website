@@ -120,6 +120,4 @@ This will download the docker image the first time it is run and will cache it f
 
 On some operating systems (OS X?) the `--net=host` flag does not properly forward ports. This can be fixed by manually specifying:
 
-    sudo docker run -tip 6080:6080 -p 5900:5900 racecar/racecar
-
-For more instructions on using the docker image see [here](https://github.com/mit-racecar/racecar_docker/blob/master/README.md).
+    sudo docker run -tip 6080:6080 -p 5900:5900 fishberg/racecar
