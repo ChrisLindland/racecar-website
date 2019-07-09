@@ -224,8 +224,8 @@ Most joysticks map to `/dev/input/js0` by default, so you can add that device wi
 
 To build the image from scratch, run:
 
-    git clone https://github.com/mit-racecar/racecar_docker.git
-    cd racecar_docker
+    git clone https://github.com/fishberg/racecar-docker.git
+    cd racecar-docker
     sudo docker build -t racecar .
 
 Then run with:
