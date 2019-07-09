@@ -52,7 +52,7 @@ To see the simulated car, you will need to open
 
 _If you are using the Docker image, rviz should already be configured properly!_
 
-In the left panel on the bottom click the "Add" button, and then in the
+Make sure the "Display" option is on in the "Panels" menu. In the left panel on the bottom click the "Add" button, and then in the
 "By display type" tab click "RobotModel". You should see a small blue car
 appear. Then click "Add" again and in the "By topic" tab click add the "/map"
 topic and then repeat to add the laser scan topic. Under added LaserScan
@@ -106,14 +106,21 @@ occluded.
 
 ![The racecar in a cubicle](https://raw.githubusercontent.com/mit-racecar/racecar_simulator/master/media/racecar_simulator_rviz_2.png)
 
+## What is wall following? 
+
+Wall following is a fairly simple mode of autonomous navigation where your car will drive alongside a wall. There are multiple ways to do this. The simplest way would be to keep the car a certain distance from an obstacle to the side of the car. Another strategy is to use the LIDAR data to first find what is most likely to be a wall, then use it to predict the path of the wall. Below you will find some tips on how to implement some methods.
+
 ## Steps to Success
 How you implement the wall follower is entirely up to you. However implementing
 the following may get you started in the right direction:
 
-* __Set up ROS structure__: Set up your wall follower node so that it subscribes to laser messages and publishes steering commands. Make sure you can at least make the racecar move fowards at a constant speed and turning angle before working on your controller.
+* Make sure you can at least make the racecar move fowards at a constant speed and turning angle before working on your controller.
 * __Slice up the scan__: Consider slicing the ```ranges``` data into more useful pieces. A majority of the data won’t be useful to you if you only care about a wall to one side. When you can, try to use [```numpy```](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html) operations rather than for loops in your code. [Multidimensional slicing](https://docs.scipy.org/doc/numpy-1.13.0/reference/arrays.indexing.html) and [broadcasting](https://docs.scipy.org/doc/numpy-1.13.0/user/basics.broadcasting.html) can make your code cleaner and much more efficient. You can turn any array into a ```numpy``` array with [```np.array```](https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.array.html), or you can integrate it directly with ros like in [this tutorial](http://wiki.ros.org/rospy_tutorials/Tutorials/numpy).
 * __Find the wall__: There are many ways to detect a wall in a laser scan. In a perfect world you might be able to detect it using a single sample of the LIDAR data. However with noisy data and uneven surfaces this might not be enough. A [least squares regression](https://en.wikipedia.org/wiki/Simple_linear_regression) is an easy way to account for more noise. The [RANSAC](https://en.wikipedia.org/wiki/Random_sample_consensus) algorithm can “upgrade” an existing model (like least squares) to be more robust to outliers. _Note: Attempt RANSAC only if you've already built a functional wall follower. It might be overkill_
-* __Use a PD or PID__: A robust wall follower algorithm that can handle wavy wall contours and corners should probably use some sort of [PD or PID control](https://en.wikipedia.org/wiki/PID_controller#Discrete_implementation). Simple P (proportional) control is often not enough to create a responsive and stable system. Think about the geometry of the wall following problem and how you could use it to get a better approximation of the D (derivative) term than if you used finite differences.
+* Start off just looking for a wall on one side of the car; once this side works, implement it for the other side as well. You can map the left and right walls to different button (ex. 'A' activates the left wall follower, and 'B' activates the right wall follower). All the joystick buttons correspond to an integer in its ROS message; check the joystick callback function for hints on how to map buttons. 
+* Convert LIDAR points to cartesian points to calculate their resulting line. Make a separate function to do this.
+
+__Challenge__: Make the car autonomously decide which wall it should follow. You might base this off of factors like the distance or the accuracy of the predicted wall. If you also complete this, try to find a way to make your wall following code more consistent or accurate. A method to test accuracy is to compare the LIDAR measurement to the wall with your estimated measurements (how do you find the distance between your car (a point) and a line?)
 
 ## Starter Code
 
