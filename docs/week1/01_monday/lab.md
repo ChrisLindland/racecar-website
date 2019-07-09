@@ -45,10 +45,7 @@ First take a look at the simulator. You can launch it by running:
 
     roslaunch racecar_simulator simulate.launch
     
-To see the simulated car, you will need to open
-[```rviz```](http://wiki.ros.org/rviz) by typing
-
-    rviz
+To see the simulated car, click the RVis icon on the bottom of the display (if you don't see it, try clicking on the vnc desktop).
 
 _If you are using the Docker image, rviz should already be configured properly!_
 
