@@ -2,7 +2,7 @@
 ## Hardware
 Each car has a **ZED stereo camera**. It can output a standard video stream, or it can output a depth estimate stream.
 <center>
-<img src="/img/ZED_photo.png" alt="the physical sensor" width="750"/>
+<img src="img/ZED_photo.png" alt="the physical sensor" width="750"/>
 </center>
 <details><summary>Specs </summary>
 <ul>
@@ -35,7 +35,7 @@ Each car has a **ZED stereo camera**. It can output a standard video stream, or 
 </ul></details></li>
 </ul>
   
-<details><summary>How to visualize the data onscreen.</summary>
+<details><summary><font color=#FFA0A0><b>How to visualize the data onscreen.</b></font></summary>
 
 <ul> 
 <li>If you're ssh-ed into the car:<ol type="1">
