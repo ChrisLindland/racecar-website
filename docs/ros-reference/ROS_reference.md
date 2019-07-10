@@ -1,10 +1,10 @@
 # Robot Operating System (ROS) & rospy
 
-<hr/>
+<hr>
 
 ## Nodes
 
-<font color=#A0A0A0> *Where do we give the robot its behavior?* </font>
+<font color=#A0A0A0><i>Where do we give the robot its behavior?</i></font>
 
 ![](img/example-node-small.jpg)
 
@@ -23,14 +23,14 @@
 </li>
 </font>
 </ul>
-<hr/>
+<hr>
 
 ## Topics & Messages
 
 <font color=#A0A0A0> *What carries data between nodes?* </font>
-  
+
 ### Messages
-	
+
 ![](img/xp-file-packet-small.gif)
 
 <ul>
@@ -47,7 +47,7 @@ my_msg = my_msg_class()
 </ul>
 
 ### Topics
-	
+
 ![](img/example-topic-small.jpg)
 
 <ul>
@@ -59,11 +59,11 @@ my_msg = my_msg_class()
    
 *<a href="http://bwsi-racecar.com/cheatsheets/ros-topics-msgs/">Here</a> is our cheatsheet for topics and message types you will likely use.*
 
-<hr/>
+<hr>
 
 ## Publishers & Subscribers
 
-<font color=#A0A0A0> *How exactly do nodes send/receive messages from topics?*</font>
+<font color=#A0A0A0><i>How exactly do nodes send/receive messages from topics?</i></font>
 
 ### Publishers
 
@@ -84,7 +84,7 @@ self.my_publisher.publish(my_msg)
 ### Subscribers
 
 <ul style="margin-top:-15px;">
-	<li><b>A subscriber is a part of a node that can receive messages from a topic.</b></li>
+<li><b>A subscriber is a part of a node that can receive messages from a topic.</b></li>
 <li><font color=#00A0F0> To initialize a subscriber:</font>
 ```python
 my_subscriber = rospy.Subscriber(my_topic, my_topics_datatype, my_callback_func)
@@ -100,7 +100,7 @@ def my_callback_func (a_msg_from_my_topic):
 ```
 </li>
 </ul>
-<hr/>
+<hr>
 
 ## Summaries and Related Material
 
@@ -122,7 +122,7 @@ Command line tricks: see details on our <a href="http://bwsi-racecar.com/cheatsh
 <li>To list all the topics, try `rostopic list`.</li>
 </ul>
 
-<hr/>
+<hr>
 
 ## The Details of Connecting and Running Nodes
 
