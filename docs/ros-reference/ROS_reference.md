@@ -1,7 +1,9 @@
 # Robot Operating System (ROS) & rospy
 
 <hr/>
+
 ## Nodes
+
 <font color=#A0A0A0> *Where do we give the robot its behavior?* </font>
 
 ![](img/example-node-small.jpg)
