@@ -4,13 +4,9 @@
 ## Nodes
 <font color=#A0A0A0> *Where do we give the robot its behavior?* </font>
 
-<div align="right" style="margin-top:-100px;">
-	
 ![](img/example-node-small.jpg)
 
-</div>
-
-<ul style="margin-top:-30px;">
+<ul>
 <li> <b>A node is a <a href=# data-toggle="tooltip" title="by default in C++ or with rospy, in Python">program</a> that runs on the robot.</b> </li>
 <li> ROS can run multiple nodes at the same time.<br>
 <font color=#A0A0A0 size="2">For example, we give the racecars different nodes for their camera, LIDAR, and driving.</font></li>
@@ -29,15 +25,11 @@
 ## Topics & Messages
 <font color=#A0A0A0> *What carries data between nodes?* </font>
   
-<div style="margin-top:-10px;"> <h3>Messages</h3></div>
-
-<div align="right" style="margin-top:-75px;">
+### Messages
 	
 ![](img/xp-file-packet-small.gif)
 
-</div>
-
-<ul style="margin-top:-40px;">
+<ul>
 <li><b>A message is a packet of data.</b></li>
 <li><font color=#00A0F0>To import the message's <a href="#" data-toggle="tooltip" title="You may know of datatypes like String and int, but a class can also work as a custom data type.">datatype</a>:</font>
 ```python	
@@ -50,16 +42,12 @@ my_msg = my_msg_class()
   This creates an instance of the `my_msg_class` class.</li>
 </ul>
 
-<h3>Topics
-
-</h3>
-<div align="right" style="margin-top:-45px;">
+### Topics
 	
 ![](img/example-topic-small.jpg)
 
-</div>
 
-<ul style="margin-top:0px;">
+<ul>
 <li><b>A topic is a communication channel that carries messages between nodes.</b><br>
 <font color=#A0A0A0 size="2"> For example, the LIDAR node sends its `LaserScan` messages to the `/scan` topic.</font></li>
 <li>Each topic can only carry messages of one datatype.</li>
@@ -67,7 +55,6 @@ my_msg = my_msg_class()
 </ul>
    
 *<a href="http://bwsi-racecar.com/cheatsheets/ros-topics-msgs/">Here</a> is our cheatsheet for topics and message types you will likely use.*
-
 
 <hr/>
 ## Publishers & Subscribers 
@@ -87,7 +74,7 @@ self.my_publisher.publish(my_msg)
 </li>
 </ul>
 
-###Subscribers
+### Subscribers
 <ul style="margin-top:-15px;">
 <li>**A subscriber is a part of a node that can receive messages from a topic.**</li>
 <li><font color=#00A0F0> To initialize a subscriber:</font>
