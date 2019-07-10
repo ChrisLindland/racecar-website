@@ -50,7 +50,6 @@ my_msg = my_msg_class()
 	
 ![](img/example-topic-small.jpg)
 
-
 <ul>
 <li><b>A topic is a communication channel that carries messages between nodes.</b><br>
 <font color=#A0A0A0 size="2"> For example, the LIDAR node sends its `LaserScan` messages to the `/scan` topic.</font></li>
@@ -188,4 +187,3 @@ rospy.init_node("my_node")
 </ul>
 
 </details><br>
-
