@@ -61,11 +61,15 @@ my_msg = my_msg_class()
 *<a href="http://bwsi-racecar.com/cheatsheets/ros-topics-msgs/">Here</a> is our cheatsheet for topics and message types you will likely use.*
 
 <hr/>
-## Publishers & Subscribers 
+
+## Publishers & Subscribers
+
 <font color=#A0A0A0> *How exactly do nodes send/receive messages from topics?*</font>
+
 ### Publishers
+
 <ul style="margin-top:-15px;">
-<li>** A publisher is a part of a node that can send messages to a topic. **</li>
+<li><b>A publisher is a part of a node that can send messages to a topic.</b></li>
 <li><font color=#00A0F0>To initialize a publisher</font>
 ```python
 my_publisher = rospy.Publisher(my_topic, my_topics_datatype, queue_size=1)
@@ -79,8 +83,9 @@ self.my_publisher.publish(my_msg)
 </ul>
 
 ### Subscribers
+
 <ul style="margin-top:-15px;">
-<li>**A subscriber is a part of a node that can receive messages from a topic.**</li>
+	<li><b>A subscriber is a part of a node that can receive messages from a topic.</b></li>
 <li><font color=#00A0F0> To initialize a subscriber:</font>
 ```python
 my_subscriber = rospy.Subscriber(my_topic, my_topics_datatype, my_callback_func)
@@ -97,7 +102,9 @@ def my_callback_func (a_msg_from_my_topic):
 </li>
 </ul>
 <hr/>
-##Summaries and Related Material
+
+## Summaries and Related Material
+
 <center><font color=#A0A0A0>
 
 ![](img/ros-sample-graph-small.jpg)
@@ -116,7 +123,9 @@ Command line tricks: see details on our <a href="http://bwsi-racecar.com/cheatsh
 </ul>
 
 <hr/>
+
 ## The Details of Connecting and Running Nodes
+
 <details> <summary>For the curious</summary><br>
 *NOTE: You will not need to know this program your cars (no really; the TA’s were not even aware of this when we first worked on the cars), but it is kinda cool.*
 
@@ -142,6 +151,7 @@ Command line tricks: see details on our <a href="http://bwsi-racecar.com/cheatsh
 <li> When do we actually run `roscore`? See the last section.</li>
 
 ### Running Nodes
+
 <ul style="margin-top:-15px;">
 <li>Thanks to the magic of rospy, all it takes to create a node is to run a python file containing 
 ```python
@@ -151,6 +161,7 @@ rospy.init_node("my_node")
 </ul>
 
 ### Running Nodes in Packages 
+
 <ul style="margin-top:-15px;">
 <li> Sometimes it is inconvenient to run `roscore` all your nodes one by one. For convenience then, you can run `roscore` and a whole bunch of nodes automatically with `teleop` or `startZED`; these are simplifications we've made using the car's <details><summary>[.bashrc file](https://github.mit.edu/2019-BWSI/Writeups/tree/master/Bootup%20Bash%20Scripts).</summary>
 	<ul>
