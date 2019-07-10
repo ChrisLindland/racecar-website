@@ -101,7 +101,7 @@ def my_callback_func (a_msg_from_my_topic):
 <hr/>
 ##Summaries and Related Material
 <center><font color=#A0A0A0>
-![](img/ROS_sample_graph.jpg)  
+<img src="img/ROS_sample_graph.jpg"/> 
 *A mock example graph showing how a set of nodes might connect*  
 <img src="img/rosgraph_grand_operating.svg"/>
 *A graph showing how an actual racecar’s nodes connect*
