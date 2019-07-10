@@ -117,7 +117,7 @@ def my_callback_func (a_msg_from_my_topic):
 
 *A graph showing how an actual racecar’s nodes connect*
 </font></center>  
-Command line tricks: see details on our <a href="../cheatsheets/ros/"> ROS Cheatsheet </a>. Some notable commands include:
+Command line tricks: see details on our <a href="http://bwsi-racecar.com/cheatsheets/ros/"> ROS Cheatsheet </a>. Some notable commands include:
 <ul style="margin-top:5px;">
 <li>To see the connection diagram of nodes and topics, try `rqt_graph`.</li>
 <li>To list all the currently running nodes, try `rosnode list`.</li>
