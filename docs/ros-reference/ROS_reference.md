@@ -5,7 +5,7 @@
 <font color=#A0A0A0> *Where do we give the robot its behavior?* </font>
 
 <div align="right" style="margin-top:-100px;">
-<img src="img/example_node.jpg" width=250px/>
+<img src="../img/example_node.jpg" width=250px/>
 </div>
 
 <ul style="margin-top:-30px;">
@@ -49,7 +49,7 @@ my_msg = my_msg_class()
 <h3>Topics
 
 </h3><div align="right" style="margin-top:-45px;">
-<img src="img/example_topic.jpg" width=150px/>
+<img src="../img/example_topic.jpg" width=150px/>
 </div>
 
 <ul style="margin-top:0px;">
@@ -101,9 +101,9 @@ def my_callback_func (a_msg_from_my_topic):
 <hr/>
 ##Summaries and Related Material
 <center><font color=#A0A0A0>
-<img src="img/ROS_sample_graph.jpg"/> 
+<img src="../img/ROS_sample_graph.jpg"/> 
 *A mock example graph showing how a set of nodes might connect*  
-<img src="img/rosgraph_grand_operating.svg"/>
+<img src="../img/rosgraph_grand_operating.svg"/>
 *A graph showing how an actual racecar’s nodes connect*
 </font></center>  
 Command line tricks: see details on our <a href="https://github.mit.edu/2019-BWSI/Writeups/blob/master/ros-cheatsheet.md"> ROS Cheatsheet </a>. Some notable commands include:
@@ -121,7 +121,7 @@ Command line tricks: see details on our <a href="https://github.mit.edu/2019-BWS
 <div style="margin-top:40px;"><h3>Connecting Nodes</h3></div>
 <font color=#A0A0A0> *The topics connect the nodes… But who builds the topics?* </font>
 <div align="right" style="margin-top:-140px;">
-<img src="img/switchboard-operator.jpg" width=250px/>
+<img src="../img/switchboard-operator.jpg" width=250px/>
 </div>
 <ul style="margin-top:-25px;">
 <li>Hiding under the hood is `roscore`.
