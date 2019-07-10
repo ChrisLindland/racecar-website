@@ -5,7 +5,7 @@ nav:
         - Setup: week1/01_monday/setup.md
         - Monday: week1/01_monday/lab.md
         - Hardware: week1/01_monday/lab2.md
-        - Tuesday: week1/02_tuesday/lab.md
+        - Tuesday: week1/02_tuesday/ROS_lab.md
         - Mid-Week Challenge: week1/03_midweek/lab.md
         - End-of-Week Challenge: week1/04_eow/lab.md
     - Week 2: 
