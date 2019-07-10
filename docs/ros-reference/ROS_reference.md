@@ -66,7 +66,7 @@ my_msg = my_msg_class()
 <li>Multiple nodes can publish to and/or subscribe to one topic.</li>
 </ul>
    
-*<a href="https://github.mit.edu/2019-BWSI/Writeups/blob/master/ros-topic-message-cheatsheet.md">Here</a> is our cheatsheet for topics and message types you will likely use.*
+*<a href="http://bwsi-racecar.com/cheatsheets/ros-topics-msgs/">Here</a> is our cheatsheet for topics and message types you will likely use.*
 
 
 <hr/>
