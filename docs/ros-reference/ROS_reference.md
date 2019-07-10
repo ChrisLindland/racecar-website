@@ -114,6 +114,7 @@ def my_callback_func (a_msg_from_my_topic):
 ![](img/rosgraph-grand-operating-small.svg)
 
 *A graph showing how an actual racecar’s nodes connect*
+
 </font></center>  
 Command line tricks: see details on our <a href="http://bwsi-racecar.com/cheatsheets/ros/"> ROS Cheatsheet </a>. Some notable commands include:
 <ul style="margin-top:5px;">
@@ -127,10 +128,11 @@ Command line tricks: see details on our <a href="http://bwsi-racecar.com/cheatsh
 ## The Details of Connecting and Running Nodes
 
 <details> <summary>For the curious</summary><br>
-*NOTE: You will not need to know this program your cars (no really; the TA’s were not even aware of this when we first worked on the cars), but it is kinda cool.*
+	
+<i>NOTE: You will not need to know this program your cars (no really; the TA’s were not even aware of this when we first worked on the cars), but it is kinda cool.</i>
 
 <div style="margin-top:40px;"><h3>Connecting Nodes</h3></div>
-<font color=#A0A0A0> *The topics connect the nodes… But who builds the topics?* </font>
+<font color=#A0A0A0><i>The topics connect the nodes… But who builds the topics?</i></font>
 <div align="right" style="margin-top:-140px;">
 	
 ![](img/switchboard-operator-small.jpg)
@@ -146,7 +148,7 @@ Command line tricks: see details on our <a href="http://bwsi-racecar.com/cheatsh
 	
 ![](img/roscore-graph-small.png)
 
-<font color=#A0A0A0>*Taken  with modification by Avalon Vinella from "Programming Robots with ROS" published by O'Reilly Media*</font></center>
+<font color=#A0A0A0><i>Taken  with modification by Avalon Vinella from "Programming Robots with ROS" published by O'Reilly Media</i></font></center>
 <li> Since `roscore` forms direct connections between publishers and subscribers, it’s more like a telephone operator (which just connects lines/topics) than a post office (which intercepts all messages and sorts them back out).</li>
 <li> When do we actually run `roscore`? See the last section.</li>
 
@@ -163,9 +165,14 @@ rospy.init_node("my_node")
 ### Running Nodes in Packages 
 
 <ul style="margin-top:-15px;">
-<li> Sometimes it is inconvenient to run `roscore` all your nodes one by one. For convenience then, you can run `roscore` and a whole bunch of nodes automatically with `teleop` or `startZED`; these are simplifications we've made using the car's <details><summary>[.bashrc file](https://github.mit.edu/2019-BWSI/Writeups/tree/master/Bootup%20Bash%20Scripts).</summary>
-	<ul>
-	<li>(For reference, a bash file contains a set of terminal commands. The .bashrc file in particular automatically runs whenever you open a new terminal. In our case, the robot's main .bashrc file  <a href="#" data-toggle="tooltip" title= "in 3rd from last line in .bashrc, there’s the command: source /home/racecar/.racecars"> runs another bash file called .racecars </a>)  In .racecars, we have written:
+<li> Sometimes it is inconvenient to run `roscore` all your nodes one by one. For convenience then, you can run `roscore` and a whole bunch of nodes automatically with `teleop` or `startZED`; these are simplifications we've made using the car's 
+<details><summary>
+	
+[.bashrc file](https://github.mit.edu/2019-BWSI/Writeups/tree/master/Bootup%20Bash%20Scripts)
+	
+</summary>
+<ul>
+<li>(For reference, a bash file contains a set of terminal commands. The .bashrc file in particular automatically runs whenever you open a new terminal. In our case, the robot's main .bashrc file  <a href="#" data-toggle="tooltip" title= "in 3rd from last line in .bashrc, there’s the command: source /home/racecar/.racecars"> runs another bash file called .racecars </a>)  In .racecars, we have written:
 ```bash
    ...
    # Create aliases to avoid having to type out ros packages and launch files
