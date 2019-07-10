@@ -45,20 +45,21 @@ Our particular sensor is the  **Hokuyo UST-10LX** scanning laser rangefinder.
 <ol type="1">
 <li>In the car’s terminal (ssh in if necessary), run `teleop`.</li>
 <li>In the computer’s terminal (or car’s if you have a monitor plugged in), run `rviz`.</li>
-<li>In rviz, select "base_link" from the "frame" dropdown menu.
+<li>In rviz, select "base_link" from the "frame" dropdown menu.</li>
   
 ![](img/rviz-screen1-small.png)
      
 <li>In rviz, press "add". </li>
-<li>In the popup, go to the "By topic" tab and select "LaserScan" from the "\scan" topic.
+<li>In the popup, go to the "By topic" tab and select "LaserScan" from the "\scan" topic.</li>
   
 ![](img/rviz-screen2-small.png)
 
-</li>
 <li>Hit the "ok" and enjoy! </li>
 </ol>
 </details><br>
+
 ### Important code snippets:
+
 ```python
 #imports the dataype/class LaserScan
 from sensor_msgs.msg import LaserScan
