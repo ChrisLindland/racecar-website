@@ -3,7 +3,7 @@
 A LIDAR sensor is a distance sensor that spins around.  
 Our particular sensor is the  **Hokuyo UST-10LX** scanning laser rangefinder.
 <center>  
-<img src="img/Hokuyo_hardware.jpg" alt="the physical sensor" width="250"/>
+<img src="../img/Hokuyo_hardware.jpg" alt="the physical sensor" width="250"/>
 </center>
 
 <details><summary> Specs </summary>
@@ -33,7 +33,7 @@ Our particular sensor is the  **Hokuyo UST-10LX** scanning laser rangefinder.
     </details> 
 * See the diagram to figure out the angles at which the distances are measured:
 <center>
-<img src="img/Hokuyo_data.png" alt="the LIDAR's scan data" width="400"/>
+<img src="../img/Hokuyo_data.png" alt="the LIDAR's scan data" width="400"/>
 </center>
 
 <details><summary><font color=#FFA0A0><b>How to visualize the data onscreen.</b></font></summary>
