@@ -3,8 +3,7 @@
 A LIDAR sensor is a distance sensor that spins around.  
 Our particular sensor is the  **Hokuyo UST-10LX** scanning laser rangefinder.
 <center>  
-![](img/Hokuyo_hardware.jpg)
-<img src="/img/Hokuyo_hardware.jpg" alt="the physical sensor" width="250"/>
+<img src="img/Hokuyo_hardware.jpg" alt="the physical sensor" width="250"/>
 </center>
 
 <details><summary> Specs </summary>
@@ -34,18 +33,18 @@ Our particular sensor is the  **Hokuyo UST-10LX** scanning laser rangefinder.
     </details> 
 * See the diagram to figure out the angles at which the distances are measured:
 <center>
-<img src="/img/Hokuyo_data.png" alt="the LIDAR's scan data" width="400"/>
+<img src="img/Hokuyo_data.png" alt="the LIDAR's scan data" width="400"/>
 </center>
 
-<details><summary> How to visualize the data onscreen. </summary>
+<details><summary><font color=#FFA0A0><b>How to visualize the data onscreen.</b></font></summary>
 <ol type="1">
 <li>In the car’s terminal (ssh in if necessary), run `teleop`.</li>
 <li>In the computer’s terminal (or car’s if you have a monitor plugged in), run `rviz`.</li>
 <li>In rviz, select "base_link" from the "frame" dropdown menu.
-<img src="/img/rviz_screen1.png" width="250"/></li>
+<img src="img/rviz_screen1.png" width="250"/></li>
 <li>In rviz, press "add". </li>
 <li>In the popup, go to the "By topic" tab and select "LaserScan" from the "\scan" topic.
-<img src="/img/rviz_screen2.png" width="250"/></li>
+<img src="img/rviz_screen2.png" width="250"/></li>
 <li>Hit the "ok" and enjoy! </li>
 </ol>
 </details><br>
