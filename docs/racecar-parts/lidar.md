@@ -36,7 +36,9 @@ Our particular sensor is the  **Hokuyo UST-10LX** scanning laser rangefinder.
     </details> 
 * See the diagram to figure out the angles at which the distances are measured:
 <center>
-<img src="../img/Hokuyo_data.png" alt="the LIDAR's scan data" width="400"/>
+
+![](img/hokuyo-data-small.png)
+
 </center>
 
 <details><summary><font color=#FFA0A0><b>How to visualize the data onscreen.</b></font></summary>
