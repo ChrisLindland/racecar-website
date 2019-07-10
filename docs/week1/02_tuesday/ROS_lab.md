@@ -4,7 +4,7 @@
 
 <li>Get docker running on your computer with functional mounting. (Good luck!)</li>
 <li>Create a new folder.<ol type="a">
-<li>Navigate to your mount folder on either your native terminal or on the docker terminal.<br>
+<li>Navigate to your mount folder on either your native terminal or on the docker/virtual terminal.<br>
 The terminal command is <font color=#00A0F0>`<a href="#" data-toggle="tooltip" title="i.e. change directory">cd</a> &#60;folder path&#62;`</font>.<br>
 <font color=#A0A0A0>For example `cd Documents/team_42_labs/`.</font></li>
 <li>Create a new folder, and name it sensibly like "example_ROS".<br>
@@ -13,13 +13,13 @@ The terminal command is <font color=#00A0F0>`<a href="#" data-toggle="tooltip" t
 
 <li>On your native machine, download the ROS lab starter files from Slack and dump them in the folder you created.</li>
 
-<li>In the car’s terminal, run <font color=#00A0F0>`roscore`</font>.<br>
+<li>In the docker/virtual terminal, run <font color=#00A0F0>`roscore`</font>.<br>
 <font color=#A0A0A0>When we get our ROS essentials page up and running, it will explain what `roscore` does; in short, `roscore` looks at the nodes’ publishers and subscribers and connects them appropriately.</font> </li>
 
 <li>Take a look at myBasicNode1.py and try to predict what it does.<br>
 <font color=#A0A0A0>If you still aren’t sure what’s going on after about 5 min, just move on to the next step.</font></li>
 
-<li>In the car’s terminal, run myBasicNode1.py.<br>
+<li>In the docker/virtual terminal, run myBasicNode1.py.<br>
 Once in the program’s folder, the terminal command is <font color=#00A0F0>`<a href="#" data-toggle="tooltip" title="`./` refers to the current folder">./</a> &#60;program name&#62;`</font>.<br>
 <ol type="a">
 <li>Does your code not run at all (no Python errors or anything)? Has your permission been denied? Well then folks, it’s debugging time!</li>
@@ -30,7 +30,7 @@ Once in the program’s folder, the terminal command is <font color=#00A0F0>`<a 
 </ol>
 <font color=#A0A0A0>Now if there’s a detail about the node that still doesn’t make sense, please ask your squad members or your TA’s what’s the situation here because the rest of the lab builds upon this. </font></li>
 
-<li>In the car’s terminal, try <font color=#00A0F0>`rosnode list`</font>, then <font color=#00A0F0>`rostopic list`</font>, then <font color=#00A0F0>`rostopic echo blah`</font>.<br>
+<li>In the docker/virtual terminal, try <font color=#00A0F0>`rosnode list`</font>, then <font color=#00A0F0>`rostopic list`</font>, then <font color=#00A0F0>`rostopic echo blah`</font>.<br>
 <font color=#A0A0A0>Just use one window; you don’t need to run these all at the same time.</font></li>
 
 <li> Now take a look at myNode1.py and fill it in to make it work like myBasicNode1.py.<br>
