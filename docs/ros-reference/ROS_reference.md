@@ -24,7 +24,9 @@
 </font>
 </ul>
 <hr/>
+
 ## Topics & Messages
+
 <font color=#A0A0A0> *What carries data between nodes?* </font>
   
 ### Messages
