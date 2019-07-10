@@ -26,7 +26,8 @@ nav:
         - Python: cheatsheets/python.md
         - OpenCV: cheatsheets/opencv.md
         - Racecar: cheatsheets/racecar.md
-        - ROS: cheatsheets/ros.md
+        - ROS Terminal Commands: cheatsheets/ros.md
+        - ROS Topics and Messages: cheatsheets/ros-topics-msgs.md
     - References:
         - ROS: ros-reference/ROS_reference.md
 theme: readthedocs
