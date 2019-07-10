@@ -2,8 +2,11 @@
 ## Hardware
 A LIDAR sensor is a distance sensor that spins around.  
 Our particular sensor is the  **Hokuyo UST-10LX** scanning laser rangefinder.
-<center>  
-<img src="../img/Hokuyo_hardware.jpg" alt="the physical sensor" width="250"/>
+
+<center>
+  
+![](img/hokuyo-hardware-small.jpg)
+
 </center>
 
 <details><summary> Specs </summary>
@@ -41,10 +44,15 @@ Our particular sensor is the  **Hokuyo UST-10LX** scanning laser rangefinder.
 <li>In the car’s terminal (ssh in if necessary), run `teleop`.</li>
 <li>In the computer’s terminal (or car’s if you have a monitor plugged in), run `rviz`.</li>
 <li>In rviz, select "base_link" from the "frame" dropdown menu.
-<img src="img/rviz_screen1.png" width="250"/></li>
+  
+![](img/rviz-screen1-small.png)
+     
 <li>In rviz, press "add". </li>
 <li>In the popup, go to the "By topic" tab and select "LaserScan" from the "\scan" topic.
-<img src="img/rviz_screen2.png" width="250"/></li>
+  
+![](img/rviz-screen2-small.png)
+
+</li>
 <li>Hit the "ok" and enjoy! </li>
 </ol>
 </details><br>
