@@ -41,22 +41,22 @@ Our particular sensor is the  **Hokuyo UST-10LX** scanning laser rangefinder.
 
 </center>
 
-<details><summary><font color=#FFA0A0><b>How to visualize the data onscreen.</b></font></summary>
+<font color=#FFA0A0><b>How to visualize the data onscreen.</b></font>
 <ol type="1">
 <li>In the car’s terminal (ssh in if necessary), run `teleop`.</li>
 <li>In the computer’s terminal (or car’s if you have a monitor plugged in), run `rviz`.</li>
 <li>In rviz, select "base_link" from the "frame" dropdown menu.</li>
-  
+
 ![](img/rviz-screen1-small.png)
-     
+
 <li>In rviz, press "add". </li>
 <li>In the popup, go to the "By topic" tab and select "LaserScan" from the "\scan" topic.</li>
-  
+
 ![](img/rviz-screen2-small.png)
 
 <li>Hit the "ok" and enjoy! </li>
 </ol>
-</details><br>
+<br>
 
 ### Important code snippets:
 
