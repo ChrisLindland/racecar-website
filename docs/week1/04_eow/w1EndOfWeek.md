@@ -7,7 +7,7 @@ Unlike wall following, potential fields takes in all the surrounding LIDAR data 
 
 Let's imagine that every piece of LIDAR data has a vector pointing from the car to the point. In order for the car to avoid this obstacle, we want the car to consider this vector in the *opposite* direction so that it will move away from it. So, if it sees something 1 meter in front of it, the car will interpret this as a vector of length 1 meter in the backwards direction. In reality, the car will get a piece of data in every direction; we can then add up all of these vectors to create a final vector that will tell the car what direction it should move in and how fast it should go.
 
-![](Resources/ptFieldsDiagram.jpg)
+![](img/ptFieldsDiagram.jpg)
 
 In this diagram, there is also an attracting force (the goal), but we will only be using repelling forces (obstacles). You can just set a default speed and direction to account for this. 
 
@@ -15,11 +15,11 @@ For speed, we have to find a way to adjust for how far away a point is, but we w
 
 So if we have LIDAR input and car interpretations like this...
 
-![](Resources/PtFieldGif.gif)
+![](img/PtFieldGif.gif)
 
 The car should have a final force vector like this:
 
-![](Resources/PtFieldsFinal.jpg)
+![](img/PtFieldsFinal.jpg)
 
 We can implement this by adjusting each raw distance by some factor such that shorter distances produce much higher speeds and longer distances are slightly slower (think about what mathematical functions would give you a larger output for a smaller input). You also will want to multiple this value by some constant so that we get appropriate speeds for the car.
 
