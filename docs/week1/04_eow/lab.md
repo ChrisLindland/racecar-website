@@ -37,7 +37,7 @@ Currently, the final vector is of form [speed, angle]. You can change this if yo
 
 You can also implement a PID controller to try and make your driving more accurate.
 
-Copy the starter code below into the `wall_follower` starter code file so roslaunch will work correctly. Then run `roslaunch wall_follower wall_follower.launch` just like yesterday.
+Copy the starter code below into the `wall_follower` starter code file so roslaunch will work correctly (make sure you save your wall follower code somewhere else first!). Then run `roslaunch wall_follower wall_follower.launch` just like yesterday.
 
 ```python
 #!/usr/bin/env python
