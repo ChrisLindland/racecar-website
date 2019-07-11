@@ -11,7 +11,6 @@ class PotentialField:
 	DRIVE_TOPIC = rospy.get_param("wall_follower/drive_topic")
 
 	def __init__(self):
-		rospy.init_node("potentialField")
 		self.data = None
 		self.cmd = AckermannDriveStamped()
 
