@@ -35,6 +35,7 @@
 
 ## Visualization Tools
 *Note: These tools work best with the monitor directly plugged into the car. If you have no monitor, you can ssh into the car using the command `ssh racecar@racecar -Y`, which will allow windows on the racecar to appear on your computer. These will be super laggy though.*
+
 * `rqt_graph` - Displays interactive graph of ROS nodes/topics
 * `rqt_image_view` - Displays any topic messages whose type is `sensor_msgs/Image`
 * `rqt_bag` - Graphical tool for watching .bag files
