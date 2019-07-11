@@ -17,7 +17,7 @@ class PotentialField:
 		#write your publishers and subscribers here; they should be the same as the wall follower's
 		
 		#cartesian points -- to be filled (tuples)
-		self.cartPoints = [None for x in range(1081)]
+		self.cartPoints = [None for x in range(100)]
 		
 		#[speed, angle]
 		self.finalVector = [0.5, 0]
