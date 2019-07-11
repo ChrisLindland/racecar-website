@@ -20,15 +20,12 @@ Your car should look like this:
 
 ## SSHing
 1. Make sure you're connected to the car's wifi
-2. On your computer, use this command: `ssh racecar@192.168.1.car_number`. The password is racecar@mit
-If you get an error, ask one of the TAs for help
+2. In the Docker terminal, ssh in to the car. You could also ssh in on your native machine if you have a Mac or have an ssh key manager.
+ We know very well this requires much more explanation. If we haven't written instructions by the time we ask you to do this then you know we've goofed.
+3. In the past, we would use the command: `ssh racecar@192.168.1.car_number`. The password is racecar@mit
 
 ## Using the Controller
 * You must hold down LB to use the controller to drive
 * If the Mode light is turned on, press Mode until it turns off
 * The controller must be in the D mode (this is changed by a switch in between the bumpers).
 * The left joystick controls speed, and the right joystick turns
-
-## Driving
-* `self.cmd.drive.speed`: changes the car's velocity
-* `self.cmd.drive.steering_angle`: changes the angle of the wheels
