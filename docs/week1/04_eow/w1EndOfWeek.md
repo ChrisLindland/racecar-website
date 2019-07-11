@@ -34,4 +34,4 @@ Currently, the final vector is of form [speed, angle]. You can change this if yo
 
 You can also implement a PID controller to try and make your driving more accurate.
 
-For now, copy the starter code into the `wall_follower` starter code so roslaunch will work correctly. You can either manuaully copy in the code or use `cp ptFieldSim.py /your/path/wall_follower.py` in your terminal/powershell. 
+For now, copy the starter code into the `wall_follower` starter code so roslaunch will work correctly. You can either manuaully copy in the code or use `cp ptFieldSim.py /your/path/wall_follower.py` in your terminal/powershell. Then run `roslaunch wall_follower wall_follower.launch` just like yesterday.
