@@ -20,8 +20,8 @@ Your car should look like this:
 
 ## SSHing
 1. Make sure you're connected to the car's wifi
-2. In the Docker terminal, ssh in to the car. You could also ssh in on your native machine if you have a Mac or have an ssh key manager.
- We know very well this requires much more explanation. If we haven't written instructions by the time we ask you to do this then you know we've goofed.
+2. In the Docker terminal, ssh in to the car. You could also ssh in on your native machine if you have a Mac or have an ssh key manager.  
+ We know very well this requires much more explanation. If we haven't written instructions by the time we ask you to do this, then you know we've goofed.
 3. In the past, we would use the command: `ssh racecar@192.168.1.car_number`. The password is racecar@mit
 
 ## Using the Controller
