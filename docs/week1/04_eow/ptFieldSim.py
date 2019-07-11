@@ -6,8 +6,6 @@ import rospy, copy, time
 from sensor_msgs.msg import LaserScan
 from ackermann_msgs.msg import AckermannDriveStamped
 
-AUTONOMOUS_MODE = False
-
 class PotentialField:
 	SCAN_TOPIC = rospy.get_param("wall_follower/scan_topic")
 	DRIVE_TOPIC = rospy.get_param("wall_follower/drive_topic")
