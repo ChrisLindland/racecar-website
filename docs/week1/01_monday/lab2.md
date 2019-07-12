@@ -50,7 +50,7 @@ In order to access the files on the car, we're going to be using SSHFS to mount 
 
 #### Windows:
 1. Install the latest versions of [WinFSP](https://github.com/billziss-gh/winfsp/releases/tag/v1.4.19049) and [win-sshfs](https://github.com/billziss-gh/sshfs-win/releases/tag/v2.7.17334)
-2. In file explorer, right click on This PC and choose Map network drive. Choose a local drive to mount, and in the Folder field type \\sshfs\racecar@192.168.1.yourCar'sNumber\home\racecar. Check the Connect Using Different Credentials box and connect. The password is racecar@mit.
+2. In file explorer, right click on This PC and choose Map network drive. Choose a local drive to mount, and in the Folder field type `\\sshfs\racecar@192.168.1.yourCar'sNumber\home\racecar`. Check the Connect Using Different Credentials box and connect. The password is racecar@mit.
 
 
 ## SSH'ing
