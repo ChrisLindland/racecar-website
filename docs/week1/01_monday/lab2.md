@@ -39,13 +39,13 @@ In order to access the files on the car, we're going to be using SSHFS to mount 
 1. In terminal, type `sudo apt-get install sshfs`
 2. Create a local directory to store the car's files: `sudo mkdir /path/yourDirectory`. `/path` can be any folder on your computer where you want to mount the car.
 3. Then `sudo sshfs -o allow_other,defer_permissions racecar@racecar:/home/racecar /path/yourDirectory`. The password is racecar@mit.
-4. In order to make the mount permanent (so you don't have to do this every time you restart the car), we have to edit your `/etc/fstab` file. Type `sudo vim /etc/fstab/`. If this file isn't empty, go to the bottom by pressing `G$`. Press `i`, make a new line, and type in `sshfs#racecar@racecar:/home/racecar /path/yourDirectory`. Press `esc` then type `:wq` to quit.
+4. In order to make the mount permanent (so you don't have to do this every time you restart the car), we have to edit your `/etc/fstab` file. Type `sudo vim /etc/fstab/` (or `nano` if you prefer). If this file isn't empty, go to the bottom by pressing `G$`. Press `i`, make a new line, and type in `sshfs#racecar@racecar:/home/racecar /path/yourDirectory`. Press `esc` then type `:wq` to quit.
 
 #### Mac OSX
 1. Download FUSE and SSHFS [here](https://osxfuse.github.io/)
 2. Create a local directory to store the car's files: `sudo mkdir /path/yourDirectory`. `/path` can be any folder on your computer where you want to mount the car.
 3. Then `sudo sshfs -o allow_other,defer_permissions racecar@racecar:/home/racecar /path/yourDirectory`. The password is racecar@mit.
-4. In order to make the mount permanent (so you don't have to do this every time you restart the car), we have to edit your `/etc/fstab` file. Type `sudo vim /etc/fstab/`. If this file isn't empty, go to the bottom by pressing `G$`. Press `i`, make a new line, and type in `sshfs#racecar@racecar:/home/racecar /path/yourDirectory`. Press `esc` then type `:wq` to quit.
+4. In order to make the mount permanent (so you don't have to do this every time you restart the car), we have to edit your `/etc/fstab` file. Type `sudo vim /etc/fstab/` (or `nano` if you prefer). If this file isn't empty, go to the bottom by pressing `G$`. Press `i`, make a new line, and type in `sshfs#racecar@racecar:/home/racecar /path/yourDirectory`. Press `esc` then type `:wq` to quit.
 
 #### Windows:
 1. Install the latest versions of [WinFSP](https://github.com/billziss-gh/winfsp/releases/tag/v1.4.19049) and [win-sshfs](https://github.com/billziss-gh/sshfs-win/releases/tag/v2.7.17334)
