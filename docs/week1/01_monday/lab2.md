@@ -64,4 +64,4 @@ Now you can drive the car using the controller! The cars have a Dead Man's Switc
 
 Keep in mind that these are expensive piece of equipment; always be aware of your/the car's surroudings when driving, and communicate with other teams that are also driving their cars to avoid damaging them.
 
-When you think you have a good feel of the car, move on to the next section.
+When you think you have a good feel of the car, move on to writing the safety controller.
