@@ -30,6 +30,8 @@ Your car should look like this:
 
 ![](img/CarFinal.jpg)
 
+### Your Car's IP
+The car's IP (which will be used often in connecting to the car) are usually 192.168.1.yourCar'sNumber __UNLESS__ you have 101 or 102, in which case it is 192.168.0.yourCar'sNumber.
 
 ## SSHFS Mounting
 In order to access the files on the car, we're going to be using SSHFS to mount its files onto your computer, where you can edit them in VSCode. When you save these files locally, they will automatically get updated on the car! Follow these instructions to set it up:
@@ -37,18 +39,18 @@ In order to access the files on the car, we're going to be using SSHFS to mount 
 #### Ubuntu
 1. In terminal, type `sudo apt-get install sshfs`
 2. Create a local directory to store the car's files: `sudo mkdir /path/yourDirectory`. `/path` can be any folder on your computer where you want to mount the car.
-3. Then `sudo sshfs -o allow_other racecar@racecar:/home/racecar /path/yourDirectory`. The password is racecar@mit.
-4. To make sshfs a little easier, we're going to make an alias so that you won't have to type out that command everytime. In your user home directory, edit your `.bashrc` file. In a new line, add `alias mount="sudo sshfs -o allow_other racecar@racecar:/home/racecar /path/yourDirectory"`. Now anytime you reboot your computer or the car, you can just type `mount` and it will mount your files!
+3. Then `sudo sshfs -o allow_other racecar@192.168.1.yourCar'sNumber:/home/racecar /path/yourDirectory`. The password is racecar@mit.
+4. To make sshfs a little easier, we're going to make an alias so that you won't have to type out that command everytime. In your user home directory, edit your `.bashrc` file. In a new line, add `alias mount="sudo sshfs -o allow_other racecar@192.168.1.yourCar'sNumber:/home/racecar /path/yourDirectory"`. Now anytime you reboot your computer or the car, you can just type `mount` and it will mount your files!
 
 #### Mac OSX
 1. Download FUSE and SSHFS [here](https://osxfuse.github.io/)
 2. Create a local directory to store the car's files: `sudo mkdir /path/yourDirectory`. `/path` can be any folder on your computer where you want to mount the car.
-3. Then `sudo sshfs -o allow_other,defer_permissions racecar@racecar:/home/racecar /path/yourDirectory`. The password is racecar@mit.
-4. To make sshfs a little easier, we're going to make an alias so that you won't have to type out that command everytime. In your user home directory, edit your `.bashrc` file. In a new line, add `alias mount="sudo sshfs -o allow_other,defer_permissions racecar@racecar:/home/racecar /path/yourDirectory"`. Now anytime you reboot your computer or the car, you can just type `mount` and it will mount your files!
+3. Then `sudo sshfs -o allow_other,defer_permissions racecar@192.168.1.yourCar'sNumber:/home/racecar /path/yourDirectory`. The password is racecar@mit.
+4. To make sshfs a little easier, we're going to make an alias so that you won't have to type out that command everytime. In your user home directory, edit your `.bashrc` file. In a new line, add `alias mount="sudo sshfs -o allow_other,defer_permissions racecar@192.168.1.yourCar'sNumber:/home/racecar /path/yourDirectory"`. Now anytime you reboot your computer or the car, you can just type `mount` and it will mount your files!
 
 #### Windows:
 1. Install the latest versions of [WinFSP](https://github.com/billziss-gh/winfsp/releases/tag/v1.4.19049) and [win-sshfs](https://github.com/billziss-gh/sshfs-win/releases/tag/v2.7.17334)
-2. In file explorer, right click on This PC and choose Map network drive. Choose a local drive to mount, and in the Folder field type \\sshfs\racecar@racecar\home\racecar. Check the Connect Using Different Credentials box and connect. The password is racecar@mit.
+2. In file explorer, right click on This PC and choose Map network drive. Choose a local drive to mount, and in the Folder field type \\sshfs\racecar@192.168.1.yourCar'sNumber\home\racecar. Check the Connect Using Different Credentials box and connect. The password is racecar@mit.
 
 
 ## SSH'ing
