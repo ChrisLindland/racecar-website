@@ -34,7 +34,7 @@ Your car should look like this:
 The car's IP (which will be used often in connecting to the car) are usually 192.168.1.yourCar'sNumber __UNLESS__ you have 101 or 102, in which case it is 192.168.0.yourCar'sNumber. When you see an IP in the below instructions, make sure you check it's the right one!
 
 ## SSHFS Mounting
-In order to access the files on the car, we're going to be using SSHFS to mount its files onto your computer, where you can edit them in VSCode. When you save these files locally, they will automatically get updated on the car! Make sure you're connected to your car's wifi (the password is `g0_fast!`), then follow these instructions to set it up:
+In order to access the files on the car, we're going to be using SSHFS to mount its files onto your computer, where you can edit them in VSCode. When you save these files locally, they will automatically get updated on the car! Make sure you're connected to your car's wifi (the password is `g0_fast!`) after downloading the necessary programs and follow these instructions to set it up:
 
 #### Ubuntu
 1. In terminal, type `sudo apt-get install sshfs`
