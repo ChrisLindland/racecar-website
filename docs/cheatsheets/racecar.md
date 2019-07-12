@@ -18,7 +18,7 @@ Your car should look like this:
 
 ![](img/CarFinal.jpg)
 
-##SSHFS Mounting
+## SSHFS Mounting
 In order to access the files on the car, we're going to be using SSHFS to mount its files onto your computer, where you can edit them in VSCode. When you save these files locally, they will automatically get updated on the car! Follow these instructions to set it up:
 * Mac OSX and Ubuntu:
 1. Install SSHFS:
