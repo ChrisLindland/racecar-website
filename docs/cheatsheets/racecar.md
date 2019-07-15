@@ -27,5 +27,5 @@ Your car should look like this:
 ## Using the Controller
 * You must hold down LB to use the controller to drive
 * If the Mode light is turned on, press Mode until it turns off
-* The controller must be in the D mode (this is changed by a switch in between the bumpers).
+* The controller must be in the X mode (this is changed by a switch in between the bumpers).
 * The left joystick controls speed, and the right joystick turns
