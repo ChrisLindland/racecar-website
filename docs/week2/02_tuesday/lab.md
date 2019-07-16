@@ -1,5 +1,7 @@
 ## Color Segmentation and openCV
 
+**If your camera is not detecting the cone, you can unplug the Zed camera from the car, plug it into a laptop, and run the slider_colorSegmentation.py with source of 1 to check what the camera is actually seeing**
+
 A color space is an organization of colors typically used to encode an image. The most common color space that most people may have heard of is the RGB color space. Others include the CMYK and YIQ models, but a common color space for robotics is the HSV color space. 
 
 HSV stands for **H**ue, **S**aturation, and **V**alue. Saturation is the intensity of the color. Hue is which one of the standard "colors" this particular color most resembles (we count starting from red to yellow, green, cyan, blue, and end with magenta). Value is the brightness of the color, where 0 is completely black and 100 is no black.
