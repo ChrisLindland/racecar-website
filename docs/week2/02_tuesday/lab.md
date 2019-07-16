@@ -70,7 +70,7 @@ If this still does not work, cycle through all possible source numbers (-1, 0, 1
 
 In this part of the lab, we will be programming the car to stop when it sees an orange cone (Look at your teammate's clothing to check if they're wearing these colors!). We will first check the HSV values of the color we'll be using and take note of these values, then mess with *driveNode.py* to make the car stop when it sees the orange cone at a certain distance away.
 
-* Open up *slider_colorSegmentation.py* and identify the upper and lower bounds of the HSV space necessary to identify the color of the cone you are working with. Once you have the numbers for the bounds, go into *color_segmentation.py* and add these values in the marked area. This ensures that the filter is applied to the images traveling through ROS.
+* Once you have the HSV numbers for the bounds for your cone, go into *color_segmentation.py* and add these values in the marked area (should be near the top of the code). This ensures that the filter is applied to the images traveling through ROS.
 
 Now, we will be working with *driveNode.py*, which is where the car will take in the filtered image and publish drive commands. In *color_segmentation.py*, there is a function called cd_color_segmentation(), which takes in an image, applies a filter, and finds the biggest viable object. It then draws a box around the object and returns the box's coordinates, in the form of a nested tuple
  ```( (xL,yL), (xR,yR) )```
