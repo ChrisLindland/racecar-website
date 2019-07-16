@@ -65,5 +65,5 @@ If you do miss it, you can get it again from:
 
 ## Option 3: DIY
 
-<font color="FF0000"> **Whatever you do, you must be able to get all team members up and running such that they can see and edit code.** </font>
+<font color="FF0000"> **Whatever you do, you must be able to get all team members up and running such that they can see and edit code.** </font>  
 Let us know if you have something really good.
