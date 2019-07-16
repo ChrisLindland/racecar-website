@@ -31,4 +31,5 @@ nav:
         - ROS Topics and Messages: cheatsheets/ros-topics-msgs.md
     - References:
         - ROS: ros-reference/ROS_reference.md
+        - Collaboration: collab/collab.md
 theme: readthedocs
