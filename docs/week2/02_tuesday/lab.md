@@ -27,6 +27,8 @@ Copy the files over for this lab and put newZed.py, driveNode.py, and color_segm
 
 Make sure you charge both of your car's batteries!
 
+Before you start coding today, check out the Collaboration page on the website. We have written up instructions for programs that would allow multiple people to edit one file, which would let more people work on code at once.
+
 ## Part 1: Correctly Identify Color Filters as well as Hue, Value, and Saturation
 We'll be working with your laptop only for this part of the lab. Run *challenge.py*, which will apply a random filter to this image:
 ![Rainbow](resources/rainbow.jpg)
