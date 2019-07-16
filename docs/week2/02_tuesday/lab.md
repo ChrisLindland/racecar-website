@@ -6,7 +6,7 @@ HSV stands for **H**ue, **S**aturation, and **V**alue. Saturation is the intensi
 
 ### **Goals:**
 1. Accurately guess what HSV filter is being used
-2. Determine the threshold values for detecting a green flag and a cone
+2. Determine the threshold values for detecting a post-it note and an orange cone
 3. Code your racecar to stop when it sees an orange cone at a desired distance away
 
 ## Part 0: Setup
