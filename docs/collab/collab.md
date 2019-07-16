@@ -41,6 +41,7 @@ Disadvantages: gross and cluttered interface, confusing networking, becoming a m
 ![](img/liveshare4.png)
 
 ### Host Instructions
+*Note: In this configuration, the host will be responsible for storing files and running them on the car.*
 
 1. On the bottom tab thing, click "Live Share".  
 ![](img/liveshare5.png)
@@ -61,3 +62,8 @@ If you do miss it, you can get it again from:
 1. Click on the link your host sent. Hope something pops ups.
 2. If you want to save the code on your machine, you may need to do a manual copy-paste.
 3. Let us know if you figure out how to do something fancier!
+
+## Option 3: DIY
+
+<font color="FF0000"> **Whatever you do, you must be able to get all team members up and running such that they can see and edit code.** </font>
+Let us know if you have something really good.
