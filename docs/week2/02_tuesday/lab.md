@@ -29,6 +29,8 @@ Copy the files over for this lab and put newZed.py, driveNode.py, and color_segm
 We'll be working with your laptop only for this part of the lab. Run *challenge.py*, which will apply a random filter to this image:
 ![Rainbow](resources/rainbow.jpg)
 
+**Note:** If you get an assertion error / error -215, the image pathing is wrong! Make sure challenge.py is in the same directory as your resources folder.
+
 Once challenge completely executes, you can press 'z' to randomly select from components of RGB and HSV: red, blue, green; hue, saturation, value. The program will modify the image to only show the values of the component that was picked. Work with your team to figure out which image is showing which component, then click the dropdown and compare. If you got any wrong, discuss with your team and call over a TA to help clarify any questions.
 
 <details>
