@@ -49,7 +49,7 @@ Once challenge completely executes, you can press 'z' to randomly select from co
 
 </details>
 
-## Part 2: Detecting Objects Using Color Segmentation
+## Part 2: Detecting Objetcs Using Color Segmentation
 Color segmentation is an algorithm used to find specific objects. We first specify the upper and lower bounds for the components of whatever color space we are using ie. hue, saturation, value for HSV and so on. The algorithm then takes in an image and applies a filter to it that "erases" any pixel that does not fall within the specified range, allowing the camera to focus on specific objects.
 
 **Note:** When you run slider_colorSegmentation, you must add a source flag. You do this by typing in the command to run the program normally in your terminal (python slider_colorSegmentation.py) then typing -s and a source number (0 for your laptop's camera and 1 for a usb camera). For example, a person using their laptop's camera would go into their terminal and type
@@ -62,13 +62,13 @@ If this still does not work, cycle through all possible source numbers (-1, 0, 1
 * Run slider_colorSegmentation.py. This gives you three separate windows, one containing the camera output, one with the filter, and one with the sliders. In order to exit the program, press and hold the escape key. If you are missing the third slider window, try looking at your open windows and selecting it.
 * You will see two sliders for each component of the color space. One is the lower bound and the other is the upper bound. The area in between is the area that the algorithm will target; everything else will be excluded.
 * In the first window, a green bounding box will be drawn around the largest object within the bounds you have specified.
-* Figure out what the correct bounds are for each object and take notes! Try to get the most accurate filter (in other words, only the specific object you want shows up on-screen).
+* Figure out what the correct bounds are for each object and take notes! Try to get the most accurate filter (in other words, only the specific object you want shows up on-screen). Write down the hsv bounds for the cone, you will need it for part 3.
 
 **Note:** Are HSV values always constant? What things could affect what a camera sees? Make sure you think about these things and how they could affect what the robot sees.
 
 ## Part 3: Drive/Stop with Cones
 
-In this part of the lab, we will be programming the car to stop when it sees an orange cone (Look at your teammate's clothing to check if they're wearing these colors!). We will first check the HSV values of the color we'll be using and take note of these values, then mess with *driveNode.py* to make the car stop when it sees the orange cone at a certain distance away.
+Join back up with your bigger team since you will be working with the cars now! In this part of the lab, we will be programming the car to stop when it sees an orange cone (Look at your teammate's clothing to check if they're wearing these colors!). We will first check the HSV values of the color we'll be using and take note of these values, then mess with *driveNode.py* to make the car stop when it sees the orange cone at a certain distance away.
 
 * Once you have the HSV numbers for the bounds for your cone, go into *color_segmentation.py* and add these values in the marked area (should be near the top of the code). This ensures that the filter is applied to the images traveling through ROS.
 
@@ -84,4 +84,4 @@ You will be working with two functions: size_calc() and drive().
 
 To test your code, have teleop, safety, and zed running. Then, in the scripts folder run driveNode.py like normal(type python driveNode.py). This should run your new driving node.
 
-**Challenge:** Once you have completed Part 2, try making the car stop only when the cone is a certain distance away **and** in the center of the screen.
+**Challenge:** Once you have completed Part 3, try making the car stop only when the cone is a certain distance away **and** in the center of the screen.
