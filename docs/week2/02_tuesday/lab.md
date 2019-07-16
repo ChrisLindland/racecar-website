@@ -31,30 +31,13 @@ We'll be working with your laptop only for this part of the lab. Run *challenge.
 
 **Note:** If you get an assertion error / error -215, the image pathing is wrong! Make sure challenge.py is in the same directory as your resources folder since the code calls for the image in "resources/rainbow.jpg".
 
-Once challenge completely executes, you can press 'z' to randomly select from components of RGB and HSV: red, blue, green; hue, saturation, value. The program will modify the image to only show the values of the component that was picked. Work with your team to figure out which image is showing which component, then click the dropdown and compare. If you got any wrong, discuss with your team and call over a TA to help clarify any questions.
+Once challenge completely executes, you can press 'z' to randomly select from components of RGB and HSV: red, blue, green; hue, saturation, value. The program will modify the image to only show the values of the component that was picked. Work with your team to figure out which image is showing which component, then click the dropdown to find the answers. If you got any wrong, discuss with your team and call over a TA to help clarify any questions.
 
 <details>
 <summary>Answers:</summary>
 <br> 
 
-
-![Red](resources/red.jpg)
-
-
-![Green](resources/green.jpg)
-
-
-![Blue](resources/blue.jpg)
-
-
-![Saturation](resources/saturation.jpg)
-
-
-![Hue](resources/hue.jpg)
-
-
-![Value](resources/value.jpg)
-
+Well apparently MkDocs doesn't like linking images in dropdown menus reliably so the answers can be found in day2Code/resources/.
 
 </details>
 
