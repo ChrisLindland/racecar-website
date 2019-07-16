@@ -56,6 +56,7 @@ Color segmentation is an algorithm used to find specific objects. We first speci
 ```sh
    python slider_colorSegmentation.py -s 0
 ```
+If this still does not work, cycle through all possible source numbers (-1, 0, 1, 2) and call over a TA if no source works.
 
 * Look at your objects and make note of which component (hue, saturation, value) will be most useful for you
 * Run slider_colorSegmentation.py. This gives you three separate windows, one containing the camera output, one with the filter, and one with the sliders. In order to exit the program, press and hold the escape key. If you are missing the third slider window, try looking at your open windows and selecting it.
