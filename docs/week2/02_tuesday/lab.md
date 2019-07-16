@@ -25,6 +25,8 @@ You will also need to split up into two teams within your group for parts 1 and 
 
 Copy the files over for this lab and put newZed.py, driveNode.py, and color_segmentation.py into the scripts folder inside racecar_ws/src.
 
+Make sure you charge both of your car's batteries!
+
 ## Part 1: Correctly Identify Color Filters as well as Hue, Value, and Saturation
 We'll be working with your laptop only for this part of the lab. Run *challenge.py*, which will apply a random filter to this image:
 ![Rainbow](resources/rainbow.jpg)
