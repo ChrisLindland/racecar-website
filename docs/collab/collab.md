@@ -12,7 +12,7 @@ Disadvantages: manual saving, kinda sketchy</font>
 1. Go to [collabedit.com](http://collabedit.com/).
 2. Click "Create a New Document".
 3. Enter a logical name.  
-![](/img/collabedit3.png)
+![](img/collabedit3.png)
 4. Select Python as your Programming Language.
 5. Share the url with your collaborators.
 6. <font color="FF0000"> **Remember to copy your code to your host machine every time you want to save!** </font>
