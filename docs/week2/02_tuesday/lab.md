@@ -13,13 +13,13 @@ HSV stands for **H**ue, **S**aturation, and **V**alue. Saturation is the intensi
 
 You will be working mainly with *slider_colorRecognition.py*, *challenge.py*, and *driveStopStarter.py*.
 
-If you are not a Linux user, you will need to have openCV version 4 installed onto your laptop. To check which version you have/if you have a version all, go into terminal and type
+If you are not a Linux user running native ROS, you will need to have openCV version 4 installed onto your laptop. To check which version you have/if you have a version all, go into terminal and type
 ```sh
     python
     import cv2
     cv2.__version__
 ```
-If you have the wrong version, first uninstall opencv-python by typing ```pip uninstall opencv-python```. To install the correct version, type ```pip install opencv-python==4.1.0.25```.
+If you have the wrong version, first uninstall opencv-python by typing ```pip uninstall opencv-python```. To install the correct version, type ```pip install opencv-python==4.1.0.25```. (Pip should have been installed when you installed python; if this is not the case, look at this [website](https://www.makeuseof.com/tag/install-pip-for-python/) for installation).
 
 You will also need to split up into two teams within your group for parts 1 and 2; when picking these sub-teams, make sure one person in each team has a working laptop camera. If no one in your team has working/good cameras, talk to your TA to see if there are extra webcameras you could borrow.
 
@@ -52,7 +52,7 @@ Once challenge completely executes, you can press 'z' to randomly select from co
 ## Part 2: Detecting Objects Using Color Segmentation
 Color segmentation is an algorithm used to find specific objects. We first specify the upper and lower bounds for the components of whatever color space we are using ie. hue, saturation, value for HSV and so on. The algorithm then takes in an image and applies a filter to it that "erases" any pixel that does not fall within the specified range, allowing the camera to focus on specific objects.
 
-**Note:** When you run slider_colorSegmentation, you must add a source flag. You do this by typing in the command to run the program normally in your terminal (python slider_colorRecognition.py) then typing -s and a source number (0 for your laptop's camera and 1 for a usb camera). For example, a person using their laptop's camera would go into their terminal and type
+**Note:** When you run slider_colorSegmentation, you must add a source flag. You do this by typing in the command to run the program normally in your terminal (python slider_colorSegmentation.py) then typing -s and a source number (0 for your laptop's camera and 1 for a usb camera). For example, a person using their laptop's camera would go into their terminal and type
 ```sh
    python slider_colorSegmentation.py -s 0
 ```
@@ -67,11 +67,11 @@ Color segmentation is an algorithm used to find specific objects. We first speci
 
 ## Part 3: Drive/Stop with Cones
 
-In this part of the lab, we will be programming the car to stop when it sees an orange cone (Look at your teammate's clothing to check if they're wearing these colors!). We will first check the HSV values of the color we'll be using and take note of these values, then mess with *driveStop_starter.py* to make the car stop when it sees the orange cone at a certain distance away.
+In this part of the lab, we will be programming the car to stop when it sees an orange cone (Look at your teammate's clothing to check if they're wearing these colors!). We will first check the HSV values of the color we'll be using and take note of these values, then mess with *driveNode.py* to make the car stop when it sees the orange cone at a certain distance away.
 
-* Open up *slider_colorSegmentation.py* and identify the upper and lower bounds of the HSV space necessary to identify the color of the cone you are working with. Once you have the numbers for the bounds, go into *color_segmentation_starter.py* and add these values in the marked area. This ensures that the filter is applied to the images traveling through ROS.
+* Open up *slider_colorSegmentation.py* and identify the upper and lower bounds of the HSV space necessary to identify the color of the cone you are working with. Once you have the numbers for the bounds, go into *color_segmentation.py* and add these values in the marked area. This ensures that the filter is applied to the images traveling through ROS.
 
-Now, we will be working with *driveStop_starter.py*, which is where the car will take in the filtered image and publish drive commands. In *color_segmentation_starter.py*, there is a function called cd_color_segmentation(), which takes in an image, applies a filter, and finds the biggest viable object. It then draws a box around the object and returns the box's coordinates, in the form of a nested tuple
+Now, we will be working with *driveStop_starter.py*, which is where the car will take in the filtered image and publish drive commands. In *color_segmentation.py*, there is a function called cd_color_segmentation(), which takes in an image, applies a filter, and finds the biggest viable object. It then draws a box around the object and returns the box's coordinates, in the form of a nested tuple
  ```( (xL,yL), (xR,yR) )```
 . xL and yL are the x,y coordinates of the upper left corner of the box while xR and yR are the x,y coordinates of the bottom right corner of the box.
 
@@ -83,4 +83,4 @@ You will be working with two functions: size_calc() and drive().
 
 To test your code, have teleop, safety, and zed running. Then, in the scripts folder run driveNode.py like normal(type python driveNode.py). This should run your new driving node.
 
-**Challenge:** Once you have completed Part 2, try making the car stop for 2 seconds then continue driving forward until the next time it sees a new red flag (executing a standard "stop" at a stop sign when actual driving). Keep in mind that the robot must not get stopped again by the same red flag!
+**Challenge:** Once you have completed Part 2, try making the car stop only when the cone is a certain distance away **and** in the center of the screen.
