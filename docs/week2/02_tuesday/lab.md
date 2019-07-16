@@ -74,7 +74,7 @@ Join back up with your bigger team since you will be working with the cars now! 
 
 * Once you have the HSV numbers for the bounds for your cone, go into *color_segmentation.py* and add these values in the marked area (should be near the top of the code). This ensures that the filter is applied to the images traveling through ROS.
 
-Now, we will be working with *driveNode.py*, which is where the car will take in the filtered image and publish drive commands. In *color_segmentation.py*, there is a function called cd_color_segmentation(), which takes in an image, applies a filter, and finds the biggest viable object. It then draws a box around the object and returns the box's coordinates, in the form of a nested tuple
+* Now, we will be working with *driveNode.py*, which is where the car will take in the filtered image and publish drive commands. In *color_segmentation.py*, there is a function called cd_color_segmentation(), which takes in an image, applies a filter, and finds the biggest viable object. It then draws a box around the object and returns the box's coordinates, in the form of a nested tuple
  ```( (xL,yL), (xR,yR) )```
 . xL and yL are the x,y coordinates of the upper left corner of the box while xR and yR are the x,y coordinates of the bottom right corner of the box.
 
