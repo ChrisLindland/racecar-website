@@ -80,4 +80,4 @@ You will be working with two functions: size_calc() and drive().
 
 To test your code, have teleop, safety, and zed running. **You do not need controller running for this lab**. Then, in the scripts folder run driveNode.py like normal(type *python driveNode.py*). This should run your new driving node.
 
-**Challenge:** Once you have completed Part 3, try making the car stop only when the cone is a certain distance away **and** in the center of the screen.
+**Challenge:** Once you have completed Part 3, try making the car stop only when the cone is a certain distance away **and** in the center of the screen. If you finish this as well, try making the car's wheels follow the cone on-screen.
