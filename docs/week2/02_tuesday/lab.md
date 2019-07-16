@@ -36,17 +36,11 @@ Once challenge completely executes, you can press 'z' to randomly select from co
 <details>
 <summary>Answers:</summary>
 <br> 
-
 ![Red](resources/red.jpg)
-
 ![Green](resources/green.jpg)
-
 ![Blue](resources/blue.jpg)
-
 ![Saturation](resources/saturation.jpg)
-
 ![Hue](resources/hue.jpg)
-
 ![Value](resources/value.jpg)
 
 </details>
