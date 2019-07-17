@@ -36,6 +36,12 @@ Explain that sift_det() returns two bounding boxes, one for the entire one-way s
 
 As you did yourself, sift_det returns two bounding boxes, one of the overall sign and another that draws a box around the color and shape that you specified.
 
+Here are the bounding boxes that we got from running sift_det on rway:
+![Right-way](rway.png)
+
+Here are the bounding boxes that we got from running sift_det on lway:
+![Left-way](lway.png)
+
 ## Parking
 Your task is to have the car drive up to the cone and park in front of it! You will need to build upon the code in driveNode.py since parking is just an extension of drive-stop. As you write your code, make sure you **START SMALL and SIMPLE** as a sanity check. If your simple code works, you can build up to more complicated things.
 
