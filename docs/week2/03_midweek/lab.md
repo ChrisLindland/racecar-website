@@ -15,7 +15,7 @@ For sign detection, we will be using feature detection in the form of the SIFT (
 
 **You will need to uninstall opencv and install a new, developer opencv called Contrib. You uninstall opencv using ```pip uninstall opencv-pthon``` and install it using ```pip install opencv-contrib-python==3.4.2.16```**
 
-You will be tasked with implementing the color/shape detection in turnRectStarter.py. Read through the code's comments; we have linked to openCV documentation that will help you write this code.  **Read every comment in the file**. This code is only designed to run on your laptop; once you can verify that it works on your laptop you can keep moving forward.
+You will be tasked with implementing the color/shape detection in turnRectStarter.py. Read through the code's comments; we have linked to openCV documentation that will help you write this code.  **Read every comment in the file**. This code is only designed to run on your laptop; once you can verify that it works on your laptop you can keep moving forward. The HSV range part is meant for singling out the colors on the sign, ie. looking for the most white or the most black, etc.
 
 Example run:
 python turnRectStarter.py -i ./images/oneway.jpg -l "One-Way-Sign" -s 0
@@ -37,10 +37,10 @@ If you get confused, the implementation of the sift_det function should be very 
 ### Interfacing with driveNode.py
 As you did yourself, sift_det returns two bounding boxes, one of the overall sign and another that draws a box around the color and shape that you specified.
 
-Here are the bounding boxes that we got from running sift_det on rway:
+Here are the bounding boxes that we got from running sift_det segmenting for black on right way sign:
 ![Right-way](rway.png)
 
-Here are the bounding boxes that we got from running sift_det on lway:
+Here are the bounding boxes that we got from running sift_det segmenting for black on left way sign:
 ![Left-way](lway.png)
 
 Its up to you to figure out how to compare the two bounding boxes to figure out what sign you are seeing.
