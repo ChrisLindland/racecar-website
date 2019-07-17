@@ -8,6 +8,9 @@ For this week's first challenge, we'll simulate your car driving down a street, 
 These two things can be developed independently of each other; our recommendation is that half of your team tackles the first task and the other tackles the second task. You can then combine the code into one node. Reading the sign will require reading some documentation, writing some openCV, and working a bit more with python, while the parking will deal with an extension of yesterday/today's drive-stop.
 
 ## Sign Detection
+
+Click [here](https://drive.google.com/drive/folders/1YBR9ObfsrUQAk-rIaIfp61OJEzRy498R?usp=sharing) to download the files you will be working with.
+
 For sign detection, we will be using feature detection in the form of the SIFT (Scale-Invariant Feature Transform) algorithm and color detection. 
 
 **You will need to uninstall opencv and install a new, developer opencv called Contrib. You uninstall opencv using ```pip uninstall opencv-pthon``` and install it using ```pip install opencv-contrib-python==3.4.2.16```
