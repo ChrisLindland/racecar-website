@@ -19,7 +19,7 @@ HSV stands for **H**ue, **S**aturation, and **V**alue. Saturation is the intensi
 
 ## Part 0: Setup
 
-You can download the files you need from this [link](https://drive.google.com/drive/folders/1sSCEJ9reKdC7XVm5K5HXhXXgpeiNO7mK?usp=sharing). You will be working mainly with *slider_colorRecognition.py*, *challenge.py*, and *driveNode.py*.
+You can download the files you need from this [link](https://drive.google.com/drive/folders/1sSCEJ9reKdC7XVm5K5HXhXXgpeiNO7mK?usp=sharing). You will be working mainly with *slider_colorSegmentation.py*, *challenge.py*, and *driveNode.py*.
 
 If you are not a Linux user running native ROS, you will need to have openCV version 4 installed onto your laptop. To check which version you have/if you have a version all, go into terminal and type
 ```sh
