@@ -21,7 +21,9 @@ Example run:
 python turnRectStarter.py -i ./images/oneway.jpg -l "One-Way-Sign" -s 0
 
 -i tells the program what image to get
+
 -l is a lowercase l that tells what to label the detected object
+
 -s tells them the source of camera, just like slider_colorSegmentation.py
 
 ### Changing turnRectStarter.py and driveNode.py to work with ROS
