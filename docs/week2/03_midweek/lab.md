@@ -32,8 +32,6 @@ If you get confused, the implementation of the sift_det function should be very 
 
 **MAKE SURE YOU IMPORT SIFT_DET CORRECTLY AT THE TOP OF THE FILE**
 ### Interfacing with driveNode.py
-Explain that sift_det() returns two bounding boxes, one for the entire one-way sign and the other that detects an aspect of the sign, in this case color and shape. Its up to you to figure out how to compare the two bounding boxes to figure out what sign you are seeing.
-
 As you did yourself, sift_det returns two bounding boxes, one of the overall sign and another that draws a box around the color and shape that you specified.
 
 Here are the bounding boxes that we got from running sift_det on rway:
@@ -41,6 +39,8 @@ Here are the bounding boxes that we got from running sift_det on rway:
 
 Here are the bounding boxes that we got from running sift_det on lway:
 ![Left-way](lway.png)
+
+Its up to you to figure out how to compare the two bounding boxes to figure out what sign you are seeing.
 
 ## Parking
 Your task is to have the car drive up to the cone and park in front of it! You will need to build upon the code in driveNode.py since parking is just an extension of drive-stop. As you write your code, make sure you **START SMALL and SIMPLE** as a sanity check. If your simple code works, you can build up to more complicated things.
