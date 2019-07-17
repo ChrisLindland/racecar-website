@@ -84,7 +84,7 @@ You will be working with two functions: size_calc() and drive().
 
 * **size_calc() :** this function will primarily modify the class's self.box_size parameter. Using the information you have been given, find the total size/area of the box given by cd_color_segmentation(). 
 
-* **drive() :** this function is called after size_calc() and when the racecar is not in autonomous mode. drive() tells the robot how to move and what to do when it sees the cone. Your task will be to have the robot stop **only when it is 1 meter or less away from the cone** and drive forward otherwise. You don't have to worry about publishing in this section since everything is published in the main loop (see *main()*), you just have to update the car's speed.
+* **drive() :** this function is called after size_calc() and when the racecar is in autonomous mode. drive() tells the robot how to move and what to do when it sees the cone. Your task will be to have the robot stop **only when it is 1 meter or less away from the cone** and drive forward otherwise. You don't have to worry about publishing in this section since everything is published in the main loop (see *main()*), you just have to update the car's speed.
 
 To test your code, have teleop, safety, and zed running. **You do not need controller running for this lab**. Then, in the scripts folder run driveNode.py like normal(type *python driveNode.py*). This should run your new driving node.
 
