@@ -1,6 +1,12 @@
 ## Color Segmentation and openCV
 
-**If your camera is not detecting the cone, you can unplug the Zed camera from the car, plug it into a laptop, and run the slider_colorSegmentation.py with source of 1 to check what the camera is actually seeing**
+## Notes for Wednesday
+**If your camera is not detecting the cone, you can unplug the Zed camera from the car, plug it into a laptop, and run the slider_colorSegmentation.py with source of 1 to check what the camera is actually seeing. If there is no way to unplug your camera, we can try loaning out a Zed camera that you could plug into your computer.**
+
+**If you want to see what the robot is seeing, set up docker, go into the VNC thing, connect to the car's wifi, open up a terminal and type 
+```export ROS_MASTER_URI=http://192.168.1.YOURCARNUMBER:11311```
+For example, a group with car 38 would type "export ROS_MASTER_URI=http://192.168.1.38:11311".
+You should then be able to type "rqt_image_view" into the terminal now and you can see the Zed camera's output.**
 
 A color space is an organization of colors typically used to encode an image. The most common color space that most people may have heard of is the RGB color space. Others include the CMYK and YIQ models, but a common color space for robotics is the HSV color space. 
 
