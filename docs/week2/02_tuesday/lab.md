@@ -88,6 +88,6 @@ You will be working with two functions: size_calc() and drive().
 
 To test your code, have teleop, safety, and zed running. **You do not need controller running for this lab**. Then, in the scripts folder run driveNode.py like normal(type *python driveNode.py*). This should run your new driving node.
 
-**Challenge:** Once you have completed Part 3, try making the car stop only when the cone is a certain distance away **and** in the center of the screen. If you finish this as well, try making the car's wheels follow the cone on-screen.
+**Challenge:** **Its wednesday now, so go into midWeek challenge once you have finished the drive stop writing.** Once you have completed Part 3, try making the car stop only when the cone is a certain distance away **and** in the center of the screen. If you finish this as well, try making the car's wheels follow the cone on-screen.
 
 If all this is finished: notice how I had you guys run a seperate file (driveNode.py) instead of running the normal controller file. In the future, controller.py will hold all your code in a big state machine. Can you modify driveNode.py and controller.py so that controller.py imports the driveStop object from driveNode.py and runs the intended code? 
