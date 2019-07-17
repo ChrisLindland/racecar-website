@@ -47,4 +47,4 @@ Your task is to have the car drive up to the cone and park in front of it! You w
 
 You should try to get the cone to sit between the car's wheels and have the car stop within a meter of the cone; penalties will be given for failing to satisfy these conditions.
 
-If you finish this code before your opencv teammates finish, you can start working on how the robot will know to switch between looking for the cone and looking for the sign.
+If you finish this code before your opencv teammates finish, you can start working on how the robot will know to switch between looking for the cone/looking for the sign and how the robot will react when it figures out the direction of the sign.
