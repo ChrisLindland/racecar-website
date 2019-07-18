@@ -32,7 +32,7 @@ Click [here](https://drive.google.com/drive/folders/1YBR9ObfsrUQAk-rIaIfp61OJEzR
 
 For sign detection, we will be using feature detection in the form of the SIFT (Scale-Invariant Feature Transform) algorithm and color detection. 
 
-**You will need to uninstall opencv and install a new, developer opencv called Contrib. You uninstall opencv using ```pip uninstall opencv-pthon``` and install it using ```pip install opencv-contrib-python==3.4.2.16```**
+**Only on your laptop: You will need to uninstall opencv and install a new, developer opencv called Contrib. You uninstall opencv using ```pip uninstall opencv-pthon``` and install it using ```pip install opencv-contrib-python==3.4.2.16```**
 
 *Important*: You will be tasked with implementing the color/shape detection in turnRectStarter.py. Read through the code's comments; we have linked to openCV documentation that will help you write this code.  **Read every comment in the file. The sections you have to do are marked with a TODO.** This code is only designed to run on your laptop; once you can verify that it works on your laptop you can keep moving forward. The HSV range part is meant for singling out the colors on the sign, ie. looking for the most white or the most black, etc.
 
