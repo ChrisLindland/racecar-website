@@ -26,6 +26,8 @@ We will now be using **ORB** instead of sift; this is not a huge change (will on
 
 That completely changes out SIFT for Orb! The reason we wanted to use SIFT instead of orb is that despite being slower, it is slightly more rotation-invariant. But, because of the paywall and ROS's package management we will have to use ORB, which will help robot performance by being faster.
 
+### End of updated instructions
+
 Click [here](https://drive.google.com/drive/folders/1YBR9ObfsrUQAk-rIaIfp61OJEzRy498R?usp=sharing) to download the files you will be working with.
 
 For sign detection, we will be using feature detection in the form of the SIFT (Scale-Invariant Feature Transform) algorithm and color detection. 
