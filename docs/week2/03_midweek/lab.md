@@ -18,7 +18,7 @@ We will now be using **ORB** instead of sift; this is not a huge change (will on
 
 2. Where it says ```#Compute keypoints```, change the ```sift.detectAndCompute(img1, None)``` to be ```orb.detectAndCompute(img1, None)```
 
-3. Where it says ```"Create Flann Object```, get rid of the line below and type ```bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck = True)```
+3. Where it says ```"Create Flann Object```, get rid of the line below and type ```bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck = False)``` **Edit:** changed to False!
 
 4. Where you see the variables ```kp_s,des_s =```, change ```sift.detectAndCompute(frame, None)``` to be ```orb.detectAndCompute(frame, None)```
 
