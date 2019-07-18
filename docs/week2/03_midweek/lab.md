@@ -14,7 +14,7 @@ Change any "continue" within an "except" statement to a "pass" and comment out a
 
 We will now be using **ORB** instead of sift; this is not a huge change (will only require 5 line changes) and your work will not be changed.
 
-1: Where it says #Create a sift detector object, delete the line below and add ```orb = cv2.ORB_create()```
+1. Where it says #Create a sift detector object, delete the line below and add ```orb = cv2.ORB_create()```
 
 2. Where it says #Compute keypoints, change the sift.detectAndCompute(img1, None) to be orb.detectAndCompute(img1, None)
 
