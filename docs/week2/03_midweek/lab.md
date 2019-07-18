@@ -9,6 +9,23 @@ These two things can be developed independently of each other; our recommendatio
 
 ## Sign Detection
 
+### New instructions for Porting to ROS
+Change any "continue" within an "except" statement to a "pass" and comment out any part with ap in it (ap.argparse, ap.add_argument, etc). You will also need to remove the if/else statement that applies the label to the image (the car doesn't need that right now).
+
+We will now be using **ORB** instead of sift; this is not a huge change (will only require 5 line changes) and your work will not be changed.
+
+1: Where it says #Create a sift detector object, delete the line below and add ```orb = cv2.ORB_create()```
+
+2. Where it says #Compute keypoints, change the sift.detectAndCompute(img1, None) to be orb.detectAndCompute(img1, None)
+
+3. Where it says "Create Flann Object, get rid of the line below and type ```bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck = True)```
+
+4. Where you see the variables kp_s,des_s, change ```sift.detectAndCompute(frame, None)``` to be ```orb.detectAndCompute(frame, None)```
+
+5. Where you see #Uses the Flann Algorithm, delete the line below and type ```matches = bf.knnMatch(des,des_s,k=2)```
+
+That completely changes out SIFT for Orb! The reason we wanted to use SIFT instead of orb is that despite being slower, it is slightly more rotation-invariant. But, because of the paywall and ROS's package management we will have to use ORB, which will help robot performance by being faster.
+
 Click [here](https://drive.google.com/drive/folders/1YBR9ObfsrUQAk-rIaIfp61OJEzRy498R?usp=sharing) to download the files you will be working with.
 
 For sign detection, we will be using feature detection in the form of the SIFT (Scale-Invariant Feature Transform) algorithm and color detection. 
@@ -28,9 +45,6 @@ python turnRectStarter.py -i ./images/oneway.jpg -l "One-Way-Sign" -s 0
 
 ### Changing turnRectStarter.py and driveNode.py to work with ROS
 The images from the Zed camera and openCV images sadly do not work too well with each other. That means we will have to change some stuff so that it works with ROS. First, we have to get rid of the source code inside turnRectStarter.py (the code that takes in images from the camera). We can delete any cv2.VideoCapture() function within the code. You can also delete any part that has the cam.read() function (including the loop it is in) and shift over alll the code that was within that loop, then set "frame" to be a passed-in image (that means you need to alter the function to take in an extra parameter "source"). Then, you can delete any cv2.imshow(), cam.release, cv2.destroyAllWindows(), and cv2.waitKey().
-
-### New instructions for converting to ROS
-Change any "continue" within an "except" statement to a "pass" and comment out any part with ap in it (ap.argparse, ap.add_argument, etc). You will also need to remove the if/else statement that applies the label to the image (the car doesn't need that right now).
 
 Finally, make a variable for your two bounding boxes, which the function will now return. Find the two instances of cv2.rectangle(), which will key you in to what the bounding box coordinates are and where they are stored, and set your bounding box variable equal to these coordinates.
 
