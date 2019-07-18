@@ -14,15 +14,15 @@ Change any "continue" within an "except" statement to a "pass" and comment out a
 
 We will now be using **ORB** instead of sift; this is not a huge change (will only require 5 line changes) and your work will not be changed.
 
-1. Where it says #Create a sift detector object, delete the line below and add ```orb = cv2.ORB_create()```
+1. Where it says ```#Create a sift detector object```, delete the line below and add ```orb = cv2.ORB_create()```
 
-2. Where it says #Compute keypoints, change the sift.detectAndCompute(img1, None) to be orb.detectAndCompute(img1, None)
+2. Where it says ```#Compute keypoints```, change the ```sift.detectAndCompute(img1, None)``` to be ```orb.detectAndCompute(img1, None)```
 
-3. Where it says "Create Flann Object, get rid of the line below and type ```bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck = True)```
+3. Where it says ```"Create Flann Object```, get rid of the line below and type ```bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck = True)```
 
-4. Where you see the variables kp_s,des_s, change ```sift.detectAndCompute(frame, None)``` to be ```orb.detectAndCompute(frame, None)```
+4. Where you see the variables ```kp_s,des_s =```, change ```sift.detectAndCompute(frame, None)``` to be ```orb.detectAndCompute(frame, None)```
 
-5. Where you see #Uses the Flann Algorithm, delete the line below and type ```matches = bf.knnMatch(des,des_s,k=2)```
+5. Where you see ```#Uses the Flann Algorithm```, delete the line below and type ```matches = bf.knnMatch(des,des_s,k=2)```
 
 That completely changes out SIFT for Orb! The reason we wanted to use SIFT instead of orb is that despite being slower, it is slightly more rotation-invariant. But, because of the paywall and ROS's package management we will have to use ORB, which will help robot performance by being faster.
 
