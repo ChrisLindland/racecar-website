@@ -10,6 +10,8 @@ These two things can be developed independently of each other; our recommendatio
 ## Sign Detection
 
 ### New instructions for Porting to ROS
+If you are not detecting your sign, **Change your HSV values**. If this doesn't work, try pluggin in your ZED camera to your laptop and running the sign detection code on there. 
+
 Change any "continue" within an "except" statement to a "pass" and comment out any part with ap in it (ap.argparse, ap.add_argument, etc). You will also need to remove the if/else statement that applies the label to the image (the car doesn't need that right now) but your code will yell at you because "label" is called somewhere else so the quickest fix is to assign "label" to a random String ie. ```label = "Oneway"```.
 
 We will now be using **ORB** instead of sift; this is not a huge change (will only require 5 line changes) and your work will not be changed.
