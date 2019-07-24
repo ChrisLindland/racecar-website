@@ -31,6 +31,6 @@ nav:
         - ROS Topics and Messages: cheatsheets/ros-topics-msgs.md
     - References:
         - ROS: ros-reference/ROS_reference.md
-        - Google Cartographer: maps/cartographer/cartographer-ref.md
+        - Google Cartographer: maps/cartographer/cartographer_ref.md
         - Collaboration: collab/collab.md
 theme: readthedocs
