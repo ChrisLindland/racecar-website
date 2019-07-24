@@ -54,7 +54,7 @@ cp ./racecar_config_files/racecar_2d.lua ~/cartographer_ws/src/cartographer_ros/
 cp ./racecar_config_files/racecar_2d_localization.lua ~/cartographer_ws/src/cartographer_ros/cartographer_ros/configuration_files/racecar_2d_localization.lua
 cp ./racecar_launch_files/racecar_2d.launch ~/cartographer_ws/src/cartographer_ros/cartographer_ros/launch/racecar_2d.launch
 cp ./racecar_launch_files/offline_racecar_2d.launch ~/cartographer_ws/src/cartographer_ros/cartographer_ros/launch/offline_racecar_2d.launch
-cp ./racecar_launch_files/demo_racecar_2d_localization.launch ~/cartographer_ws/src/cartographer_ros/cartographer_ros/launch/racecar_2d_localization.launch
+cp ./racecar_launch_files/demo_racecar_2d_localization.launch ~/cartographer_ws/src/cartographer_ros/cartographer_ros/launch/demo_racecar_2d_localization.launch
 cp -r racecar_description ~/cartographer_ws/src/
 ```
 Finally `catkin_make` again to install these files:
@@ -64,6 +64,7 @@ catkin_make_isolated --install --use-ninja
 ```
 # Making Maps
 ## Running off of live data
+*Running live is nice is that all happens all at once, but it can be laggy, and it can become messy if you wish to restart the process.*
 1. If you haven't already, make a folder to store maps. We recommend making it in the home directory `mkdir ~/mapfiles`.
 2. Run `teleop`.
 4. In another car's terminal, run `source ~/cartographer_ws/devel_isolated/setup.bash`, then `roslaunch cartographer_ros racecar_2d.launch` to start making the map.<br>
@@ -87,11 +88,11 @@ catkin_make_isolated --install --use-ninja
 
 ### Creating the map
 <u>To get a .pgm file and a .yaml file (*this is what our localization package uses!*):</u><br>
-Follow the same instructions as for running off of live data, but instead of running `teleop`, run `roscore`, and instead of driving the car around, run `rosbag play ~/bagfiles/<your_rosbag_name>.bag`. Save the map when the rosbag stops playing.
-&nbsp;&nbsp;Note: Please don't blow off these instructions! If you don't kill teleop, cartographer will see the rosbag data and current data at the same time! Plus, since the `-a` flag passed to `rosbag record` means record everything, playing the rosbag plays drive command data (which we believe the cartographer does use)! Brick your cars, folks!
+Follow the same instructions as for running off of live data, but instead of running `teleop`, run `roscore`, and instead of driving the car around, run `rosbag play ~/bagfiles/<your_rosbag_name>.bag`. Save the map when the rosbag stops playing.<br>
+<font color="AAA0A0"> Note: Please don't blow off these instructions! If you don't kill teleop, cartographer will see the rosbag data and current data at the same time! Plus, since the `-a` flag passed to `rosbag record` means record everything, playing the rosbag plays drive command data! Brick your cars, folks! </font>
 
 <details><summary><u>Alternatively, to get a .pbstream file (<i>not recommended; this is usually for further use within Google Cartographer</i>):</u></summary>
-1. Run `roslaunch cartographer_ros offline_racecar_2d.launch bag_filenames:=${HOME}/bagfiles/<your_rosbag_name>.bag`<br>
-&ensp; Warning: this will pull up an rviz window.<br>
+1. Run <code>roslaunch cartographer_ros offline_racecar_2d.launch bag_filenames:=${HOME}/bagfiles/&lt;your_rosbag_name&gt;.bag</code><br>
+&ensp; Warning: this will pull up an rviz window. If you're ssh-ed in, then whoops.<br>
 2. Wait for the bag to finish playing, then watch the terminal and wait until it's done "optimizing".
 </details>
