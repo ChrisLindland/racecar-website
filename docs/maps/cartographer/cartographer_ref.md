@@ -64,7 +64,9 @@ catkin_make_isolated --install --use-ninja
 ```
 # Making Maps
 ## Running off of live data
-*Running live is nice is that all happens all at once, but it can be laggy, and it can become messy if you wish to restart the process.*
+
+<font color="A0A0A0">*Running live is nice is that all happens all at once, but it can be laggy, and it can become messy if you wish to restart the process.*</font>
+
 1. If you haven't already, make a folder to store maps. We recommend making it in the home directory `mkdir ~/mapfiles`.
 2. Run `teleop`.
 4. In another car's terminal, run `source ~/cartographer_ws/devel_isolated/setup.bash`, then `roslaunch cartographer_ros racecar_2d.launch` to start making the map.<br>
@@ -75,7 +77,9 @@ catkin_make_isolated --install --use-ninja
 8. Now you may kill cartographer.
 
 ## Running off of a rosbag
-*Rosbags are nice in that they allow you to isolate data collection from data processing.*
+
+<font color="A0A0A0">*Rosbags are nice in that they allow you to isolate data collection from data processing.*</font>
+
 ### Recording the rosbag.
 
 1. If you haven't already, make a folder to store rosbags. We recommend making it in the home directory `mkdir ~/bagfiles`.
@@ -87,7 +91,7 @@ catkin_make_isolated --install --use-ninja
 7. (optional) The bagfile naming system is kinda gross. Use an `mv` command to rename your bag file to something pretty. If you don't know what we mean by that, [Google](https://www.google.com/) (and by that I mean [DuckDuckGo](https://duckduckgo.com/) or [Ecosia](https://www.ecosia.org/)) "renaming files in terminal".
 
 ### Creating the map
-<u>To get a .pgm file and a .yaml file (*this is what our localization package uses!*):</u><br>
+<u>To get a .pgm file and a .yaml file (*this is what our particle filter uses*):</u><br>
 Follow the same instructions as for running off of live data, but instead of running `teleop`, run `roscore`, and instead of driving the car around, run `rosbag play ~/bagfiles/<your_rosbag_name>.bag`. Save the map when the rosbag stops playing.<br>
 <font color="AAA0A0"> Note: Please don't blow off these instructions! If you don't kill teleop, cartographer will see the rosbag data and current data at the same time! Plus, since the `-a` flag passed to `rosbag record` means record everything, playing the rosbag plays drive command data! Brick your cars, folks! </font>
 
