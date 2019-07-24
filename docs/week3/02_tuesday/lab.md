@@ -45,7 +45,7 @@ Now, you are going to have your car change states based on what AR tag ID it see
 * 4: Left
 * 5: Straight
 
-This time, all we're giving you in the starter code (`driveAr.py`) are the basic ROS things (publishers/subscribers, publishing, etc) and a basic framework; everything concerning the driving, reading AR tags, and setting states states is up to you. Download the code [here](https://drive.google.com/drive/folders/189Vf5-P4p2II1ifWEnZYnswWQXXD_P18?usp=sharing).
+This time, all we're giving you in the starter code (`driveAr.py`) are the basic ROS things (publishers/subscribers, publishing, etc) and a basic framework; everything concerning the driving, reading AR tags, and setting states states is up to you. You should write everything having to do with the AR tags in the arCallback function, and set your driving speed and steering angle in the driveCallback function. Download the code [here](https://drive.google.com/drive/folders/189Vf5-P4p2II1ifWEnZYnswWQXXD_P18?usp=sharing).
 
 ## Using Sounds
 
