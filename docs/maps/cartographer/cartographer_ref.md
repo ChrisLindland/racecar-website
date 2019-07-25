@@ -99,7 +99,7 @@ Also, rviz can be finicky at times. If nothing appears even after running teleop
 ### Creating the map
 <u>To get a .pgm file and a .yaml file</u> (*this is what our particle filter uses*):<br>
 Follow the same instructions as for running off of live data, but instead of running `teleop`, run `roscore`, and instead of driving the car around, run `rosbag play ~/bagfiles/<your_rosbag_name>.bag`. Save the map when the rosbag stops playing.<br>
-<font color="AAA0A0"> Note: Please don't blow off these instructions! If you don't kill teleop, cartographer will see the rosbag data and current data at the same time! Plus, since the `-a` flag passed to `rosbag record` means record everything, playing the rosbag plays drive command data! Brick your cars, folks! </font>
+<font color="AAA0A0"> Note: Remember to kill teleop! If you don't kill teleop, cartographer will see the rosbag data and current data at the same time! Plus, since the `-a` flag passed to `rosbag record` means record everything, playing the rosbag plays drive command data!</font>
 
 <details><summary><u>Alternatively, to get a .pbstream file</u> (<i>not recommended; this is usually for further use within Google Cartographer</i>):</summary>
 1. Run <code>roslaunch cartographer_ros offline_racecar_2d.launch bag_filenames:=${HOME}/bagfiles/&lt;your_rosbag_name&gt;.bag</code><br>
