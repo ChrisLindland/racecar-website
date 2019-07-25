@@ -10,7 +10,7 @@
   roslaunch particle_filter localize.launch
 ```
 After the program prints "…Received first LiDAR message," it should start to print "iters per sec: 20  possible: 21" to confirm that it is getting scan data and making localization estimates. We found that it is usually necessary for the vesc to be running completely (i.e. there’s a good Traxxas battery) in order for this to work.
-* Also, just as with cartographer, you may open rviz. Interesting topics to try will be
+5. Also, just as with cartographer, you may open rviz. Interesting topics to try will be
 
 <div style="margin-top: -20px;">
 <u>To use the data in ROS</u>:
