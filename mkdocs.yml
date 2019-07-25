@@ -32,6 +32,7 @@ nav:
     - References:
         - ROS: ros-reference/ROS_reference.md
         - Cartographer: maps/cartographer/cartographer_usage.md
+        - Particle Filter: maps/localization/particle_filter_usage.md
         - Collaboration: collab/collab.md
     - Installation:
         - Google Cartographer: maps/cartographer/cartographer_installation.md
