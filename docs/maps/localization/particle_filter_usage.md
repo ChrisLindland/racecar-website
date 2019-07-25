@@ -1,14 +1,10 @@
-# Localization
+# Particle Filter Localization
 **Note: These instructions assume you have installed Google Cartographer according to [these](http://bwsi-racecar.com/maps/localization/particle_filter_installation/) installation instructions.**
-### Maps
-* If you have followed the installation instructions as intended, the maps the particle filter uses will be in "\~/localization/localization_ws/src/maps". Assuming you have a .pgm file and a .yaml file in your "~/mapfile" folder, then you can copy all these files with: `cp ~/mapfiles/* ~/localization/localization_ws/src/maps`.
-* To use the map for localization, modify the mapParams.yaml file <br>(it’ll be obvious, trust me). You may need to chmod it to edit it.
-
-### Usage in ROS
-<u>To run localization</u>:
-
-* In the car's terminal, run `teleop`.</li>
-* In the car's terminal, run:
+### Running Localization
+1. If you have followed the installation instructions as intended, the maps the particle filter uses will be in "\~/localization/localization_ws/src/maps". Assuming you have a ".pgm" file and a ".yaml" file in your "~/mapfile" folder, then you can copy all these files with: `cp ~/mapfiles/* ~/localization/localization_ws/src/maps`.
+2. To select which map to use for localization, you'll need to modify your "map_server.launch" file in "~/localization/localization_ws/src/launch". You may need to chmod it to edit it. Launch files essentially tell `roslaunch` how to run nodes in a package. The modification is simply replacing "basement_fixed.map.yaml" with the name of your ".yaml" file.
+3. Now we can get cooking! In the car's terminal, run `teleop`.
+4. Then in another tab/window, run:
 ```bash
   source ~/localization/localization_ws/devel/setup.bash
   roslaunch particle_filter localize.launch
