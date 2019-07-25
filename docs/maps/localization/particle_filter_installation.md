@@ -29,7 +29,11 @@ Since compiling with cuda fails, we do regular compiling. Thankfully, this does 
 ```bash
   rosdep install -r --from-paths src --ignore-src --rosdistro ${ROS_DISTRO} -y
 ```
-6. Then download this zip file [here on Google Drive](https://drive.google.com/file/d/1n4dGdirW0J5r6NKri8jONzLk8GGCK_cX/view?usp=sharing) onto the car, and dump it into someplace logical (like the Downloads folder). Then extract the zip file and `cd` into the resulting "particle_filter_files" folder, and copy the files over into the following paths within "localization" (note that these files come from [this repo](https://github.com/mit-racecar/particle_filter)):
+6. Then download this zip file [here on Google Drive](https://drive.google.com/file/d/1n4dGdirW0J5r6NKri8jONzLk8GGCK_cX/view?usp=sharing) onto your computer and extract its contents. Then use `scp` to dump it onto the car into someplace logical (like the Downloads folder):
+```bash
+  scp -r <path_to_my_computers_downloads_folder>/particle_filter_files racecar@192.168.1.<car_number>:~/Downloads/
+```
+Then on the racecar, `cd` into the resulting "particle_filter_files" folder, and copy the files over into the following paths within "localization" (note that these files come from [this repo](https://github.com/mit-racecar/particle_filter)):
 ```bash
   cp -r ./rviz ~/localization
   cp ./.catkin_workspace ~/localization/localization_ws/
