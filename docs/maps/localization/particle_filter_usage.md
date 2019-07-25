@@ -10,38 +10,25 @@
   roslaunch particle_filter localize.launch
 ```
 After the program prints "…Received first LiDAR message," it should start to print "iters per sec: 20  possible: 21" to confirm that it is getting scan data and making localization estimates. We found that it is usually necessary for the vesc to be running completely (i.e. there’s a good Traxxas battery) in order for this to work.
-5. Also, just as with cartographer, you may open rviz. Interesting topics to try will be
 
-<div style="margin-top: -20px;">
-<u>To use the data in ROS</u>:
-<div style="margin-top: 10px;">
-<ul>
-<li>Want to know where you are in this world? Subscribe to <del>(insert pop culture here youtube channel)</del> pf/viz/inferred_pose!</li>
-<li>To extract meaningful data from these messages, you can figure it out on your own.
-  <ul>
-  <li> Use `rostopic type` to see what datatype the messages are. Once you have the name, you can find more info on <a href=http://docs.ros.org/api/geometry_msgs/html/index-msg.html>ros.org</a>.</li>
-  <li> Or just use `rostopic echo`.</li>
-  <li> <details><summary>Quaternions Help (if you think angular info will help)</summary>
-You may have noticed the rotations are encoded in quaternions. Why? I really don’t know, but it allows us to track the car’s rotation from -2π to 2π. If you care to amuse yourself for a few minutes, feel free to look up quaternions and derive the conversion back to an angle. Otherwise, if y’all just need to get this racecar up and running, here’s <details><summary>a little converter function:</summary>
-```python
-import math
-. . .
-def quatToAng2D(quat):
-    dc=2*math.acos(quat.w)
-    ds=2*math.asin(quat.z)
-    if ds>0:
-        if dc<math.pi:
-            ang=ds
-        else:
-            ang=dc
-    else:
-        if dc<math.pi:
-            ang=ds
-        else:
-            ang=-dc
-    return ang
-```
-Or to use the ROS’s built-in transformations:
+5. Also, just as with cartographer, you may open rviz. Interesting topics to try will be /map, /scan, and /pf/viz/particles topics.
+ * Again, rviz can be finicky at times. If nothing appears even after running teleop or playing the rosbag, try changing the "Fixed Frame" to "map". Then check and uncheck the the checkboxes for the topics you are interested in. If that didn't work, try re-running Rviz. Check that you are running the programs you need to run.
+6. The car likely does not know where it is starting on the map. Give it an estimate of where it is using the "2D Pose Estimate" tool.<br>
+![]("img/localize_pose_rviz.png")<br>
+Click on the map for position, drag for orientation.<br>
+If you want to be extra fancy, you can have the car do this itself, by publishing a [PoseWithCovarianceStamped](http://docs.ros.org/api/geometry_msgs/html/index-msg.html) message to the /initialpose topic. You can see what these messages look like by running `rostopic echo /initialpose` and doing a 2D pose estimate in RViz. A good idea would be to place the car in a fixed starting position and publish this *known* position to "/initialpose" when you press a button. Then you could press another button to change state and start running.
+7. (optional) Don’t like your view locked to (0,0,0)? Make it follow the car by changing your frame to something on the car.<br>
+![](img/rviz_target_frame.png)
+  * First use the "Focus Camera" tool and click near the pose estimates (red arrows) to center the view on the car initially.</li>
+  * Then change "Target Frame" to something on the car to keep up with the car’s changes in position. The "laser" (LIDAR) or "base_link" are good things to follow.
+8. Want to know where you are in this world? Subscribe to <del>(insert pop culture here youtube channel)</del> pf/viz/inferred_pose!
+To extract meaningful data from these messages, you can figure it out on your own.
+  Use `rostopic type` to see what datatype the messages are. Once you have the name, you can find more info on [ros.org](http://docs.ros.org/api/geometry_msgs/html/index-msg.html).
+  Or just use `rostopic echo`.
+    
+   
+<details><summary>Quaternions Help (if you think angular info will help)</summary>
+You may have noticed the rotations are encoded in quaternions. Why? I really don’t know, but it allows us to track the car’s rotation from -2π to 2π. If you care to amuse yourself for a few minutes, feel free to look up quaternions and derive the conversion back to an angle. Y'all are smart. Or you may just use the ROS’s built-in transformations:
 ```python
 from tf.transformations import euler_from_quaternion
 . . .
@@ -50,35 +37,7 @@ def quatToAng3D(quat):
     return euler
 ```
 For reference, roll = `euler[0]`, pitch = `euler[1]`, yaw = `euler[2]`, and yaw is rotation about the z-axis (equivalent to `ang` in the previous function).
-
-</details></details></li></li></ul></div></div>
-
-
-<details><summary><font color=#FFA0A0><b>To visualize the data onscreen.</b></font></summary>
-<div style="margin-top: 10px;">
-<ol type="1" start=1>
-  <li>In the computer's terminal, run `rviz`.</li>
-  <li>&nbsp;<div style="margin-top: -25px;"><details><summary>In rviz, add the /map, /scan, and /pf/viz/particles topics. </summary>
-    <ol type="a">
-    <li>In rviz, press "add". </li>
-    <li>In the popup, go to the "By topic" tab and select "LaserScan" from the "\scan" topic, and hit the "ok".<br>
-    <img src="/img/localize_topics_rviz.png" width=350px/></li>
-    <li>Repeat for each topic.</li>
-    </ol>
-  </details></div></li>
-  <li>&nbsp;<div style="margin-top: -25px;"><details><summary>The car likely does not know where it is starting on the map. Give it an estimate of where it is using the "2D Pose Estimate" tool.</summary>
-    <img src="/img/localize_pose_rviz.png" width=350px/><br>
-    Click on the map for position, drag for orientation.
-  </details></div></li>
-  <li>&nbsp;<div style="margin-top: -25px;"><details><summary>Don’t like your view locked to (0,0,0)? Make it follow the car by changing your frame to something on the car.</summary>
-    <img src="/img/rviz_target_frame.png" width=650px/>
-    <ol type="a">
-    <li>First use the "Focus Camera" tool and click near the pose estimates (red arrows) to center the view on the car initially.</li>
-    <li>Then change "Target Frame" to something on the car to keep up with the car’s changes in position. The "laser" (LIDAR) is a good thing to follow.</li>
-    </ol>
-  </details></div></li> 
-</ol>
-</div></details><br>
+</details>
 
 <details><summary><h3>Google Cartographer Localization</h3></summary>
 Basically, Chris wrote some stuff, unfortunately, it ended up not being helpful because Google Cartographer is darn dense and we haven't fully figured it out. Either that, or it's just plain wonk. Wonk means bad. Either way, I didn't have the heart to delete Chris's hard work (but I did have the heart to edit it and make it correct as possible), and besides, maybe some really ROS-y or Google-y person will one day find this helpful...<br>
