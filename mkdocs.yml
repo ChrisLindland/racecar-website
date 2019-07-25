@@ -32,5 +32,6 @@ nav:
     - References:
         - ROS: ros-reference/ROS_reference.md
         - Google Cartographer: maps/cartographer/cartographer_ref.md
+        - Particle Filter Localization: maps/localization/particle_filter_setup.md
         - Collaboration: collab/collab.md
 theme: readthedocs
