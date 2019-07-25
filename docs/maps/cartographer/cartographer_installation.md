@@ -1,5 +1,5 @@
 # New Instructions
-1. Download this zip file [here on Google Drive](https://drive.google.com/file/d/1a71YjMlLNQapo6Cs3l7ezS-TKVErK0Gs/) onto your computer and extract its contents. Then use `scp` to dump it onto the car into someplace logical (like the Downloads folder):
+1. Download this zip file [here on Google Drive](https://drive.google.com/file/d/1gnmsnZVlS64Eyn4PKC7j6FxmnPSLptfq/view?usp=sharing) onto your computer and extract its contents. Then use `scp` to dump it onto the car into the car's Downloads:
 ```bash
   scp -r <path_to_my_computers_downloads_folder>/racecar_cartographer_installation racecar@192.168.1.<car_number>:~/Downloads/
 ```
