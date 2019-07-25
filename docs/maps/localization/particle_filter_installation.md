@@ -48,15 +48,3 @@ Then on the racecar, `cd` into the resulting "particle_filter_files" folder, and
   cd ~/localization/localization_ws
   catkin_make
 ```
-
-# Running Instructions
-### The Bare Bones Localization
-```bash
-  source ~/localization/localization_ws/devel/setup.bash
-  roslaunch particle_filter localize.launch
-```
-### Receiving the Pose
-1. Ensure that the name in `rosrun map_server map_saver -f ~/mapfiles/<your_map_name>`, is called mymap.
-2. In the map_server.launch file, change the yaml file name to mymap.yaml
-3. Move or copy the yaml and pmg data to the necessary position, which is ~/localization_ws/catkin_ws/src/maps.
-3. In the rviz section pf/viz/inferred_pose to see the pose date. It is delivered in x and y. Subscribe to this topic in your program to see the pose data.
