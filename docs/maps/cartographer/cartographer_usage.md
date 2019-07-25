@@ -8,7 +8,8 @@
 2. Run `teleop`.
 4. In another car's terminal, run `source ~/cartographer_ws/devel_isolated/setup.bash`, then `roslaunch cartographer_ros racecar_2d.launch` to start making the map.<br>
 &nbsp;&nbsp;Note: If you forget to source the setup file, you will get an error like: "No such file or directory: /home/racecar/cartographer_ws/install_isolated/share/racecar_description/urdf/racecar.xacro..."
-5. Run `rviz`, and add the "\map" topic if it's not there already. Do this in Docker (make sure you ran it with the car number argument), or on your Ubuntu machine (with ROS installed), or on the car itself (if you have a monitor).<br>
+5. Run `rviz`, and add the "\map" topic if it's not there already. 
+  - Do this in Docker (make sure you ran it with the car number argument), or on your Ubuntu machine (with ROS installed), or on the car itself (if you have a monitor).
   - If you are making a map with a rosbag, be warned that you will not see any map until you start playing the rosbag.
   - To add a topic, click the "Add" button.<br>
 ![](img/rviz_cartographer1_small.png)<br>
