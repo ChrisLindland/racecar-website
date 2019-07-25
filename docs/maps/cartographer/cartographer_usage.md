@@ -9,7 +9,7 @@
 4. In another car's terminal, run `source ~/cartographer_ws/devel_isolated/setup.bash`, then `roslaunch cartographer_ros racecar_2d.launch` to start making the map.<br>
 
 * If you forget to source the setup file, you will get an error like: "No such file or directory: /home/racecar/cartographer_ws/install_isolated/share/racecar_description/urdf/racecar.xacro..."
-* If you get another error along the lines of "... racecar_2d.launch is not a launch file nor ...", try `cd`-ing into "~/cartographer_ws" and running `catkin_make_isolated --install --use-ninja`.
+* If you get another error along the lines of "RLException: [racecar_2d.launch] is neither a launch file in package [cartographer_ros] nor is [cartographer_ros] a launch file name", try `cd`-ing into "~/cartographer_ws" and running `catkin_make_isolated --install --use-ninja`.
 
 5. Run `rviz`, and add the "\map" topic if it's not there already. 
   - Do this in Docker (make sure you ran it with the car number argument), or on your Ubuntu machine (with ROS installed), or on the car itself (if you have a monitor).
