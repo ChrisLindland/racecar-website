@@ -7,6 +7,6 @@ You are picking up three "customers": 1, 2, and 5 (this is the number the AR tag
 There will also be obstacles in the track, so you will have to integrate your potential field control as well.
 
 ## Securing the Bag
-In order to use localization, you will need to record a rosbag. You can find instructions for how to do this in *References*, in the **Cartographer** section under "Running the Rosbag".
+Navigate to the Installation: Google Cartographer on our website and follow the *new* instructions there. Once you have done this, you will need to record a map. You can find instructions for how to do this in *References*, in the **Cartographer** section under "Running the Rosbag".
 
 After you have done this, read through the Particle Filter section of *References* for instructions on how to work with the maps you have made (like looking at the relative X and Y values of your current position).
