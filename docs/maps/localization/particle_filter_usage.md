@@ -33,13 +33,13 @@ After the program prints "…Received first LiDAR message," it should start to p
   * If you get something in a python program and are unsure of what it is, try printing it out.
   * Quaternions Help (if you think angular info will help)
   You may have noticed the rotations for these ROS geometry messages are encoded in quaternions. Why? I really don’t know, but it allows us to track the car’s rotation from -2π to 2π. If you care to amuse yourself for a few minutes, feel free to look up quaternions and derive the conversion back to an angle. Y'all are smart. Or you may just use the ROS’s built-in transformations:
-  ```python
+```python
     from tf.transformations import euler_from_quaternion
     . . .
     def quatToAng3D(quat):
         euler = euler_from_quaternion((quat.x,quat.y,quat.z,quat.w))
         return euler
-  ```
+```
   For reference, roll = `euler[0]`, pitch = `euler[1]`, yaw = `euler[2]`, and yaw is rotation about the z-axis.
 
 <details><summary><h3>Google Cartographer Localization</h3></summary>
