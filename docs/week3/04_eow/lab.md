@@ -8,6 +8,8 @@ The topic you will need for the lab is `/pf/viz/inferred_pose`.
 
 There will also be obstacles in the track, so you will have to integrate your Potential Field control as well.
 
+THERE IS NO STARTER CODE FOR THIS LAB - flex those coding muscles! ᕙ〳 ʘ – ʘ 〵ᕗ
+
 ## Securing the Bag
 Navigate to the [Installation: Google Cartographer](http://bwsi-racecar.com/maps/cartographer/cartographer_installation/) on our website and follow the *new* instructions there. Once you have done this, you will need to record a map. You can find instructions for how to do this in *References*, in the **Cartographer** section under ["Running off of a Rosbag"](http://bwsi-racecar.com/maps/cartographer/cartographer_usage/).
 
