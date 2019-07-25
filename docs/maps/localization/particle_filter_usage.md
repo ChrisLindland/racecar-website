@@ -31,19 +31,16 @@ After the program prints "…Received first LiDAR message," it should start to p
   * Use `rostopic type` to see what datatype the messages are. Once you have the name, you can find more info on [ros.org](http://docs.ros.org/api/geometry_msgs/html/index-msg.html).
   * Or just use `rostopic echo`.
   * If you get somethin in a python program and are unsure of what it is, try printing it out.
-<details><summary>Quaternions Help (if you think angular info will help)</summary>
-You may have noticed the rotations for these ROS geometry messages are encoded in quaternions. Why? I really don’t know, but it allows us to track the car’s rotation from -2π to 2π. If you care to amuse yourself for a few minutes, feel free to look up quaternions and derive the conversion back to an angle. Y'all are smart. Or you may just use the ROS’s built-in transformations:
-  
-```python
-  from tf.transformations import euler_from_quaternion
-  . . .
-  def quatToAng3D(quat):
-      euler = euler_from_quaternion((quat.x,quat.y,quat.z,quat.w))
-      return euler
-```
-
-For reference, roll = `euler[0]`, pitch = `euler[1]`, yaw = `euler[2]`, and yaw is rotation about the z-axis (equivalent to `ang` in the  previous function).
-</details>
+  * Quaternions Help (if you think angular info will help)
+  You may have noticed the rotations for these ROS geometry messages are encoded in quaternions. Why? I really don’t know, but it allows us to track the car’s rotation from -2π to 2π. If you care to amuse yourself for a few minutes, feel free to look up quaternions and derive the conversion back to an angle. Y'all are smart. Or you may just use the ROS’s built-in transformations:
+  ```python
+    from tf.transformations import euler_from_quaternion
+    . . .
+    def quatToAng3D(quat):
+        euler = euler_from_quaternion((quat.x,quat.y,quat.z,quat.w))
+        return euler
+  ```
+  For reference, roll = `euler[0]`, pitch = `euler[1]`, yaw = `euler[2]`, and yaw is rotation about the z-axis.
 
 <details><summary><h3>Google Cartographer Localization</h3></summary>
 Basically, Chris wrote some stuff, unfortunately, it ended up not being helpful because Google Cartographer is darn dense and we haven't fully figured it out. Either that, or it's just plain wonk. Wonk means bad. Either way, I didn't have the heart to delete Chris's hard work (but I did have the heart to edit it and make it correct as possible), and besides, maybe some really ROS-y or Google-y person will one day find this helpful...<br>
