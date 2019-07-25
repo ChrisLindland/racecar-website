@@ -1,7 +1,7 @@
 # Localization
 **Note: These instructions assume you have installed Google Cartographer according to [these](http://bwsi-racecar.com/maps/localization/particle_filter_installation/) installation instructions.**
 ### Maps
-* If you have followed the installation instructions as intended, the maps the particle filter uses will be in " ~/localization/localization_ws/src/maps". Assuming you have a .pgm file and a .yaml file in your "~/mapfile" folder, then you can copy all these files with: `cp ~/mapfiles/* ~/localization/localization_ws/src/maps`.
+* If you have followed the installation instructions as intended, the maps the particle filter uses will be in "\~/localization/localization_ws/src/maps". Assuming you have a .pgm file and a .yaml file in your "~/mapfile" folder, then you can copy all these files with: `cp ~/mapfiles/* ~/localization/localization_ws/src/maps`.
 * To create a new map, plunk your image and yaml file that you made in this folder.
 ![](img/yourMap.png)
 * To use the map for localization, modify the mapParams.yaml file <br>(it’ll be obvious, trust me). You may need to chmod it to edit it.
