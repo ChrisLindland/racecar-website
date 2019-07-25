@@ -30,7 +30,7 @@ After the program prints "…Received first LiDAR message," it should start to p
   * To extract meaningful data from these messages, you can figure it out on your own.
   * Use `rostopic type` to see what datatype the messages are. Once you have the name, you can find more info on [ros.org](http://docs.ros.org/api/geometry_msgs/html/index-msg.html).
   * Or just use `rostopic echo`.
-  * If you get somethin in a python program and are unsure of what it is, try printing it out.
+  * If you get something in a python program and are unsure of what it is, try printing it out.
   * Quaternions Help (if you think angular info will help)
   You may have noticed the rotations for these ROS geometry messages are encoded in quaternions. Why? I really don’t know, but it allows us to track the car’s rotation from -2π to 2π. If you care to amuse yourself for a few minutes, feel free to look up quaternions and derive the conversion back to an angle. Y'all are smart. Or you may just use the ROS’s built-in transformations:
   ```python
