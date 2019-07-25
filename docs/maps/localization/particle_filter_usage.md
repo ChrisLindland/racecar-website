@@ -25,6 +25,7 @@ After the program prints "…Received first LiDAR message," it should start to p
 ![](img/rviz_target_frame_small.png)
   * First use the "Focus Camera" tool and click near the pose estimates (red arrows) to center the view on the car initially.</li>
   * Then change "Target Frame" to something on the car to keep up with the car’s changes in position. The "laser" (LIDAR) or "base_link" are good things to follow.
+  
 8. Want to know where you are in this world? Subscribe to <del>(insert pop culture here youtube channel)</del> pf/viz/inferred_pose!
 **This is where you get data telling you where your car is on the map!**
   * To extract meaningful data from these messages, you can figure it out on your own.
