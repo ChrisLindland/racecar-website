@@ -7,12 +7,12 @@
 3. `ssh` into the car `cd` to the "racecar_cartographer_installation" folder
 4. Run Mat's first shell script. (This replaces Install Google Cartographer):
 ```bash
-  bash cartographer_installation.sh
+  bash cartographer_install.sh
 ```
 Warning: this will take a diddly doodlely long time.
 5. Run Mat's second shell script. (This replaces Install MIT Racecar stuff):
 ```bash
-  bash racecar_cartographer_installation.sh
+  bash racecar_cartographer_install.sh
 ```
 
 # Old Instructions
@@ -57,9 +57,9 @@ source ~/cartographer_ws/install_isolated/setup.bash
 
 Clone this repo into your `racecar_ws` (not your `cartographer_ws`!) and `catkin_make`:
 ```bash
-cd ~/racecar_ws/src
+cd ~/racecar_ws/.catkin_ws/src
 git clone https://github.com/mit-rss/cartographer_config.git
-cd ~/racecar_ws
+cd ~/racecar_ws/.catkin_ws
 catkin_make
 source devel/setup.bash
 ```
