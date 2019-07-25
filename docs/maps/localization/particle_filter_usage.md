@@ -15,21 +15,23 @@ After the program prints "…Received first LiDAR message," it should start to p
  * Again, rviz can be finicky at times. If nothing appears even after running teleop or playing the rosbag, try changing the "Fixed Frame" to "map". Then check and uncheck the the checkboxes for the topics you are interested in. If that didn't work, try re-running Rviz. Check that you are running the programs you need to run.
 6. The car likely does not know where it is starting on the map. Give it an estimate of where it is using the "2D Pose Estimate" tool.<br>
 
-![]("img/localize_pose_rviz_small.png")
+![](img/localize_pose_rviz_small.png)
 
-Click on the map for position, drag for orientation.<br>
-If you want to be extra fancy, you can have the car do this itself, by publishing a [PoseWithCovarianceStamped](http://docs.ros.org/api/geometry_msgs/html/index-msg.html) message to the /initialpose topic. You can see what these messages look like by running `rostopic echo /initialpose` and doing a 2D pose estimate in RViz. A good idea would be to place the car in a fixed starting position and publish this *known* position to "/initialpose" when you press a button. Then you could press another button to change state and start running.
+* Click on the map for position, drag for orientation.<br>
+* If you want to be extra fancy, you can have the car do this itself, by publishing a [PoseWithCovarianceStamped](http://docs.ros.org/api/geometry_msgs/html/index-msg.html) message to the /initialpose topic. You can see what these messages look like by running `rostopic echo /initialpose` and doing a 2D pose estimate in RViz. 
+* A good idea would be to place the car in a fixed starting position and publish this *known* position to "/initialpose" when you press a button. Then you could press another button to change state and start running.
+
 7. (optional) Don’t like your view locked to (0,0,0)? Make it follow the car by changing your frame to something on the car.<br>
 ![](img/rviz_target_frame_small.png)
   * First use the "Focus Camera" tool and click near the pose estimates (red arrows) to center the view on the car initially.</li>
   * Then change "Target Frame" to something on the car to keep up with the car’s changes in position. The "laser" (LIDAR) or "base_link" are good things to follow.
 8. Want to know where you are in this world? Subscribe to <del>(insert pop culture here youtube channel)</del> pf/viz/inferred_pose!
-To extract meaningful data from these messages, you can figure it out on your own.
-  Use `rostopic type` to see what datatype the messages are. Once you have the name, you can find more info on [ros.org](http://docs.ros.org/api/geometry_msgs/html/index-msg.html).
-  Or just use `rostopic echo`.
-    
-   
-<details><summary>Quaternions Help (if you think angular info will help)</summary>
+**This is where you get data telling you where your car is on the map!**
+  * To extract meaningful data from these messages, you can figure it out on your own.
+  * Use `rostopic type` to see what datatype the messages are. Once you have the name, you can find more info on [ros.org](http://docs.ros.org/api/geometry_msgs/html/index-msg.html).
+  * Or just use `rostopic echo`.
+  * If you get somethin in a python program and are unsure of what it is, try printing it out.
+  * <details><summary>Quaternions Help (if you think angular info will help)</summary>
 You may have noticed the rotations are encoded in quaternions. Why? I really don’t know, but it allows us to track the car’s rotation from -2π to 2π. If you care to amuse yourself for a few minutes, feel free to look up quaternions and derive the conversion back to an angle. Y'all are smart. Or you may just use the ROS’s built-in transformations:
 ```python
 from tf.transformations import euler_from_quaternion
