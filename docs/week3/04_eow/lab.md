@@ -5,3 +5,6 @@ For this challenge, you are going to mimic a rideshare program with your car! Th
 You are picking up three "customers": 1, 2, and 5 (this is the number the AR tag returns when read). These will be randomly given to you at the pickup point and they have to be returned to their "houses". The order of the houses, from left to right, is 1 -> 2 -> 5 (2 is the corner spot). After you have dropped off 5, have your robot return to the pickup spot and stop.
 
 There will also be obstacles in the track, so you will have to integrate your potential field control as well.
+
+## Securing the Bag
+In order to use localization, you will need to record a rosbag. You can find instructions for how to do this in *References*, in the **Cartographer** section under "Running the Rosbag".
