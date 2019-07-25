@@ -14,11 +14,11 @@ After the program prints "…Received first LiDAR message," it should start to p
 5. Also, just as with cartographer, you may open RViz. Interesting topics to try will be /map, /scan, and /pf/viz/particles topics. See step 7 of the "Running off of live data" section of the [Cartographer page](http://bwsi-racecar.com/maps/cartographer/cartographer_usage/#running-off-of-live-data) for how to add topics in RViz.
  * Again, rviz can be finicky at times. If nothing appears even after running teleop or playing the rosbag, try changing the "Fixed Frame" to "map". Then check and uncheck the the checkboxes for the topics you are interested in. If that didn't work, try re-running Rviz. Check that you are running the programs you need to run.
 6. The car likely does not know where it is starting on the map. Give it an estimate of where it is using the "2D Pose Estimate" tool.<br>
-![]("img/localize_pose_rviz.png")<br>
+![]("img/localize_pose_rviz_small.png")<br>
 Click on the map for position, drag for orientation.<br>
 If you want to be extra fancy, you can have the car do this itself, by publishing a [PoseWithCovarianceStamped](http://docs.ros.org/api/geometry_msgs/html/index-msg.html) message to the /initialpose topic. You can see what these messages look like by running `rostopic echo /initialpose` and doing a 2D pose estimate in RViz. A good idea would be to place the car in a fixed starting position and publish this *known* position to "/initialpose" when you press a button. Then you could press another button to change state and start running.
 7. (optional) Don’t like your view locked to (0,0,0)? Make it follow the car by changing your frame to something on the car.<br>
-![](img/rviz_target_frame.png)
+![](img/rviz_target_frame_small.png)
   * First use the "Focus Camera" tool and click near the pose estimates (red arrows) to center the view on the car initially.</li>
   * Then change "Target Frame" to something on the car to keep up with the car’s changes in position. The "laser" (LIDAR) or "base_link" are good things to follow.
 8. Want to know where you are in this world? Subscribe to <del>(insert pop culture here youtube channel)</del> pf/viz/inferred_pose!
