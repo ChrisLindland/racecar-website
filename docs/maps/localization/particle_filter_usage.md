@@ -1,10 +1,8 @@
 # Localization
 
 ### Maps
-<ul>
-<li>The maps the localization filter uses are in ~/racecar_ws/src/base/particle_filter/maps.<br>
-<font color=#A0A0A0 size="2">Yes, this is the car’s beastly filesystem. Feel free to look around, but don’t touch unless you know what you’re doing. If you kill stuff, we may not be able to readily unkill it.</font></li>
-<li>To create a new map, plunk a .png image in this folder.</li>
+* If you have followed the installation instructions as intended, the maps the localization filter uses will be in "~/localization/localization_ws/src/maps".
+* To create a new map, plunk your image and yaml file that you made in this folder.
 <div align="right" style="margin-top:-35px;">
 <img src="/img/yourMap.png" width=200px/>
 </div>
