@@ -4,7 +4,7 @@ For this challenge, you are going to mimic a rideshare program with your car! Th
 
 You are picking up three "customers": 1, 2, and 5 (this is the number the AR tag returns when read). These will be randomly given to you at the pickup point (one at a time) and they have to be returned to their "houses". The order of the houses, from left to right, is 1 -> 2 -> 5 (2 is the corner spot). After you have dropped off the last customer, have your robot return to the pickup spot and stop.
 
-The topic you need for lab is `/pf/viz/inferred_pose`.
+The topic you will need for the lab is `/pf/viz/inferred_pose`.
 
 There will also be obstacles in the track, so you will have to integrate your Potential Field control as well.
 
