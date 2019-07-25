@@ -35,7 +35,7 @@ Also, rviz can be finicky at times. If nothing appears even after running teleop
 
 ### Creating the map
 <u>To get a .pgm file and a .yaml file</u> (*this is what our particle filter uses*):<br>
-Follow the same instructions as for running off of live data, but in step 2, instead of running `teleop`, run `roscore`, and in step 6, instead of driving the car around, run `rosbag play ~/bagfiles/<your_rosbag_name>.bag`. Save the map when the rosbag stops playing.<br>
+Follow the same instructions as for running off of live data, but in step 2, instead of running `teleop`, run `roscore`, and in step 6, instead of driving the car around, run `rosbag play ~/bagfiles/<your_rosbag_name>.bag`. Save the map when the rosbag stops playing. (You'll know it is done when it prints "Done." in the terminal).<br>
 <font color="AAA0A0"> Note: Remember to kill teleop! If you don't kill teleop, cartographer will see the rosbag data and current data at the same time! Plus, since the `-a` flag passed to `rosbag record` means record everything, playing the rosbag plays drive command data!</font>
 
 <details><summary><u>Alternatively, to get a .pbstream file</u> (<i>not recommended; this is usually for further use within Google Cartographer</i>):</summary>
