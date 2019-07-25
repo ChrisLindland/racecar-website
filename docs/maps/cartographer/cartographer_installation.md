@@ -1,9 +1,15 @@
-# Installation
+# New Instructions
+1. Download this zip file [here on Google Drive](https://drive.google.com/file/d/1a71YjMlLNQapo6Cs3l7ezS-TKVErK0Gs/) onto your computer and extract its contents. Then use `scp` to dump it onto the car into someplace logical (like the Downloads folder):
+```bash
+  scp -r <path_to_my_computers_downloads_folder>/racecar_cartographer_installation racecar@192.168.1.<car_number>:~/Downloads/
+```
+2. Make sure your car's router is plugged into wifi.
+3. `ssh` into the car `cd` to the "racecar_cartographer_installation" folder
+4. Run Mat's first shell script. (This replaces Install Google Cartographer)
+5. Run Mat's second shell script. (This replaces Install MIT Racecar stuff)
 
-## Install Google Cartographer
-### New Instructions
-Make sure your car's router is plugged into wifi, and run Mat's installer.
-### Old Instructions
+# Old Instructions
+### Install Google Cartographer
 Based on official Google Cartographer [instructions](https://google-cartographer-ros.readthedocs.io/en/latest/compilation.html):
 ```bash
 # Update apt-get (good housekeeping)
@@ -40,7 +46,7 @@ source ~/racecar_ws/.catkin_ws/devel/setup.bash
 source ~/cartographer_ws/install_isolated/setup.bash
 ``` 
 
-## Install MIT Racecar stuff
+### Install MIT Racecar stuff
 
 Clone this repo into your `racecar_ws` (not your `cartographer_ws`!) and `catkin_make`:
 ```bash
