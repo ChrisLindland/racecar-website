@@ -27,7 +27,11 @@ After the program prints "…Received first LiDAR message," it should start to p
   * Then change "Target Frame" to something on the car to keep up with the car’s changes in position. The "laser" (LIDAR) or "base_link" are good things to follow.
   
 8. Want to know where you are in this world? Subscribe to <del>(insert pop culture here youtube channel)</del> pf/viz/inferred_pose!
-**This is where you get data telling you where your car is on the map!**
+
+
+<font color="AA0000" size="4"><b> This is where you get the pose estimate of where the car is on the map! </b></font>
+
+
   * To extract meaningful data from these messages, you can figure it out on your own.
   * Use `rostopic type` to see what datatype the messages are. Once you have the name, you can find more info on [ros.org](http://docs.ros.org/api/geometry_msgs/html/index-msg.html).
   * Or just use `rostopic echo`.
