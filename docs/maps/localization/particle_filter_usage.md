@@ -11,7 +11,7 @@
 ```
 After the program prints "…Received first LiDAR message," it should start to print "iters per sec: 20  possible: 21" to confirm that it is getting scan data and making localization estimates. We found that it is usually necessary for the vesc to be running completely (i.e. there’s a good Traxxas battery) in order for this to work.
 
-5. Also, just as with cartographer, you may open rviz. Interesting topics to try will be /map, /scan, and /pf/viz/particles topics.
+5. Also, just as with cartographer, you may open RViz. Interesting topics to try will be /map, /scan, and /pf/viz/particles topics. See step 7 of the "Running off of live data" section of the [Cartographer page](http://bwsi-racecar.com/maps/cartographer/cartographer_usage/#running-off-of-live-data) for how to add topics in RViz.
  * Again, rviz can be finicky at times. If nothing appears even after running teleop or playing the rosbag, try changing the "Fixed Frame" to "map". Then check and uncheck the the checkboxes for the topics you are interested in. If that didn't work, try re-running Rviz. Check that you are running the programs you need to run.
 6. The car likely does not know where it is starting on the map. Give it an estimate of where it is using the "2D Pose Estimate" tool.<br>
 ![]("img/localize_pose_rviz.png")<br>
