@@ -1,5 +1,5 @@
 # Making Maps
-**Note: These instructions assume you have installed Google Cartographer according to the installation instructions on this page.**
+**Note: These instructions assume you have installed Google Cartographer according to [these](http://bwsi-racecar.com/maps/cartographer/cartographer_installation/) installation instructions.**
 ## Running off of live data
 
 <font color="A0A0A0">*Running live is nice is that all happens all at once, but it can be laggy, and it can become messy if you wish to restart the process.*</font>
