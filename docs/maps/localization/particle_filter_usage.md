@@ -23,6 +23,7 @@ After the program prints "…Received first LiDAR message," it should start to p
 
 (7). (optional) Don’t like your view locked to (0,0,0)? Make it follow the car by changing your frame to something on the car.<br>
 ![](img/rviz_target_frame_small.png)
+
   * First use the "Focus Camera" tool and click near the pose estimates (red arrows) to center the view on the car initially.</li>
   * Then change "Target Frame" to something on the car to keep up with the car’s changes in position. The "laser" (LIDAR) or "base_link" are good things to follow.
   
