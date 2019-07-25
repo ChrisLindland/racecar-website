@@ -97,11 +97,11 @@ Also, rviz can be finicky at times. If nothing appears even after running teleop
 7. (optional) The bagfile naming system is kinda gross. Use an `mv` command to rename your bag file to something pretty. If you don't know what we mean by that, [Google](https://www.google.com/) (and by that I mean [DuckDuckGo](https://duckduckgo.com/) or [Ecosia](https://www.ecosia.org/)) "renaming files in terminal".
 
 ### Creating the map
-<u>To get a .pgm file and a .yaml file (*this is what our particle filter uses*):</u><br>
+<u>To get a .pgm file and a .yaml file</u> (*this is what our particle filter uses*):<br>
 Follow the same instructions as for running off of live data, but instead of running `teleop`, run `roscore`, and instead of driving the car around, run `rosbag play ~/bagfiles/<your_rosbag_name>.bag`. Save the map when the rosbag stops playing.<br>
 <font color="AAA0A0"> Note: Please don't blow off these instructions! If you don't kill teleop, cartographer will see the rosbag data and current data at the same time! Plus, since the `-a` flag passed to `rosbag record` means record everything, playing the rosbag plays drive command data! Brick your cars, folks! </font>
 
-<details><summary><u>Alternatively, to get a .pbstream file (<i>not recommended; this is usually for further use within Google Cartographer</i>):</u></summary>
+<details><summary><u>Alternatively, to get a .pbstream file</u> (<i>not recommended; this is usually for further use within Google Cartographer</i>):</summary>
 1. Run <code>roslaunch cartographer_ros offline_racecar_2d.launch bag_filenames:=${HOME}/bagfiles/&lt;your_rosbag_name&gt;.bag</code><br>
 &ensp; Warning: this will pull up an rviz window. If you're ssh-ed in, then whoops.<br>
 2. Wait for the bag to finish playing, then watch the terminal and wait until it's done "optimizing".
