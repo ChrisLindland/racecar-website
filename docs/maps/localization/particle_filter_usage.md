@@ -1,5 +1,5 @@
 # Particle Filter Localization
-**Note: These instructions assume you have installed Google Cartographer according to [these](http://bwsi-racecar.com/maps/localization/particle_filter_installation/) installation instructions.**
+**Note: These instructions assume you have installed the Particle Filter according to [these](http://bwsi-racecar.com/maps/localization/particle_filter_installation/) installation instructions.**
 ### Running Localization
 (1). If you have followed the installation instructions as intended, the maps the particle filter uses will be in "~/localization/localization_ws/src/maps". Assuming you have a ".pgm" file and a ".yaml" file in your "~/mapfile" folder, then you can copy all these files with: `cp ~/mapfiles/* ~/localization/localization_ws/src/maps`.<br>
 (2). To select which map to use for localization, you'll need to modify your "map_server.launch" file in "~/localization/localization_ws/src/launch". You may need to chmod it to edit it. Launch files essentially tell `roslaunch` how to run nodes in a package. The modification is simply replacing "basement_fixed.map.yaml" with the name of your ".yaml" file.<br>
