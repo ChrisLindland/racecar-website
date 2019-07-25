@@ -1,13 +1,10 @@
 # Localization
-
+**Note: These instructions assume you have installed Google Cartographer according to [these](http://bwsi-racecar.com/maps/localization/particle_filter_installation/) installation instructions.**
 ### Maps
-* If you have followed the installation instructions as intended, the maps the localization filter uses will be in "~/localization/localization_ws/src/maps".
+* If you have followed the installation instructions as intended, the maps the localization filter uses will be in "~/localization/localization_ws/src/maps". Assuming you have a .pgm file and a .yaml file in your mapfile.
 * To create a new map, plunk your image and yaml file that you made in this folder.
-<div align="right" style="margin-top:-35px;">
-<img src="/img/yourMap.png" width=200px/>
-</div>
-<div style="margin-top:-165px;">
-<li>To use the map for localization, modify the mapParams.yaml file <br>(it’ll be obvious, trust me). You may need to chmod it to edit it.</li></div>
+![](img/yourMap.png)
+* To use the map for localization, modify the mapParams.yaml file <br>(it’ll be obvious, trust me). You may need to chmod it to edit it.
 
 ### Usage in ROS
 <u>To run localization</u>:
