@@ -3,6 +3,7 @@
 ## Running Localization
 (1). If you have followed the installation instructions as intended, the maps the particle filter uses will be in "~/localization/localization_ws/src/maps". Assuming you have a ".pgm" file and a ".yaml" file in your "~/mapfile" folder, then you can copy all these files with: `cp ~/mapfiles/* ~/localization/localization_ws/src/maps`.<br>
 (2). To select which map to use for localization, you'll need to modify your "map_server.launch" file in "~/localization/localization_ws/src/launch". You may need to chmod it to edit it. Launch files essentially tell `roslaunch` how to run nodes in a package. The modification is simply replacing "basement_fixed.map.yaml" with the name of your ".yaml" file.<br>
+  * Debugging tip: We recommend keeping the default path "$(find particle_filter)/maps/<yaml_file_name>.yaml". If `roslaunch` doesn't seem to find the ".yaml", double check the filename (no really, stop and do that). Then you can try putting in the full path: "/home/racecar/localization/localization_ws/src/maps/<yaml_file_name>.yaml". Do not try using "~/"! `roslaunch` does not know what "~/" means like the terminal shell does.
 (3). Now we can get cooking! In the car's terminal, run `teleop`.<br>
 (4). Then in another tab/window, run:
 ```bash
@@ -32,7 +33,7 @@ Make it follow the car by changing your frame to something on the car.<br>
 ![](img/rviz_target_frame_small.png)
 
   * First use the "Focus Camera" tool and click near the pose estimates (red arrows) to center the view on the car initially.</li>
-  * Then change "Target Frame" to something on the car to keep up with the car’s changes in position. The "laser" (LIDAR) or "base_link" are good things to follow.
+  * Then change "Target Frame" to something on the car (like "base_link") to keep up with the car’s changes in position.
 </details><br>
 
 ## Using Pose Estimate Data in ROS
