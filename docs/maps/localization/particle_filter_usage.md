@@ -27,11 +27,13 @@
 * If you want to be extra fancy, you can have the car do this itself, by publishing a [PoseWithCovarianceStamped](http://docs.ros.org/api/geometry_msgs/html/index-msg.html) message to the /initialpose topic. You can see what these messages look like by running `rostopic echo /initialpose` and doing a 2D pose estimate in RViz. 
 * A good idea would be to place the car in a fixed starting position and publish this *known* position to "/initialpose" when you press a button. Then you could press another button to change state and start running.
 
-(7). (optional) Don’t like your view locked to (0,0,0)? Make it follow the car by changing your frame to something on the car.<br>
+(7). (optional) <details><summary>Don’t like your view locked to (0,0,0)?</summary>
+Make it follow the car by changing your frame to something on the car.<br>
 ![](img/rviz_target_frame_small.png)
 
   * First use the "Focus Camera" tool and click near the pose estimates (red arrows) to center the view on the car initially.</li>
   * Then change "Target Frame" to something on the car to keep up with the car’s changes in position. The "laser" (LIDAR) or "base_link" are good things to follow.
+</details>
 
 ## Using Pose Estimate Data in ROS
 <font color="00AA00" size="4"><b> This is where you get the pose estimate of where the car is on the map! </b></font><br>
