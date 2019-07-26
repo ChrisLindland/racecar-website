@@ -13,7 +13,7 @@
 * Debugging tips:
   - We found that it is usually necessary for the vesc to be running completely (i.e. there’s a good Traxxas battery) in order for this to work.
   - If the `roslaunch` starts launching, but then returns an error message like <font color="A00000">"cannot locate node of type particle_filter"</font>, it likely means that the "particle_filter.py" file in "~/localization/localization_ws/src/" needs executable permissions. You can give it these permissions by running `chmod +x particle_filter.py`.
-  - If the `roslaunch` raises errors regarding "rangelibc", it likely means that the "rangelibc" installation failed. Try it again according to our instructions [here](http://bwsi-racecar.com/maps/localization/particle_filter_installation/). Maybe the "setup.py" file in "~/localization/range_libc/pywrapper/" needs executable permissions.
+  - If the `roslaunch` starts launching, but then the python file returns an error message like <font color="A00000">"ImportError: No module named range_libc"</font>, it likely means that the range_libc installation failed. Try it again according to our instructions [here](http://bwsi-racecar.com/maps/localization/particle_filter_installation/). Maybe the "setup.py" file in "~/localization/range_libc/pywrapper/" needs executable permissions.
 
 (5). Also, just as with cartographer, you may open RViz. Interesting topics to try will be /map, /scan, and /pf/viz/particles topics.
 * Wondering how to add topics in RViz? See step 7 of the "Running off of live data" section of [our Cartographer page](http://bwsi-racecar.com/maps/cartographer/cartographer_usage/#running-off-of-live-data).
