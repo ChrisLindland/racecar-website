@@ -53,6 +53,7 @@ Then add these lines to the end of the car's "~/.bashrc" file if they're not alr
 source ~/racecar_ws/.catkin_ws/devel/setup.bash
 source ~/cartographer_ws/install_isolated/setup.bash
 ``` 
+<!--Recommendation for future work. Put these bash customization lines in ~/racecar_ws/.dotfiles/_racecars instead.-->
 
 ### Install MIT Racecar stuff
 
