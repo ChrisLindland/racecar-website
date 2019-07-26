@@ -9,8 +9,11 @@
   source ~/localization/localization_ws/devel/setup.bash
   roslaunch particle_filter localize.launch
 ```
-* After the program prints "…Received first LiDAR message," it should start to print "iters per sec: 20  possible: 21" to confirm that it is getting scan data and making localization estimates. We found that it is usually necessary for the vesc to be running completely (i.e. there’s a good Traxxas battery) in order for this to work.<br>
-* If the `roslaunch` starts launching, but then returns an error message like "cannot locate node of type particle_filter", it likely means that the "particle_filter.py" file in "~/localization/localization_ws/src/" needs executable permissions. You can give it these permissions by running `chmod +x particle_filter.py`.
+* After the program prints "…Received first LiDAR message," it should start to print "iters per sec: 20  possible: 21" to confirm that it is getting scan data and making localization estimates.
+* Debugging tips:
+  - We found that it is usually necessary for the vesc to be running completely (i.e. there’s a good Traxxas battery) in order for this to work.
+  - If the `roslaunch` starts launching, but then returns an error message like <font color="A00000">"cannot locate node of type particle_filter"</font>, it likely means that the "particle_filter.py" file in "~/localization/localization_ws/src/" needs executable permissions. You can give it these permissions by running `chmod +x particle_filter.py`.
+  - If the `roslaunch` raises errors regarding "rangelibc", it likely means that the "rangelibc" installation failed. Try it again according to our instructions [here](http://bwsi-racecar.com/maps/localization/particle_filter_installation/). Maybe the "setup.py" file in "~/localization/range_libc/pywrapper/" needs executable permissions.
 
 (5). Also, just as with cartographer, you may open RViz. Interesting topics to try will be /map, /scan, and /pf/viz/particles topics. See step 7 of the "Running off of live data" section of the [Cartographer page](http://bwsi-racecar.com/maps/cartographer/cartographer_usage/#running-off-of-live-data) for how to add topics in RViz.
  * Again, rviz can be finicky at times. If nothing appears even after running teleop or playing the rosbag, try changing the "Fixed Frame" to "map". Then check and uncheck the the checkboxes for the topics you are interested in. If that didn't work, try re-running Rviz. Check that you are running the programs you need to run.<br>
