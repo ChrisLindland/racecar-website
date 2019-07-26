@@ -28,7 +28,7 @@
   * First use the "Focus Camera" tool and click near the pose estimates (red arrows) to center the view on the car initially.</li>
   * Then change "Target Frame" to something on the car to keep up with the car’s changes in position. The "laser" (LIDAR) or "base_link" are good things to follow.
   
-(8). Want to know where you are in this world? Subscribe to <del>PewDiePie</del> pf/viz/inferred_pose!<br>
+(8). Want to know where you are in this world while you're writing your code? Subscribe to <del>PewDiePie</del> pf/viz/inferred_pose!<br>
 
 
 <font color="AA0000" size="4"><b> This is where you get the pose estimate of where the car is on the map! </b></font>
@@ -37,7 +37,7 @@
   * To extract meaningful data from these messages, you can figure it out on your own.
   * Use `rostopic type` to see what datatype the messages are. Once you have the name, you can find more info on [ros.org](http://docs.ros.org/api/geometry_msgs/html/index-msg.html).
   * Or just use `rostopic echo`.
-  * If you get something in a python program and are unsure of what it is, try printing it out.
+  * If you receive a ros message in a python program and are unsure of what it is, try printing it out.
   * Quaternions Help (if you think angular info will help)
   You may have noticed the rotations for these ROS geometry messages are encoded in quaternions. Why? I really don’t know, but it allows us to track the car’s rotation from -2π to 2π. If you care to amuse yourself for a few minutes, feel free to look up quaternions and derive the conversion back to an angle. Y'all are smart. Or you may just use the ROS’s built-in transformations:
 ```python
