@@ -34,7 +34,7 @@
   * Then change "Target Frame" to something on the car to keep up with the car’s changes in position. The "laser" (LIDAR) or "base_link" are good things to follow.
 
 ## Using Pose Estimate Data in ROS
-<font color="00AA00" size="4"><b> This is where you get the pose estimate of where the car is on the map! </b></font>
+<font color="00AA00" size="4"><b> This is where you get the pose estimate of where the car is on the map! </b></font><br>
 Want to know where you are in this world while you're writing your code? Subscribe to <del>PewDiePie</del> pf/viz/inferred_pose!<br>
 
   * To extract meaningful data from these messages, you can figure it out on your own.
