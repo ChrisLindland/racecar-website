@@ -9,7 +9,7 @@
 ```bash
   bash cartographer_install.sh
 ```
-Warning: this will take a diddly-doodlely long time.
+Warning: this will take a long time ~ roughly 20-30 minutes.
 
 5. Run Matt's second shell script. (This replaces "Install MIT Racecar stuff"):
 ```bash
