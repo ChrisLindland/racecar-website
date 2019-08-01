@@ -45,21 +45,28 @@ Provided are two simple helper Python scripts for image preprocessing (commands 
                     Use the letter 'e' key to start saving frames from the feed, and 'ESC' to quit the stream.
                     By default saves the images as .png, but can be changed to other image formats (ex. .jpg).
 
+
 ### Choosing ML parameters
 
 For both the Histogram of Gradients (HOG) and Support Vector Machine (SVM), there are several parameters to be chosen to optimize your integrated model.
-Full documentation is [here](https://docs.opencv.org/3.0-beta/modules/ml/doc/support_vector_machines.html).
 
 For HOG (line 131, parameter in hog.compute(), in TrainHOG.cpp) :
 
-    winstride : 
+    winstride : Window stride determines the win
     padding   :
 
+Full documentation is [here](https://docs.opencv.org/3.0-beta/modules/ml/doc/support_vector_machines.html).
+More info on SVM types [here](http://www.statsoft.com/textbook/support-vector-machines), useful for the `SVM-Type` parameter.
 For SVM - main parameters (starting line 387, parameter in SVM, in TrainHOG.cpp):
 
-    kernel Type : Chooses the Kernel function used for separating classes. The central svm->setKernel( SVM::LINEAR );                             
-    C           : Chooses the degree of leninence for misclassification of classes in the model. The higher the C value, the more the model will try to not misclassify the HOG feature vectors.                  
-    SVM Type    : svm->setType( SVM::C_SVC );                    
+    gamma       : Manipulates the data in 3-D space, making it easier to separate the data non-linearly, at the cost of data distortion as gamma grows.
+    kernel Type : Determines the Kernel function used for separating classes. The key methods are linear vs. nonlinear seperation, depending on the datasets.                             
+    C           : Determines the degree of leninence for misclassification of classes in the model. The higher the C value, the more the model will try to not misclassify the HOG feature vectors.                  
+    SVM Type    : Determines whether the SVM focuses on classification error minimization vs. regression error minimization.  
+
+
+![C](img/C_param.png)
+
 
 ### Training data
 
