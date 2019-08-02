@@ -19,7 +19,10 @@ nav:
         - Tuesday: week3/02_tuesday/lab.md
         - Mid-Week Challenge: week3/03_midweek/lab.md
         - End-of-Week Challenge: week3/04_eow/lab.md
-    - Week 4: week4/coming-soon.md
+    - Week 4: 
+        - Optional ML: week4/hog-svm/high_level_overview.md
+        - HOG-SVM: week4/hog-svm/file_setup.md
+        - Coming Soon: week4/coming-soon.md
     - Racecar Parts:
         - Lidar: racecar-parts/lidar.md
         - ZED: racecar-parts/zed.md
