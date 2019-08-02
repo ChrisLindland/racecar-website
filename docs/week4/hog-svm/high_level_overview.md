@@ -64,23 +64,19 @@ You must make the positiveTrainingImages / negativeTrainingImages directories yo
 
 We recommend having at least 100 postives images of your object (for example, a Right Way Sign), and at least 100 negative images. A good rule is to always have at least as many negative images as positive images.
 
-<pre>
-    - Positive images: Consists of your object of interest as the center of attention. 
-                       Crop and adjust the images to focus on your object, where the image essentially acts as a Region of Interest (ROI) in which the HOG algorithm will build a feature vector from. Be careful of how rotated the object is. HOG works when descriptors have the same "ratio". For example, a right way sign may have a 3:1 ratio of length to width, but when greatly rotated about the y-axis, the area the sign appears in would be a square, 1:1.
+- Positive images : Consists of your object of interest as the center of attention. 
+                    Crop and adjust the images to focus on your object, where the image essentially acts as a Region of Interest (ROI) in which the HOG algorithm will build a feature vector from. Be careful of how rotated the object is. HOG works when descriptors have the same "ratio". For example, a right way sign may have a 3:1 ratio of length to width, but when greatly rotated about the y-axis, the area the sign appears in would be a square, 1:1.
 
-    - Negative images: Images that do not contain your object of interest. 
-                       A rule of thumb is to not choose purely random pictures as negatives, but images that represent backgrounds/environments in which the model will or may be used in.
-</pre>
+- Negative images : Images that do not contain your object of interest. 
+                   A rule of thumb is to not choose purely random pictures as negatives, but images that represent backgrounds/environments in which the model will or may be used in.
 
 Provided are two simple helper Python scripts for image preprocessing (commands to run are found near the top of the files):
 
-<pre>
-    - batchRename.py: Copies, then renames and resizes all images within a given directory, saving these new images in a separate directory.
+- batchRename.py : Copies, then renames and resizes all images within a given directory, saving these new images in a separate directory.
 
-    - feedSaver.py: Using a camera feed, it saves a specified number of frames from the feed as images, within a specified directory. 
+- feedSaver.py : Using a camera feed, it saves a specified number of frames from the feed as images, within a specified directory. 
                     Use the letter 'e' key to start saving frames from the feed, and 'ESC' to quit the stream.
                     By default saves the images as .png, but can be changed to other image formats (ex. .jpg).
-</pre>
 
 ### Choosing ML parameters
 
@@ -88,20 +84,20 @@ For both the Histogram of Gradients (HOG) and Support Vector Machine (SVM), ther
 
 For HOG (line 131, parameter in hog.compute(), in TrainHOG.cpp):
 
-<pre>
+```
     winstride : Window stride, a tuple of two values, determines the step size of the sliding window. 
                 Intuitively, a sliding window is a rectangular region of interest (of set length and width) that moves across an image (akin to a convolutional neural network). T
                 The window grabs feature vectors, passes them to our SVM model for classification. 
 
     padding   : A tuple of two values. Determines how many pixels are added to the Region of Interest (ROI) BEFORE feature extraction. 
                 Can increase detector accuracy, but if the value is too large, will cause a performance hit.
-</pre>
+```
 
 Full documentation is [here](https://docs.opencv.org/3.0-beta/modules/ml/doc/support_vector_machines.html).
 More info on SVM types [here](http://www.statsoft.com/textbook/support-vector-machines), useful for the `SVM-Type` parameter.
 For SVM - main parameters (starting line 387, parameter in SVM, in TrainHOG.cpp):
 
-<pre>
+```
     gamma       : Manipulates the data in 3-D space, making it easier to separate the data non-linearly, at the cost of data distortion as gamma grows.
 
     kernel Type : Determines the Kernel function used for separating classes. The key methods are linear vs. nonlinear seperation, depending on the datasets.   
@@ -109,14 +105,14 @@ For SVM - main parameters (starting line 387, parameter in SVM, in TrainHOG.cpp)
     C           : Determines the degree of leninence for misclassification of classes in the model. The higher the C value, the more the model will try to not misclassify the HOG feature vectors.                  
 
     SVM Type    : Determines whether the SVM focuses on classification error minimization vs. regression error minimization.  
-</pre>
+```
 
 ![C](img/C_param.png)
 
 Full documentation [here](https://docs.opencv.org/master/d5/d33/structcv_1_1HOGDescriptor.html#a9c7a0b2aa72cf39b4b32b3eddea78203)
 For model detection (line 113, parameter in HOGDescriptor.detectMultiscale(), in detector.py):
 
-<pre>
+```
     winstride      : See above for basic description. For real-time detection, this HEAVILY affects performance. 
                      Small strides such as (2,2) will be much slower than (4,4), as more windows to evaluate become computationally expensive. 
                      We recommend starting at (4,4) or (8,8) and adjusting for speed vs. accuracy.
@@ -130,7 +126,7 @@ For model detection (line 113, parameter in HOGDescriptor.detectMultiscale(), in
     finalThreshold : This sets a lower bound for detection rectangle clusters. 
                      A cluster of rectangles must have ONE more rectangle than the number set be finalThreshold to be drawn. 
                      For example, if finalThreshold = 1, then clusters of at least 2 rectangles are drawn.
-</pre>
+```
 
 ### Training data
 
