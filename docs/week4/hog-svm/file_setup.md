@@ -31,20 +31,23 @@ You must make the positiveTrainingImages / negativeTrainingImages directories yo
 
 We recommend having at least 100 postives images of your object (for example, a Right Way Sign), and at least 100 negative images. A good rule is to always have at least as many negative images as positive images.
 
+```
     - Positive images: Consists of your object of interest as the center of attention. 
                        Crop and adjust the images to focus on your object, where the image essentially acts as a Region of Interest (ROI) in which the HOG algorithm will build a feature vector from.
 
     - Negative images: Images that do not contain your object of interest. 
                        A rule of thumb is not choose purely random pictures as negatives, but images that represent backgrounds/environments in which the model will or may be used in.
+```
 
 Provided are two simple helper Python scripts for image preprocessing (commands to run are found near the top of the files):
 
+```
     - batchRename.py: Copies, then renames and resizes all images within a given directory, saving these new images in a separate directory.
 
     - feedSaver.py: Using a camera feed, it saves a specified number of frames from the feed as images, within a specified directory. 
                     Use the letter 'e' key to start saving frames from the feed, and 'ESC' to quit the stream.
                     By default saves the images as .png, but can be changed to other image formats (ex. .jpg).
-
+```
 
 ### Choosing ML parameters
 
@@ -52,18 +55,21 @@ For both the Histogram of Gradients (HOG) and Support Vector Machine (SVM), ther
 
 For HOG (line 131, parameter in hog.compute(), in TrainHOG.cpp) :
 
-    winstride : Window stride determines the win
+```
+    winstride : Window stride, a tuple of two values, determines the step size of the sliding 
     padding   :
+```
 
 Full documentation is [here](https://docs.opencv.org/3.0-beta/modules/ml/doc/support_vector_machines.html).
 More info on SVM types [here](http://www.statsoft.com/textbook/support-vector-machines), useful for the `SVM-Type` parameter.
 For SVM - main parameters (starting line 387, parameter in SVM, in TrainHOG.cpp):
 
+```
     gamma       : Manipulates the data in 3-D space, making it easier to separate the data non-linearly, at the cost of data distortion as gamma grows.
     kernel Type : Determines the Kernel function used for separating classes. The key methods are linear vs. nonlinear seperation, depending on the datasets.                             
     C           : Determines the degree of leninence for misclassification of classes in the model. The higher the C value, the more the model will try to not misclassify the HOG feature vectors.                  
     SVM Type    : Determines whether the SVM focuses on classification error minimization vs. regression error minimization.  
-
+```
 
 ![C](img/C_param.png)
 
