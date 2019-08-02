@@ -21,7 +21,6 @@ nav:
         - End-of-Week Challenge: week3/04_eow/lab.md
     - Week 4: 
         - Optional ML: week4/hog-svm/high_level_overview.md
-        - HOG-SVM: week4/hog-svm/file_setup.md
         - Coming Soon: week4/coming-soon.md
     - Racecar Parts:
         - Lidar: racecar-parts/lidar.md
