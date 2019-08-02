@@ -31,23 +31,23 @@ You must make the positiveTrainingImages / negativeTrainingImages directories yo
 
 We recommend having at least 100 postives images of your object (for example, a Right Way Sign), and at least 100 negative images. A good rule is to always have at least as many negative images as positive images.
 
-```
+<pre>
     - Positive images: Consists of your object of interest as the center of attention. 
                        Crop and adjust the images to focus on your object, where the image essentially acts as a Region of Interest (ROI) in which the HOG algorithm will build a feature vector from.
 
     - Negative images: Images that do not contain your object of interest. 
                        A rule of thumb is not choose purely random pictures as negatives, but images that represent backgrounds/environments in which the model will or may be used in.
-```
+</pre>
 
 Provided are two simple helper Python scripts for image preprocessing (commands to run are found near the top of the files):
 
-```
+<pre>
     - batchRename.py: Copies, then renames and resizes all images within a given directory, saving these new images in a separate directory.
 
     - feedSaver.py: Using a camera feed, it saves a specified number of frames from the feed as images, within a specified directory. 
                     Use the letter 'e' key to start saving frames from the feed, and 'ESC' to quit the stream.
                     By default saves the images as .png, but can be changed to other image formats (ex. .jpg).
-```
+</pre>
 
 ### Choosing ML parameters
 
