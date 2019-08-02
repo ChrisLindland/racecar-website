@@ -131,7 +131,7 @@ For model detection (line 113, parameter in HOGDescriptor.detectMultiscale(), in
 ### Training data
 
 Once there is a positive and negative dataset formatted, we can compile our model via the single C++ file - TrainHOG.cpp.
-Compilation is more complicated Windows, requiring separate software from Microsoft called `MSVC` (an IDE). We recommend the people on the group with Mac OS X and Native Linux machines to compile the C++ code. Check if the machines have `g++` installed, though most machines have it by default.
+Compilation is more complicated Windows, requiring separate software from Microsoft called `MSVC` (an IDE). We recommend the people in the group with Mac OS X and Native Linux machines to compile the C++ code. Check if the machines have `g++` installed, though most machines have it by default.
 
 If not installed:
 
@@ -140,6 +140,21 @@ If not installed:
     then
 
     $ sudo apt install g++
+
+For training on Windows (if no members use Mac OS or Linux):
+
+1. `scp` your `hog-svm` folder over to the racecar.
+
+2. `ssh` into the racecar (we compile on the car as it has g++). 
+
+3. Follow the instructions below (starting with `make`), and if a **GTK display** error appears:
+
+    - Download the **windows** folder from the Google Drive link provided above.
+
+    - **windows** contains one file
+        - TrainHOGWin.cpp
+
+    - Delete the current TrainHOG.cpp, replace it with TrainHOGWin.cpp, then rename it to TrainHOG.cpp. 
 
 We have provided a `makefile` to simplify the commands for object file linking and executable construction, so to use the C++ code, in your terminal:
 
