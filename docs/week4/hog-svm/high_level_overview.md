@@ -175,6 +175,16 @@ Provided in `detector.py` are two implementations, almost usable but not quite.
 
 1. The first one is coordinate and area based (point_non_max_suppression()). Since HOGDescriptor.detectMultiscale() returns both bounding boxes and detection scores (weights) for those boxes, we can alter the function to take weights into account, at higher precedence than purely area. We recommend printing out the `weights` variable to discern score differences between boxes that actually detect the object, and those that do not. 
 
-2. The second is OpenCV's Deep Neural Network implementation of NMS. The key area of focus is how the `weights` from our model relate to the **score_threshold** and **nms_threshold**. This function, cv2.dnn.NMSBoxes(), is generally used with convolutional neural network models (CNNs) such as YOLO. The threshold parameters of this function only draw boxes that are above in value.
+2. The second is OpenCV's Deep Neural Network implementation of NMS. The key area of focus is how the `weights` from our model relate to the **score_threshold** and **nms_threshold**. This function, cv2.dnn.NMSBoxes(), is generally used with convolutional neural network models (CNNs) such as YOLO. The threshold parameters of this function only draw boxes that are above in value. Full documentation [here](https://docs.opencv.org/master/d6/d0f/group__dnn.html)
+
+### Multi-object detection
+
+There are two options (Labels for objects can be returned via dictionary keyed to each detector):
+
+1. Run two HOGDescriptor objects, each one with a different XML model. Computationally expensive, but with detection parameter adjustment and CUDA GPU acceleration (already implemented), resultant speed should suffice for max two objects.
+
+2. (Not Recommeded in our Scope) Alter the C++ code. Train a HOGDescriptor for object. Push each HOGDescriptor into a `Mat` (n-dimensional array), and push a corresponding label for each HOGDescriptor into a separate `Mat`. The `labels` Mat is already created, and each label should be a **int** ID. Train the SVM on these two `Mat` arrays.
+
+
 
 Depending on student progress, we **MAY** release a fully functioning model and the correct NMS algorithm.
