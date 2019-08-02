@@ -194,7 +194,7 @@ There are two options (Labels for objects can be returned via dictionary keyed t
 
 1. Run two HOGDescriptor objects, each one with a different XML model. Computationally expensive, but with detection parameter adjustment and CUDA GPU acceleration (already implemented), resultant speed should suffice for max two objects.
 
-2. (Not Recommeded in our Scope) Alter the C++ code. Train a HOGDescriptor for object. Push each HOGDescriptor into a `Mat` (n-dimensional array), and push a corresponding label for each HOGDescriptor into a separate `Mat`. The `labels` Mat is already created, and each label should be a **int** ID. Train the SVM on these two `Mat` arrays.
+2. (Not Recommeded in our Scope) Alter the C++ code. Train a HOGDescriptor for object. Push each HOGDescriptor into a `Mat` (n-dimensional array), and push a corresponding label for each HOGDescriptor into a separate `Mat`. The `labels` Mat is already created, and each label should be an **int** ID. Train the SVM on these two `Mat` arrays.
 
 
 
