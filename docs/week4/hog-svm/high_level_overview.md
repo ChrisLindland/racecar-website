@@ -29,7 +29,8 @@ A **nonlinear** SVM on the left, and a **linear** SVM on the right:
 # HOG-SVM Interaction
 
 The data points are feature vectors in our case. The feature vectors built by the HOG are fed into the SVM, where they are separated into classes of feature vectors.
-*** More to come ***
+
+*** More to come. ***
 
 # Directory Setup
 
