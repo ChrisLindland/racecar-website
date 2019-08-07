@@ -67,7 +67,7 @@ where <a href="#" data-toggle="tooltip" title="it refers to how many messages th
 self.my_publisher.publish(my_msg)
 ```
 
-### Subscribers
+<h3 id="subscribers"> Subscribers </h3>
 
 * **A subscriber is a part of a node that can receive messages from a topic.**
 * <font color=#00A0F0> To initialize a subscriber:</font>
@@ -106,7 +106,7 @@ Command line tricks: see details on our <a href="http://bwsi-racecar.com/cheatsh
 	
 *NOTE: You will not need to know this program your cars (no really; the TA’s were not even aware of this when we first worked on the cars), but it is kinda cool.*
 
-### Connecting Nodes
+<h3 id="connecting_nodes"> Connecting Nodes </h3>
 
 *The topics connect the nodes… But who builds the topics?*
 	
