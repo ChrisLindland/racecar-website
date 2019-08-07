@@ -1,17 +1,28 @@
 # Creating a ROS Network Using Rospy
-<font color=#A0A0A0> In this lab, we will create an example node network. <br> <font size=2>*Personal note: We realize this may feel a bit slow/pedantic, but please know that we aren’t doing this just to annoy you. Knowledge being what it is, it is often necessary to learn a language before trying to write with it. And if you do enjoy the language itself, that’s cool beans too!*</font></font> 
-<ol type="1">
 
-<li>Get docker running on your computer with functional mounting. (Good luck!)</li>
-<li>Create a new folder.<ol type="a">
-<li>Navigate to your mount folder on either your native terminal or on the docker/virtual terminal.<br>
-The terminal command is <font color=#00A0F0>`<a href="#" data-toggle="tooltip" title="i.e. change directory">cd</a> &#60;folder path&#62;`</font>.<br>
-<font color=#A0A0A0>For example `cd Documents/team_42_labs/`.</font></li>
-<li>Create a new folder, and name it sensibly like "example_ROS".<br>
-The terminal command is <font color=#00A0F0>`<a href="#" data-toggle="tooltip" title="i.e. make directory">mkdir</a> &#60;folder name&#62;`</font>.</li>
-</ol></li>
+<font color=#A0A0A0 size=2>
+*Personal note: We realize this may feel a bit slow/pedantic, but please know that we aren’t doing this just to annoy you. Knowledge being what it is, it is often necessary to learn a language before trying to write with it. And if you do enjoy the language itself, that’s cool beans too!*
+</font>
 
-<li>On your native machine, download the ROS lab starter files from Slack and dump them in the folder you created.</li>
+<ol type="1"><li>
+Make sure you have an installation of ROS.
+<ul><li>
+If you installed ROS on your (presumably Ubuntu) machine or if you have a monitor plugged in to your car, you have a local installation of ROS and thus are good to go.
+</li><li>
+Otherwise, run Docker (because the fishberg/racecar <a href=https://en.wikipedia.org/wiki/System_image> image </a> has an installation of ROS) and mount to a folder on your local machine. (Good luck! Hehe.)
+</li></ul></li>
+
+<li>
+Create a new folder in the terminal.
+<br><ul><li>
+If using a native installation, navigate to your home directory or whatever other folder seems logical. If using docker, navigate to your mount folder (in either your host terminal or the virtual terminal).<br>
+The terminal command for changing folders is <code><a href="https://en.wikipedia.org/wiki/Cd_(command)">cd</a> &#60;folder_path_to_navigate_to&#62;</code>.
+</li><li>
+Create a new folder, and name it "example_ROS_files".<br>
+The terminal command is <code><a href="https://en.wikipedia.org/wiki/Mkdir">mkdir</a> &#60;new_folder_name&#62;</code>.
+</li></ul></li>
+
+<li>Download the ROS lab starter files from Slack and dump them in the folder you created.</li>
 
 <li>In the docker/virtual terminal, run <font color=#00A0F0>`roscore`</font>.<br>
 <font color=#A0A0A0>When we get our ROS essentials page up and running, it will explain what `roscore` does; in short, `roscore` looks at the nodes’ publishers and subscribers and connects them appropriately.</font> </li>
