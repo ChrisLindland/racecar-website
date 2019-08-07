@@ -1,5 +1,5 @@
 <center><h1>
-Lab 1: Manipulating Files and Creating a ROS Network
+Lab 1: Intro to Terminal & ROS
 </h1></center>
 <font color=#A0A0A0 size=2>
 *Personal note: We realize some of you may find this a bit slow/pedantic, but please know that we aren’t doing this just to annoy you. Knowledge being what it is, it is often necessary to learn a language before trying to write with it. And if you do enjoy the language itself, that’s cool beans too!*
@@ -8,7 +8,7 @@ Lab 1: Manipulating Files and Creating a ROS Network
 
 <hr/><!-------------------------------------------->
 <h2>
-Manipulating Files
+Manipulating Files Using the Terminal
 </h2>
 
 <ol type="1"><li><b>
@@ -63,13 +63,13 @@ If you're using Docker, you'll want to do this on your host machine. If you've m
 
 <hr/><!-------------------------------------------->
 <h2>
-Creating a ROS Network
+Creating a ROS Network from Scratch
 </h2>
 
 <li><b>
 In a terminal that has ROS, run <code>roscore</code>.
 </b><br>
-In short, roscore is a sort of master node looks at all the other nodes’ publishers and subscribers and connects them appropriately. See the "Connecting Nodes" section of the <a href=http://bwsi-racecar.com/ros-reference/ROS_reference/###connecting_nodes>ROS Reference Page</a>.
+In short, roscore is a sort of master node looks at all the other nodes’ publishers and subscribers and connects them appropriately. See the "Connecting Nodes" section of the <a href=http://bwsi-racecar.com/ros-reference/ROS_reference/#connecting_nodes>ROS Reference Page</a>.
 </li>
 
 <li><b>
@@ -121,7 +121,7 @@ In case you haven’t heard of classes before, we created a class in "myNode1.py
 <li><b>
 Now fill out "myNode2.py" so that it subscribes to the "blah" topic and prints out the messages it receives. Run it at the same time as "myNode1.py".
 </b><br>
-See the "Subscribers" section of the <a href=http://bwsi-racecar.com/ros-reference/ROS_reference/###subscribers>ROS Reference Page</a> for a review of subscribers and callback functions if needed.
+See the "Subscribers" section of the <a href=http://bwsi-racecar.com/ros-reference/ROS_reference/#subscribers>ROS Reference Page</a> for a review of subscribers and callback functions if needed.
 </li>
 
 <li><b>
