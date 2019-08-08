@@ -4,7 +4,7 @@ nav:
     - Week 1: 
         - Monday: week1/01_monday/lab.md
         - Hardware: week1/01_monday/lab2.md
-        - "Lab 1: Intro to Terminal & ROS": week1/ROS_lab.md
+        - "Lab 1: Intro to Terminal & ROS": week1/ros_lab.md
         - Mid-Week Challenge: week1/03_midweek/lab.md
         - End-of-Week Challenge: week1/04_eow/lab.md
         - Safety Controller: week1/04_eow/safetyController.md
