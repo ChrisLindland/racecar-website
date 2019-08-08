@@ -184,7 +184,7 @@ By default, clicking on the terminal button when a terminal is already open mini
 To open multiple terminals, type <kbd>CTRL</kbd> and then click on the terminal icon.
 
 <details>
-<summary><h4>Running the Racecar Simulator</h4></summary>
+<summary><b>Running the Racecar Simulator<b></summary>
 
 To get started with the simulator, first run the following in any shell:
 ```sh
