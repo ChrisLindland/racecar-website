@@ -34,7 +34,7 @@ nav:
         - ROS: ros-reference/ROS_reference.md
         - Cartographer: maps/cartographer/cartographer_usage.md
         - Localization: maps/localization/particle_filter_usage.md
-	- Docker: week1/01_monday/setup.md
+        - Docker: week1/01_monday/setup.md
         - Collaboration: collab/collab.md
     - Installation:
         - Google Cartographer: maps/cartographer/cartographer_installation.md
