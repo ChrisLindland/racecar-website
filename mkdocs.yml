@@ -32,4 +32,5 @@ nav:
         - Localization: references/localization/localization_ref.md
         - Docker: references/docker/docker_ref.md
         - Collaboration: references/collab/collab_ref.md
+        - Router Setup: references/routerSetup.md
 theme: readthedocs
