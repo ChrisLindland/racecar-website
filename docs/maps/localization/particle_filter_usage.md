@@ -14,7 +14,7 @@
 ```
 * After the program prints "…Received first LiDAR message," it should start to print "iters per sec: 20  possible: 21" to confirm that it is getting scan data and making localization estimates.
 * Debugging tips:
-    * We found that it is usually necessary for the vesc to be running completely (i.e. there’s a good Traxxas battery) in order for this to work.
+    * We found that it is usually necessary for the vesc to be running completely (i.e. there’s a good Traxxis battery) in order for this to work.
     * If the `roslaunch` starts launching, but then returns an error message like <font color="A00000">"cannot locate node of type particle_filter"</font>, it likely means that the "particle_filter.py" file in "~/localization/localization_ws/src/" needs executable permissions. You can give it these permissions by running `chmod +x particle_filter.py`.
     * If the `roslaunch` starts launching, but then the python file returns an error message like <font color="A00000">"ImportError: No module named range_libc"</font>, it likely means that the range_libc installation failed. Try it again according to our instructions [here](http://bwsi-racecar.com/maps/localization/particle_filter_installation/). Maybe the "setup.py" file in "~/localization/range_libc/pywrapper/" needs executable permissions.
 
@@ -40,7 +40,7 @@ Make it follow the car by changing your frame to something on the car.<br>
 
 ## Using Pose Estimate Data in ROS
 <font color="00AA00" size="4"><b> This is where you get the pose estimate of where the car is on the map! </b></font><br>
-Want to know where you are in this world while you're writing your code? Subscribe to <del>PewDiePie</del> pf/viz/inferred_pose!<br>
+Want to know where you are in this world while you're writing your code? Subscribe to pf/viz/inferred\_pose!
 
   * To extract meaningful data from these messages, you can figure it out on your own.
   * Use `rostopic type` to see what datatype the messages are. Once you have the name, you can find more info on [ros.org](http://docs.ros.org/api/geometry_msgs/html/index-msg.html).
@@ -58,18 +58,21 @@ Want to know where you are in this world while you're writing your code? Subscri
   For reference, roll = `euler[0]`, pitch = `euler[1]`, yaw = `euler[2]`, and yaw is rotation about the z-axis.
 
 <details><summary><h3>Google Cartographer Localization</h3></summary>
-Basically, Chris wrote some stuff, unfortunately, it ended up not being helpful because Google Cartographer is darn dense and we haven't fully figured it out. Either that, or it's just plain wonk. Wonk means bad. Either way, I didn't have the heart to delete Chris's hard work (but I did have the heart to edit it and make it correct as possible), and besides, maybe some really ROS-y or Google-y person will one day find this helpful...<br>
-<br>
-To run localization in Google Cartographer, you won't need an image and an ".yaml" file, but rather this diddly doo-dad called a ".pbstream" file. Here's how you get this thing:
+To run localization in Google Cartographer, you won't need an image and an ".yaml" file, but rather this file structure called a ".pbstream". Here's how you get this thing:
   
-(1). `cd` into the folder you want your ".pbstream" stored.<br>
+(1). `cd` into the folder you want your ".pbstream" stored.
+<br>
 (2). Run `roslaunch cartographer_ros offline_racecar_2d.launch bag_filenames:=${HOME}/bagfiles/<your_rosbag_name>.bag`<br>
-&ensp; Warning: this will pull up an rviz window, so whoops if you're ssh-ed in.<br>
-(3). Wait for the bag to finish playing, then watch the terminal and wait until it's done "optimizing".<br>
-Now you wanna localize. Here's how you do something like that (though it also tries to make another map, which is concerning; maybe you need to modify one of the config files to include `max_submaps_to_keep = 3`, as the [Google Cartographer website](https://google-cartographer-ros.readthedocs.io/en/latest/going_further.html) suggests).<br>
-(4). Run the localization by entering the following `roslaunch cartographer_ros demo_racecar_2d_localization.launch \ load_state_filename:=${HOME}/<path_to_file>/<my_file_name>.pbstream`.<br>
-(5). We don't really know where to get pose data. And if you wanted to give the program pose estimated, good stinkin' luck, buddy. The best we can offer is intercepting stuff sent across the "tf" topic. While the localization is running, enter `rostopic echo tf`. The "base_link" frame may have relevant data.<br>
-
+&ensp; Warning: this will pull up an rviz window, so whoops if you're ssh-ed in.
+<br>
+(3). Wait for the bag to finish playing, then watch the terminal and wait until it's done "optimizing".
+<br>
+Now you wanna localize. Here's how you do something like that (though it also tries to make another map, which is concerning; maybe you need to modify one of the config files to include `max_submaps_to_keep = 3`, as the [Google Cartographer website](https://google-cartographer-ros.readthedocs.io/en/latest/going_further.html) suggests).
+<br>
+(4). Run the localization by entering the following `roslaunch cartographer_ros demo_racecar_2d_localization.launch \ load_state_filename:=${HOME}/<path_to_file>/<my_file_name>.pbstream`.
+<br>
+(5). We don't really know where to get pose data. And if you wanted to give the program pose estimated, good stinkin' luck, buddy. The best we can offer is intercepting stuff sent across the "tf" topic. While the localization is running, enter `rostopic echo tf`. The "base_link" frame may have relevant data.
+<br>
 <h4> Change log (how did we concoct some of those launch and configuration files):</h4>
 (1). Copy the launch file demo_backpack_2d_localization.launch and rename it by entering `cp demo_backpack_2d_localization.launch demo_racecar_2d_localization.launch`.<br>
 &ensp; Within this new file change robot_description to "$(find xacro)/xacro '$(find racecar_description)/urdf/racecar.xacro'")"<br>
