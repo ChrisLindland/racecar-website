@@ -1,4 +1,4 @@
-# Week 1 Monday Lab: Setting up and Driving 
+# Setting up and Driving 
 
 Welcome to the racecar! First things first, we need to set up the cars to be able to control them.
 
@@ -64,7 +64,7 @@ If your car doesn't drive with the controller...
 When you think you have a good feel of the car, move on to the next section.
 
 ## Intro to autonomous driving
-First, let's just program the racecar to drive forwards on its own. Open `drive.py`. We'll talk about this more tomorrow, but in order for different programs in the car to communicate with eachother, they use publishers and subscribers. We've already set up the publishers and subscribers for today, but for the rest of the course you will have to write your own (don't worry, we'll explain it all tomorrow). For now, change the car's velocity in the function `drive_callback`. You can change the speed with the variable `self.cmd.drive.speed`. Start off with small values like 0.5 so you don't accidently crash!
+First, let's just program the racecar to drive forwards on its own. Open `controller.py`. Change the car's velocity in the function `drive_callback`. You can change the speed with the variable `self.cmd.drive.speed`. Start off with small values like 0.5 so you don't accidently crash!
 
 When you want to run your code on the car, press 'A' on the controller after teleop has been turned on.
 
