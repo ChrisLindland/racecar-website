@@ -83,7 +83,7 @@ If you still aren’t sure what’s going on after about 5 min, just move on to 
 In another window/tab of terminal, run myBasicNode1.py.
 </b><br>
 The terminal command is <code>&#60;path_to_file&#62;/&#60;python_file_name&#62;</code>.<br>
-<font color="A0A0A0">This works because we have <code>#!/usr/bin/env python</code> at the top of our python files. Otherwise we would need to use <code>python &#60;path_to_file&#62;/&#60;python_file_name&#62;</code> to run our file as a python program.</font>
+This works because we have <code>#!/usr/bin/env python</code> at the top of our python files. Otherwise we would need to use <code>python &#60;path_to_file&#62;/&#60;python_file_name&#62;</code> to run our file as a python program.
 <details><summary>
 Does your code not run at all (no Python errors or anything)? Has your permission been denied? Well then folks, it’s debugging time!
 </summary>
