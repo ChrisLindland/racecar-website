@@ -25,7 +25,6 @@ To keep your code organized and efficient, we've set up empty functions for you.
 
 Functions to write:
 
-
 * `convertPoint`: convert polar points (points with only magnitude and angle) to cartesian coordinates
 * `estimateWall`: Predict the wall using the method described above. Currently, it takes in a direction (left or right) as a parameter, but you can change this if you'd like
 * `chooseWall`: Autonomously choose which wall to follow (this can be left empty if you don't get to it)
