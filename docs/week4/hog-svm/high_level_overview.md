@@ -22,9 +22,9 @@ An example **HOG descriptor**:
 
 This is a **supervised machine learning** method, depending on labeled training data. Based on the provided data, an SVM tries to find an optimal hyperplane (based on user parameters) to separate data points into unique classes. Optimal, in this case, is focused on separating clusters of data while maximizing the distance from those points - known as maximizing the `margin` of the training data. The hyperplane is built in N-dimensional space, and our model will be staged in 2-D or 3-D space, depending on parameters.
 
-A **nonlinear** SVM on the left, and a **linear** SVM on the right:
+A **nonlinear separable** SVM, when taken to a higher dimension:
 
-![svm](img/svm.png)
+![svm](img/svm2.png)
 
 # HOG-SVM Interaction
 
@@ -125,7 +125,7 @@ For model detection (line 113, parameter in `HOGDescriptor.detectMultiscale()`, 
                      This HEAVILY impacts the speed of the detector. The smaller the value of scale, the more layers are added to the image pyramid - increasing computation time.
 
     finalThreshold : This sets a lower bound for detection rectangle clusters. 
-                     A cluster of rectangles must have ONE more rectangle than the number set be finalThreshold to be drawn. 
+                     A cluster of rectangles must have ONE more rectangle than the number set by finalThreshold to be drawn. 
                      For example, if finalThreshold = 1, then clusters of at least 2 rectangles are drawn.
 ```
 
