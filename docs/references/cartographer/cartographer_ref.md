@@ -1,29 +1,33 @@
 <center><h1>Google Cartographer</h1></center>
 <hr/>
+
 <!-- --------------------INSTALLING CARTOGRAPHER-------------------- -->
 <details>
-<summary><h2>Installation Instructions</h2></summary>
+<summary> <h2 id="installation-instructions"> Installation Instructions </h2> </summary>
 
-### New Installation Instructions
-1. Download this zip file [here on Google Drive](https://drive.google.com/file/d/1SurM5VlkNsGCOTyt9Qm-RvwhOG2SR-ac/) onto your computer and extract its contents. Then use `scp` to dump it onto the car into the car's Downloads:
+<h3> New Installation Instructions </h3>
+<ol type="1">
+<li>Download this zip file <a href="https://drive.google.com/file/d/1SurM5VlkNsGCOTyt9Qm-RvwhOG2SR-ac/">here on Google Drive</a> onto your computer and extract its contents. Then use <code>scp</code> to dump it onto the car into the car's Downloads:
 ```bash
   scp -r <path_to_my_computers_downloads_folder>/racecar_cartographer_installation racecar@192.168.1.<car_number>:~/Downloads/
 ```
-2. Make sure your car's router is plugged into wifi.
-3. `ssh` into the car `cd` to the "racecar_cartographer_installation" folder
-4. Run the first shell script. (This replaces "Install Google Cartographer"):
+</li>
+<li>Make sure your car's router is plugged into wifi.</li>
+<li><code>ssh</code> into the car <code>cd</code> to the "racecar_cartographer_installation" folder</li>
+<li>Run the first shell script. (This replaces "Install Google Cartographer"):
 ```bash
   bash cartographer_install.sh
 ```
-Warning: this will take a long time ~ roughly 20-30 minutes.
-
-5. Run the second shell script. (This replaces "Install MIT Racecar stuff"):
+Warning: this will take a long time ~ roughly 20-30 minutes.</li>
+<li>Run the second shell script. (This replaces "Install MIT Racecar stuff"):
 ```bash
   bash racecar_cartographer_install.sh
 ```
+</li>
+</ol>
 
-### Old Installation Instructions
-#### Install Google Cartographer
+<h3> Old Installation Instructions </h3>
+<h4> Install Google Cartographer </h4>
 Based on official Google Cartographer [instructions](https://google-cartographer-ros.readthedocs.io/en/latest/compilation.html):
 ```bash
 # Update apt-get (good housekeeping)
@@ -61,9 +65,9 @@ source ~/cartographer_ws/install_isolated/setup.bash
 ``` 
 <!--Recommendation for future work. Put these bash customization lines in ~/racecar_ws/.dotfiles/_racecars instead.-->
 
-#### Install MIT Racecar stuff
+<h3> Install MIT Racecar stuff </h3>
 
-Clone this repo into your `racecar_ws` (not your `cartographer_ws`!) and `catkin_make`:
+Clone this repo into your "racecar_ws" (not your "cartographer_ws"!) and <code>catkin_make</code>:
 ```bash
 cd ~/racecar_ws/.catkin_ws/src
 git clone https://github.com/mit-rss/cartographer_config.git
@@ -71,11 +75,11 @@ cd ~/racecar_ws/.catkin_ws
 catkin_make
 source devel/setup.bash
 ```
-Then download this zip file [here on Google Drive](https://drive.google.com/file/d/1a71YjMlLNQapo6Cs3l7ezS-TKVErK0Gs/) onto your computer and extract its contents. Then use `scp` to dump it onto the car into someplace logical (like the Downloads folder):
+Then download this zip file <a href="https://drive.google.com/file/d/1a71YjMlLNQapo6Cs3l7ezS-TKVErK0Gs/">here on Google Drive</a> onto your computer and extract its contents. Then use <code>scp</code> to dump it onto the car into someplace logical (like the Downloads folder):
 ```bash
   scp -r <path_to_my_computers_downloads_folder>/racecar_cartographer_files racecar@192.168.1.<car_number>:~/Downloads/
 ```
-Then on the racecar, `cd` into the resulting "racecar_cartographer_files" folder, and copy the files over into the following paths within "cartographer_ws":
+Then on the racecar, <code>cd</code> into the resulting "racecar_cartographer_files" folder, and copy the files over into the following paths within "cartographer_ws":
 ```bash
 cp ./racecar_config_files/racecar_2d.lua ~/cartographer_ws/src/cartographer_ros/cartographer_ros/configuration_files/racecar_2d.lua
 cp ./racecar_config_files/racecar_2d_localization.lua ~/cartographer_ws/src/cartographer_ros/cartographer_ros/configuration_files/racecar_2d_localization.lua
@@ -84,7 +88,7 @@ cp ./racecar_launch_files/offline_racecar_2d.launch ~/cartographer_ws/src/cartog
 cp ./racecar_launch_files/demo_racecar_2d_localization.launch ~/cartographer_ws/src/cartographer_ros/cartographer_ros/launch/demo_racecar_2d_localization.launch
 cp -r racecar_description ~/cartographer_ws/src/
 ```
-Finally `catkin_make` again to install these files:
+Finally <code>catkin_make</code> again to install these files:
 ```bash
 cd ~/cartographer_ws
 catkin_make_isolated --install --use-ninja
