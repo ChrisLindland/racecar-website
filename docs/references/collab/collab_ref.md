@@ -1,6 +1,7 @@
-# Working on Code Together!
+<center><h1>Working on Code Together!</h1></center>
 
 <font color="A0A0A0">*How can multiple people contribute to the same program?*</font>
+<hr/>
 
 ## Option 1: Sketchy Website
 
@@ -23,7 +24,7 @@ Disadvantages: manual saving, kinda sketchy</font>
 2. Enter a logical name.
 3. <font color="FF0000"> **Remember to copy your code to your host machine every time you want to save!** </font>
 
-
+<hr/>
 
 ## Option 2: Bloated Piece of Software
 
@@ -62,6 +63,8 @@ If you do miss it, you can get it again from:
 1. Click on the link your host sent. Hope something pops ups.
 2. If you want to save the code on your machine, you may need to do a manual copy-paste.
 3. Let us know if you figure out how to do something fancier!
+
+<hr/>
 
 ## Option 3: DIY
 

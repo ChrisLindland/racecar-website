@@ -2,7 +2,7 @@
 <h1> Docker</h1>
 </center>
 
-Docker runs a mini virtual machine whose GUI (graphical user interface) can be viewed in a browser or VNC client. The point of Docker in this class is to get ROS onto non-Linux machines, so <font color="AA0000">if you have something like Ubuntu or Arch-Linux, see [these](<insert_link>) native ROS installation instructions instead</font>.
+Docker runs a mini virtual machine whose GUI (graphical user interface) can be viewed in a browser or VNC client. The point of Docker in this class is to get ROS onto non-Linux machines, so <font color="AA0000">if you have something like Ubuntu or Arch-Linux, see [these](http://bwsi-racecar.com/references/native_ros_install/native_ros_install_ref/) native ROS installation instructions instead</font>.
 
 For those of you with non-Linux machines, the "fishberg/racecar" <a href=https://en.wikipedia.org/wiki/System_image> image </a> already has an installation of ROS as well as a basic simulator for running code on virtual racecars.
 
@@ -169,6 +169,7 @@ sudo docker run -ti --net=host -v ~/mount:/mnt racecar
 </li>
 </ul>
 </details>
+<br>
 
 <!-- USAGE INSTRUCTIONS -->
 ### Using the Image
@@ -222,3 +223,4 @@ sudo docker run -ti --net=host --device=/dev/input/js0 -v ~/mount:/mnt fishberg/
 <li>RViz: if your RViz isn't setup correctly (ex. you don't see the map or LIDAR scans), make sure the "Displays" option is checked under "Panels". Under the "Global Settings" drop-down, set the topic to "map"; under "Map", set the topic to "/map"; and under "LaserScans", set the size to 0.1. If there is no LaserScans, Map, or RobotModel drop-down, click on "Add" at the bottom of the left panel, and select all of them.</li>
 </ul>
 </details>
+<br>

@@ -28,6 +28,7 @@ nav:
         - ROS Topics and Messages: cheatsheets/ros-topics-msgs.md
     - References:
         - ROS: references/ros/ros_ref.md
+        - Native ROS Install: references/native_ros_install/native_ros_install_ref.md
         - Cartographer: references/cartographer/cartographer_ref.md
         - Localization: references/localization/localization_ref.md
         - Docker: references/docker/docker_ref.md
