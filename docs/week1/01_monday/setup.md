@@ -43,7 +43,7 @@ Mounting by contrast allows Docker to access and modify all the files in a mount
 </details>
 <br>
 
-<h3 id="step3">Step 3: Install the Racecar Simulator</h3>
+### Step 3: Install the Racecar Simulator
 Make a `src` folder in your `racecar_ws`:
 ```sh
 # Windows (using Powershell)
