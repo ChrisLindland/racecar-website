@@ -1,4 +1,4 @@
-# Week 1 Midweek Challenge: Drag Race
+# Wall Following Challenge: Drag Race
 
 It's time for your first challenge! You will navigate a racetrack by using a method of autonomous driving: wall following. We will have two cars running simultaneously between two walls with "lanes" made of tape:
 
