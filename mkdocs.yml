@@ -1,25 +1,21 @@
 site_name: Racecar
 nav:
     - Home: index.md
-    - "Phase 1 Labs: Intro and Navigation": 
+    - "Phase 1 Labs: Intros and Controllers": 
         - "Intro to Terminal & ROS": labs/phase_1/ros_intro/ros_intro_lab.md
         - "Wall Follower & Simulator": labs/phase_1/sim_wall_follow/sim_wall_follow_lab.md
         - "RACECAR Hardware Intro": labs/phase_1/hardware_intro/hardware_intro_lab.md
         - "Safety Controller": labs/phase_1/safety_controller/safety_controller_lab.md
         - "Potential Fields Controller": labs/phase_1/pot_fields/pot_fields_lab.md
-    - Week 2: 
-        - Monday: week2/01_monday/lab.md
-        - Tuesday: week2/02_tuesday/lab.md
-        - Mid-Week Challenge: week2/03_midweek/lab.md
-        - End-of-Week Challenge: week2/04_eow/lab.md
-    - Week 3: 
-        - Monday: week3/01_monday/lab.md
-        - Tuesday: week3/02_tuesday/lab.md
-        - Mid-Week Challenge: week3/03_midweek/lab.md
-        - End-of-Week Challenge: week3/04_eow/lab.md
-    - Week 4: 
-        - Optional ML: week4/hog-svm/high_level_overview.md
-        - Coming Soon: week4/coming-soon.md
+    - "Phase 2 Labs: Computer Vision":
+        - "Intro to OpenCV & Color Segmentation": labs/phase_2/opencv_segmentation/opencv_segmentation_lab.md
+        - "Line Following": labs/phase_2/line_follow/line_follow_lab.md
+        - "Feature Detection": labs/phase_2/feature_detect/feature_detect_lab.md
+    - "Phase 3 Labs: Detecting Environments":
+       - "AR Tags and Sounds": labs/phase_3/ar_n_sounds/ar_n_sounds_lab.md
+       - "Making/Using Maps & rosbags": labs/phase_3/maps_n_bags/maps_n_bags_lab.md
+    - "Phase 4 Labs: Machine Learning":
+       - "HOG SVM": labs/phase_4/hog_svm/hog_svm_lab.md
     - Racecar Parts:
         - Lidar: racecar-parts/lidar.md
         - ZED: racecar-parts/zed.md
