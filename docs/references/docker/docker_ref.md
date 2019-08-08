@@ -101,7 +101,7 @@ The car number is the last part of the car's IP address (the IP should be of the
 
 <!-- RUNNING TROUBLESHOOTING-->
 <details>
-<summary><b><font color="AA0000">Running Troubleshooting</font><b></summary>
+<summary><b><font color="AA0000">Running Troubleshooting</font></b></summary>
 <ul>
 <li>
 Error something along the lines of "[] is not a launch file nor a package..."
@@ -184,7 +184,7 @@ By default, clicking on the terminal button when a terminal is already open mini
 To open multiple terminals, type <kbd>CTRL</kbd> and then click on the terminal icon.
 
 <details>
-<summary><b>Running the Racecar Simulator<b></summary>
+<summary><b>Running the Racecar Simulator</b></summary>
 
 To get started with the simulator, first run the following in any shell:
 ```sh
@@ -197,7 +197,7 @@ Alternatively use a joystick to drive the car as described below.
 </details>
 
 <details>
-<summary><b>Using a Joystick<b></summary>
+<summary><b>Using a Joystick</b></summary>
 
 Unfortunately, we can currently only get a joystick to work on Linux and Windows machines due to Mac's different USB system. To use a joystick in the image (e.g. to use with the simulator),
 you need to forward inputs from that USB device into docker.
