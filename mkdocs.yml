@@ -1,13 +1,12 @@
 site_name: Racecar
 nav:
     - Home: index.md
-    - Week 1: 
-        - Monday: week1/01_monday/lab.md
-        - Hardware: week1/01_monday/lab2.md
-        - "Lab 1: Intro to Terminal & ROS": week1/ros_lab.md
-        - Mid-Week Challenge: week1/03_midweek/lab.md
-        - End-of-Week Challenge: week1/04_eow/lab.md
-        - Safety Controller: week1/04_eow/safetyController.md
+    - "Phase 1 Labs: Intro and Navigation": 
+        - "Intro to Terminal & ROS": labs/phase_1/ros_intro/ros_intro_lab.md
+        - "Wall Follower & Simulator": labs/phase_1/sim_wall_follow/sim_wall_follow_lab.md
+        - "RACECAR Hardware Intro": labs/phase_1/hardware_intro/hardware_intro_lab.md
+        - "Safety Controller": labs/phase_1/safety_controller/safety_controller_lab.md
+        - "Potential Fields Controller": labs/phase_1/pot_fields/pot_fields_lab.md
     - Week 2: 
         - Monday: week2/01_monday/lab.md
         - Tuesday: week2/02_tuesday/lab.md
