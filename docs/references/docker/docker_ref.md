@@ -101,7 +101,7 @@ The car number is the last part of the car's IP address (the IP should be of the
 
 <!-- RUNNING TROUBLESHOOTING-->
 <details>
-<summary><h3><font color="AA0000">Running Troubleshooting</font></h3></summary>
+<summary><b><font color="AA0000">Running Troubleshooting</font><b></summary>
 <ul>
 <li>
 Error something along the lines of "[] is not a launch file nor a package..."
@@ -197,7 +197,7 @@ Alternatively use a joystick to drive the car as described below.
 </details>
 
 <details>
-<summary><h4>Using a Joystick</h4></summary>
+<summary><b>Using a Joystick<b></summary>
 
 Unfortunately, we can currently only get a joystick to work on Linux and Windows machines due to Mac's different USB system. To use a joystick in the image (e.g. to use with the simulator),
 you need to forward inputs from that USB device into docker.
@@ -209,7 +209,7 @@ sudo docker run -ti --net=host --device=/dev/input/js0 -v ~/mount:/mnt fishberg/
 
 <!-- USAGE TROUBLESHOOTING -->
 <details>
-<summary><h3><font color="AA0000">Usage Troubleshooting</font></h3></summary>
+<summary><b><font color="AA0000">Usage Troubleshooting</font></b></summary>
 <ul>
 <li>If the browser link doesn't work, use the provided link after you run the docker image in your terminal (it should be in the paragraph that appears after running the image). You can also try replacing the IP in the address with the results of typing <code>hostname -I</code> in the image's terminal.</li>
 <li>If a red banner appear at the top of the noVNC client saying "Failed to connect to server", close your broswer and try re-running the docker image.</code>
