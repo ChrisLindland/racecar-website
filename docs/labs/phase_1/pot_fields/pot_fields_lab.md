@@ -1,4 +1,4 @@
-# Week 1 Final Challenge
+# Potential Fields Challenge
 
 We've reached your first cumulative challenge! We'll be giving you a more complex racetrack to navigate, and you'll also have a new type of autonomous driving to explore called potential fields.
 
