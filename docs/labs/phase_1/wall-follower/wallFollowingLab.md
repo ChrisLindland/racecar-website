@@ -1,4 +1,4 @@
-# Week 1 Midweek Challenge: Drag Race
+# Wall Following Challenge: Drag Race
 
 It's time for your first challenge! You will navigate a racetrack by using a method of autonomous driving: wall following. We will have two cars running simultaneously between two walls with "lanes" made of tape:
 
@@ -24,6 +24,7 @@ __Challenge__: Make the car autonomously decide which wall it should follow. You
 To keep your code organized and efficient, we've set up empty functions for you. I recommend only using `drive_callback` to set the driving speed and angle and putting everything else in other function. If there is too much code in a callback, it will become too slow and the car won't drive smoothly.
 
 Functions to write:
+
 * `convertPoint`: convert polar points (points with only magnitude and angle) to cartesian coordinates
 * `estimateWall`: Predict the wall using the method described above. Currently, it takes in a direction (left or right) as a parameter, but you can change this if you'd like
 * `chooseWall`: Autonomously choose which wall to follow (this can be left empty if you don't get to it)

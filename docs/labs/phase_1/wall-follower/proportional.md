@@ -7,4 +7,4 @@ The farther the car is away from the desired distance, the faster it will move. 
 
 Now, let's implement it: choose a distance threshold, probably between 0.5 and 1.5. Have the car aim to stay this distance away from an object in front of it. Of course, this will only allow the car to follow it in a straight line. You can use this same idea to adjust the angle of the wheels so the car will stay squared to the object as it moves.
 
-You can work in `drive.py`. Instead of working in `drive_callback`, write a new function `propControl`, then publish in the callback.
+You can work in `controller.py`. Instead of working in `drive_callback`, write a new function `propControl`, then publish in the callback.

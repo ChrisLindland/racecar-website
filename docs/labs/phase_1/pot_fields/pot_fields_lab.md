@@ -1,4 +1,4 @@
-# Week 1 Final Challenge
+# Potential Fields Challenge
 
 We've reached your first cumulative challenge! We'll be giving you a more complex racetrack to navigate, and you'll also have a new type of autonomous driving to explore called potential fields.
 
@@ -33,5 +33,3 @@ Functions to write:
 Currently, the final vector is of form [speed, angle]. You can change this if you'd like (ie if you want to change it to [x-speed, y-speed])
 
 You can also implement a PID controller to try and make your driving more accurate.
-
-For now, copy the starter code into the `wall_follower` starter code so roslaunch will work correctly. You can either manuaully copy in the code or use `cp ptFieldSim.py /your/path/wall_follower.py` in your terminal/powershell. 
