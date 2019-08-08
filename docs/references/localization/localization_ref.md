@@ -112,7 +112,7 @@ cp ~/mapfiles/* ~/localization/localization_ws/src/maps
 
 <li> The car likely does not know where it is starting on the map. Give it an estimate of where it is using the "2D Pose Estimate" tool.
 
-<img src=img/localize_pose_rviz_small.png>
+<img src="../img/localize_pose_rviz_small.png"/>
 
   <ul>
     <li>Click on the map for position, drag for orientation.</li>
@@ -123,7 +123,7 @@ cp ~/mapfiles/* ~/localization/localization_ws/src/maps
 
 <li> (optional)<details><summary>Don’t like your view locked to (0,0,0)?</summary>
 Make it follow the car by changing your frame to something on the car.<br>
-<img src=img/rviz_target_frame_small.png>
+<img src="../img/rviz_target_frame_small.png"/>
   <ul>
     <li>First use the "Focus Camera" tool and click near the pose estimates (red arrows) to center the view on the car initially.</li>
     <li>Then change "Target Frame" to something on the car (like "base_link") to keep up with the car’s changes in position.</li>
