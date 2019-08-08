@@ -1,233 +1,218 @@
-## Overview
-We will be working with both the RACECAR hardware and simulator today. Although basic interactions with the hardware require only
-[SSH](https://en.wikipedia.org/wiki/Secure_Shell), the full experience
-requires a local installation of
-[Robot Operating System (ROS)](http://www.ros.org/) on a GNU/Linux machine.
-(Note: Although ROS recently started supporting an
-[official Windows 10 build](https://wiki.ros.org/Installation/Windows),
-it is new and thus untested with our platform.)
+<center>
+<h1> Docker</h1>
+</center>
 
-## What is ROS?
-Despite its name, the Robot _Operating System_ is not actually a bona fide OS. Rather it is a set of robotics middleware built on top of GNU/Linux. ROS is most commonly used in conjunction with
-[Ubuntu](https://www.ubuntu.com/), as ROS releases are tied to Ubuntu releases.
-For example:
+Docker runs a mini virtual machine whose GUI (graphical user interface) can be viewed in a browser or VNC client. The point of Docker in this class is to get ROS onto non-Linux machines, so <font color="AA0000">if you have something like Ubuntu or Arch-Linux, see [these](<insert_link>) native ROS installation instructions instead</font>.
 
-- Ubuntu 18.04, Bionic Beaver → ROS Melodic Morenia
-- Ubuntu 16.04, Xenial Xerus → ROS Kinetic Kame
+For those of you with non-Linux machines, the "fishberg/racecar" <a href=https://en.wikipedia.org/wiki/System_image> image </a> already has an installation of ROS as well as a basic simulator for running code on virtual racecars.
 
-That being said, [Debian](https://www.debian.org/) is also well supported since Ubuntu is derived from it.
+Unfortunately, a lot can go wrong with setting up the docker image. Be sure to check the troubleshooting sections for any errors that make pop up.
 
-If you have never used ROS before, it is best thought of as a standardized
-[pub/sub messaging protocol](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)
-with some handy libraries and visualization tools.
-
+<hr/>
+<!-- -------------DOCKER INSTALLATION INSTRUCTIONS------------- -->
 ## Setup
-The next few sections will walk you through getting your personal machine setup with ROS as either a native install, Docker install, or Virtual Machine.
 
-* If you have a GNU/Linux machine (especially Ubuntu or Debian) and are
-comfortable on it, a native install will give you the best performance.
-* If you are on Windows, MacOS, or an unsupported flavor of GNU/Linux, BSD,
-etc., we encourage using our new [Docker](https://www.docker.com/) image.
-* If you have your own copy of VMWare installed, and prefer VMs to Docker
-(why would you though?), we can provide a Debian-based VM preloaded with all the software you'll need.
-
-_If you already have ROS installed, you're good to go! Just make sure you have
-the following ROS packages installed: velodyne, ackermann-msgs, joy, and serial.
-Installation instructions for these packages are included at the end of the
-Native ROS Install section._
-
-## Setup (Native ROS - Ubuntu/Debian)
-### Step 1: Install ROS
-Based on your flavor of GNU/Linux, follow the linked installation instructions below. Be sure to install the `ros-VERSION-desktop-full` version of ROS.
-
-* [Install ROS on Ubuntu 18.04](https://wiki.ros.org/melodic/Installation/Ubuntu)
-* [Install ROS on Ubuntu 16.04](https://wiki.ros.org/kinetic/Installation/Ubuntu)
-* [Install ROS on Debian Stretch](https://wiki.ros.org/melodic/Installation/Debian)
-* [Install ROS on Debian Jessie](https://wiki.ros.org/kinetic/Installation/Debian)
-
-_There is an experimental ROS installation for Arch Linux. While we love Arch,
-we've found the ROS package unreliable. If you must, you can
-follow the experimental instructions [here](https://wiki.ros.org/melodic/Installation/ArchLinux)._
-
-
-### Step 2: Install Additional ROS Packages
-After ROS installation completes, install these additional ROS packages:
-```sh
-# install on Ubuntu 18.04 & Debian Stretch
-sudo apt install ros-melodic-velodyne ros-melodic-ackermann-msgs ros-melodic-joy ros-melodic-serial
-
-# install on Ubuntu 16.04 & Debian Jessie
-sudo apt install ros-kinetic-velodyne ros-kinetic-ackermann-msgs ros-kinetic-joy ros-kinetic-serial
-```
-
-### Step 3: Install the racecar simulator code
-
-First make a `racecar_ws`:
-
-    mkdir -p ~/racecar_ws/src
-
-Clone the racecar code:
-
-    cd ~/racecar_ws/src
-    git clone https://github.com/mit-racecar/racecar_simulator.git
-
-Make the code:
-
-    cd ~/racecar_ws
-    catkin_make
-    source devel/setup.bash
-
-## Setup (Docker)
 ### Step 1: Install Docker 
 Based on your OS, follow the linked installation instructions below.
 
-* Windows
-    * Follow these instructions until Step 3, item 2:
-    * [Installer](https://docs.docker.com/toolbox/toolbox_install_windows/)
-    
-* [MacOS](https://docs.docker.com/docker-for-mac/install/)
-* [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+* [Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
+* [MacOS](https://docs.docker.com/docker-for-mac/install/) (You will have to make an account)
+* [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/) (If you really want Docker anyways)
 * [Debian](https://docs.docker.com/install/linux/docker-ce/debian/)
 * [Fedora](https://docs.docker.com/install/linux/docker-ce/fedora/)
 
 ### Step 2: Create a Mount Folder
 Create a folder to connect your Docker image to:
 
-    # Windows (using Powershell)
-    mkdir C:\Users\YOUR_USER_NAME\mount
-    mkdir C:\Users\YOUR_USER_NAME\mount\jupyter_ws
+```sh
+# Windows (using Powershell)
+    <a href="https://en.wikipedia.org/wiki/Mkdir">mkdir</a> C:\Users\YOUR_USER_NAME\mount
+    mkdir C:\Users\YOUR_USER_NAME\mount\racecar_ws
 
-    # MacOS
-    mkdir -p ~/mount/jupyter_ws
+# MacOS
+    mkdir -p ~/mount/racecar_ws
 
-    # GNU/Linux
-    mkdir -p ~/mount/jupyter_ws
+# GNU/Linux
+    mkdir -p ~/mount/racecar_ws
+```
 
-### Step 2: Run the Docker Image
+<details>
+<summary>What is a mounting?</summary>
+Being a "light" virtual machine, Docker machines do not by default write to any permanent memory on your computer, so without mounting, your Docker machine will always revert to the original "fishberg/racecar" image every time you restart Docker (<i>thus not saving any code you wrote on it!</i>).<br>
+Mounting by contrast allows Docker to access and modify all the files in a mount folder on your host machine. We will use "~/mount" as the mount folder.
+</details>
+<br>
 
-Start the docker image by running:
+<h3 id="step3">Step 3: Install the Racecar Simulator</h3>
+Make a `src` folder in your `racecar_ws`:
+```sh
+# Windows (using Powershell)
+    mkdir C:\Users\YOUR_USER_NAME\mount\racecar_ws\src
+    
+# MacOS/GNU/Linux
+    mkdir -p ~/mount/racecar_ws/src
+    
+```sh
+Clone the racecar code:
+```
+cd ~/mount/racecar_ws/src
+git clone https://github.com/mit-racecar/racecar_simulator.git
+```
 
-    # On Windows
-    docker run -ti --net=host -v /C/Users/YOUR_USER_NAME/mount:/mnt/jupyter_ws fishberg/racecar
+Make the catkin space:
+```sh
+cd ~/mount/racecar_ws 
+catkin_make
+source devel/setup.bash
+```
+<details>
+<summary>What is <code>catkin_make</code>?</summary>
+It basically looks at the files in the "src" folder automatically generates and compiles stuff into the "devel" and "build" folders. For more details, Google it if you wish, but also, don't worry about it too much since it's not critical for programming the racecars.
+</details>
+<br>
 
-    # On MacOS
-    sudo docker run -ti --net=host -v ~/mount:/mnt/jupyter_ws fishberg/racecar
+<hr/>
+<!-- -------------DOCKER USAGE INSTRUCTIONS------------- -->
+## Using the Docker Image
+<hr/>
+
+<!-- RUNNING INSTRUCTIONS -->
+### Running the Virtual Machine
+Start the generic docker image by running:
+
+    # On Windows (run this either in the Docker Toolbox terminal or Powershell)
+    docker run -ti --net=host -v /c/Users/<username>/mount/racecar_ws:/racecar_ws fishberg/racecar
+
+    # On MacOS (make sure the Docker application is running!)
+    sudo docker run -tip 6080:6080 -v ~/mount:/mnt fishberg/racecar
 
     # On GNU/Linux
-    sudo docker run -ti --net=host -v ~/mount:/mnt/jupyter_ws fishberg/racecar
-
-This will download the docker image the first time it is run and will cache it for future use.
-
-On some operating systems (OS X?) the `--net=host` flag does not properly forward ports. This can be fixed by manually specifying:
-
-    sudo docker run -tip 6080:6080 -p 5900:5900 fishberg/racecar
-
-# Racecar Docker
-
-This code defines a docker image to interface with the MIT Racecar.
-The image is built from a Debian base, includes the latest version of ROS, and the [racecar simulator](https://github.com/mit-racecar/racecar_simulator). It can be interfaced through a terminal or graphically through a browser or VNC client.
-
-## Running the Image
-
-If you do not already have docker, follow the install instructions for your OS [here](https://docs.docker.com/install/).
-
-Start the docker image by running:
-
-    sudo docker run -ti --net=host fishberg/racecar
+    sudo docker run -ti --net=host -v ~/mount:/mnt fishberg/racecar
 
 The first time you run this command you will need to wait a little while for the image to download.
 Future runs should be instantaneous and won't require an internet connection.
 The image is currently ~2.25GB (ROS is big).
 
-### Troubleshooting
+__If are using a specific car__ (for seeing the car's camera output or ssh'ing), you can add your car's number onto the end. For example, for Mac you would run
+```sh
+sudo docker run -tip 6080:6080 -v ~/mount:/mnt fishberg/racecar <YOUR_CAR_NUMBER>
+```
+The car number is the last part of the car's IP address (the IP should be of the form 192.168.1.&#60;YOUR_CAR_NUMBER&#62;).
 
-Unfortunately, due to the way that networking is implemented in macOS, the `--net=host` flag does not work
-\[[1](https://docs.docker.com/docker-for-mac/networking/),[2](https://github.com/docker/for-mac/issues/2716)\].
-You can partially fix this by running:
+<!-- RUNNING TROUBLESHOOTING-->
+<details>
+<summary><h3><font color="AA0000">Running Troubleshooting</font></h3></summary>
+<ul>
+<li>
+Error something along the lines of "[] is not a launch file nor a package..."
+  <ul>
+  <li>Remake the catkin space (see <a href=insert_link>step 3</a>); make sure you are in the racecar_ws. It may throw an error about `cmake`, but just try it again. If you then get a similar but different error...</li>
+  <li>Try recloning the code (see <a href=insert_link>step 3</a>) and <code>catkin_make</code> again.</li>
+  <li> Ubuntu: you might need to install some extra packages. Run<br>
+```sh
+apt-get install -y \
+    ros-melodic-tf2-geometry-msgs \
+    ros-melodic-ackermann-msgs \
+    ros-melodic-joy \
+    ros-melodic-map-server \
+    build-essential
+```
+  </li>
+  </ul>
+</li>
 
-    sudo docker run -tip 6080:6080 -p 5900:5900 fishberg/racecar
+<li>
+Windows: try running one docker image for building spaces, and one for running launch files. In one Powershell, run
+```sh
+docker run -ti --net=host -v /c/Users/YOUR_USERANME/mount:/mnt fishberg/racecar
+```
+In "racecar_ws",<br>
+```sh
+catkin_make
+catkin_make #not a typo; do it twice
+source devel/setup.bash
+```
+In a different Powershell, run <br>
+```
+docker run -ti --net=host -v /c/Users/YOUR_USERNAME/mount/racecar_ws:/racecar_ws/src fishberg/racecar
+```
+In <b>this</b> docker image, you can run any roslaunch commands you need to.
+</li>
 
-If you are running Windows you may also need to run the following before running docker to get the terminal to work properly:
 
-     alias docker="winpty docker"
+<li>
+Mac error: “Error response from daemon: Bad response from Docker engine.”
+   <ul><li>Docker isn't running, start the application</li></ul>
+</li>
 
-See the [Additional Docker Options](https://github.com/mit-racecar/racecar_docker#additional-docker-options) section for more useful docker flags.
+<li>
+Windows error: "...A connection attempt failed because the connected party did not properly respond after a period of time, ..."
+   <ul><li>Try rerunning the docker command in another Powershell window</li></ul>
+</li>
 
-## Using the Image
+<li>
+If an instructor deems it necessary, you may also try re-building the "fishberg/racecar" image from scratch.<br>
+To build the image from scratch, run:<br>
+```sh
+git clone https://github.com/fishberg/racecar-docker.git
+cd racecar-docker
+sudo docker build -t racecar
+```
+Then run with:
+```sh
+sudo docker run -ti --net=host -v ~/mount:/mnt racecar
+```
+</li>
+</ul>
+</details>
 
-When you run the command above, you will be presented with a new bash shell in the folder `racecar_ws`.
-This shell has ROS installed (e.g. try running `roscore`).
+<!-- USAGE INSTRUCTIONS -->
+### Using the Image
+
+When you start up the virtual machine, you will be presented with a new bash shell in the folder `racecar_ws`.
+This shell will have ROS installed (e.g. try running `roscore`).
 It also has the programs `screen` and `tmux` installed.
 These programs allow you to run many shells from within the same window.
 
 In addition to the terminal interface, you can interact with the image visually through either your browser or through VNC.
-This allows you to use programs like `rviz`.
+This allows you to use programs like RViz.
 
-To use the image in the browser, navigate to [http://localhost:6080/vnc.html](http://localhost:6080/vnc.html). Hit the "Connect" button and you're in!
+To use the image in the browser, navigate to [http://192.168.99.100:6080/vnc.html](http://192.168.99.100:6080/vnc.html) (Windows) or [http://localhost:6080/vnc.html](http://localhost:6080/vnc.html) (Mac). Hit the "Connect" button and you're in!
 
-Alternatively, you can interface with the image using any VNC client with address `localhost:5900`.
-
-Some operating systems (e.g. windows) don't like the `localhost` variable. If you can't connect you may have to type in the docker image's actual IP address. Find the IP address by typing `hostname -I` in the image's terminal.
-Then visit either of the links above, replacing `localhost` with this IP.
-
-The visual interface has two buttons that launch a terminal and `rviz` respectively.
+The visual interface has two buttons that launch a terminal and RViz respectively.
 By default, clicking on the terminal button when a terminal is already open minimizes that window.
 To open multiple terminals, type <kbd>CTRL</kbd> and then click on the terminal icon.
 
-### Running the Racecar Simulator
+<details>
+<summary><h4>Running the Racecar Simulator</h4></summary>
 
 To get started with the simulator, first run the following in any shell:
-
-    roslaunch racecar_simulator simulate.launch
-
-Then open `rviz`.
+```sh
+roslaunch racecar_simulator simulate.launch
+```
+Then open RViz.
 You should see a blue car on a black and white background (a map) and some colorful dots (simulated lidar).
 If you click the green 2D Pose Estimate arrow on the top you can change the position of the car.
 Alternatively use a joystick to drive the car as described below.
+</details>
 
-## Additional Docker Options
+<details>
+<summary><h4>Using a Joystick</h4></summary>
 
-### Running on a specific car
-
-By default the image is set up to use ROS locally. If you want to connect the image to another `rosmaster` (e.g. a racecar) you need to change some ROS variables. You can do this automatically by running:
-
-    sudo docker run -ti --net=host fishberg/racecar CAR_NUMBER
-
-This sets the correct `ROS_IP`, `ROS_MASTER_URI`, and `/etc/hosts` variables, assuming that the car's IP is `192.168.1.CAR_NUMBER`. When you launch `rviz` it will display topics published on the racecar. Note that this won't work on macOS due to the networking issues described above.
-
-You will also be able to `ssh` into the racecar from within the docker image by typing:
-
-    ssh racecar@racecar
-
-### Mounting a local drive
-
-Docker images do not save changes made to them by default which can be dangerous when writing lots of code.
-Plus, the docker image may not have your favorite text editor, window manager, etc. installed.
-To solve both of these issues, you can mount a local folder into the docker image.
-This will make sure your changes are written and give you the freedom to edit the code in whatever environment you would like.
-
-We recommend that you mount into the `/racecar_ws/src` folder.
-This is typically where all of your code will live while working with the racecar or the racecar simulator.
-You can do this by adding the following to your docker run command:
-
-    sudo docker run -tiv /full/path/to/local/folder:/racecar_ws/src --net=host fishberg/racecar
-
-### Using a Joystick
-
-To use a joystick in the image (e.g. to use with the simulator),
+Unfortunately, we can currently only get a joystick to work on Linux and Windows machines due to Mac's different USB system. To use a joystick in the image (e.g. to use with the simulator),
 you need to forward inputs from that USB device into docker.
-Most joysticks map to `/dev/input/js0` by default, so you can add that device with:
+Most joysticks map to "/dev/input/js0" by default, so you can add that device with the flag "--device=/dev/input/js0". For example, for Linux you can run
+```sh
+sudo docker run -ti --net=host --device=/dev/input/js0 -v ~/mount:/mnt fishberg/racecar <YOUR_CAR_NUMBER>
+```
+</details>
 
-    sudo docker run -ti --net=host --device=/dev/input/js0 fishberg/racecar
-
-## Building the Image From Scratch
-
-To build the image from scratch, run:
-
-    git clone https://github.com/fishberg/racecar-docker.git
-    cd racecar-docker
-    sudo docker build -t racecar .
-
-Then run with:
-
-    sudo docker run -ti --net=host racecar
+<!-- USAGE TROUBLESHOOTING -->
+<details>
+<summary><h3><font color="AA0000">Usage Troubleshooting</font></h3></summary>
+<ul>
+<li>If the browser link doesn't work, use the provided link after you run the docker image in your terminal (it should be in the paragraph that appears after running the image). You can also try replacing the IP in the address with the results of typing <code>hostname -I</code> in the image's terminal.</li>
+<li>If a red banner appear at the top of the noVNC client saying "Failed to connect to server", close your broswer and try re-running the docker image.</code>
+<li>RViz: if your RViz isn't setup correctly (ex. you don't see the map or LIDAR scans), make sure the "Displays" option is checked under "Panels". Under the "Global Settings" drop-down, set the topic to "map"; under "Map", set the topic to "/map"; and under "LaserScans", set the size to 0.1. If there is no LaserScans, Map, or RobotModel drop-down, click on "Add" at the bottom of the left panel, and select all of them.</li>
+</ul>
+</details>
