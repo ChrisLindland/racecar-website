@@ -6,7 +6,7 @@ Be sure to FIRST focus on the practice racetracks set up (if this is done during
 
 If interested in the entire background of the algorithm, the [paper is here](http://lear.inrialpes.fr/people/triggs/pubs/Dalal-cvpr05.pdf).
 
-This algorithm extracts key features from an image or set of images. It builds this based on the most extreme gradient changes between pixels, which are then grouped into cells for an aggregate weight and direction. Intuitively, these features are strongest around the edges of objects and pixel intensity changes.
+This algorithm extracts key features from an image or set of images. These images are generally pre-processed to normalize lighting and shadows. It then finds features based on the most extreme gradient changes between pixels, which are then grouped into cells for an aggregate weight and direction. Intuitively, these features are strongest around the edges of objects and pixel intensity changes.
 
 An example **HOG descriptor**:
 
@@ -16,15 +16,19 @@ An example **HOG descriptor**:
 
 **The computed descriptor**
 
-![descrip](img/descriptor.png)
+![descrip](img/descrip.png)
 
 # Support Vector Machines (SVM)
 
-This is a **supervised machine learning** method, depending on labeled training data. Based on the provided data, an SVM tries to find an optimal hyperplane (based on user parameters) to separate data points into unique classes. Optimal, in this case, is focused on separating clusters of data while maximizing the distance from those points - known as maximizing the `margin` of the training data. The hyperplane is built in N-dimensional space, and our model will be staged in 2-D or 3-D space, depending on parameters.
+This is a **supervised machine learning** method, depending on labeled training data. Based on the provided data, an SVM tries to find an optimal hyperplane (based on user parameters) to separate data points into unique classes. Optimal, in this case, is defined by separating clusters of data while maximizing the distance from those points - known as maximizing the `margin` of the training data. The hyperplane is built in N-dimensional space, and our model will be staged in 2-D or 3-D space, depending on parameters.
+
+A classic **linear** SVM:
+
+![linSVM](img/linear.jpg)
 
 A **nonlinear separable** SVM, when taken to a higher dimension:
 
-![svm](img/svm2.png)
+![nonLinSVM](img/nonlinear.png)
 
 # HOG-SVM Interaction
 
@@ -66,7 +70,7 @@ You must make the **positiveTrainingImages** / **negativeTrainingImages** direct
 We recommend having at least 100 postives images of your object (for example, a Right Way Sign), and at least 100 negative images. A good rule is to always have at least as many negative images as positive images.
 
 - **Positive images** : Consists of your object of interest as the center of attention. 
-                    Crop and adjust the images to focus on your object, where the image essentially acts as a Region of Interest (ROI) in which the HOG algorithm will build a feature vector from. Be careful of how rotated the object is. HOG works when descriptors have the same "ratio". For example, a right way sign may have a 3:1 ratio of length to width, but when greatly rotated about the y-axis, the area the sign appears in would be a square, 1:1.
+                    Crop and adjust the images to focus on your object, where the image essentially acts as a Region of Interest (ROI) in which the HOG algorithm will build a feature vector from. Be careful of the object's degree of rotation. HOG works when descriptors have the same "ratio". For example, a right way sign may have a 3:1 ratio of length to width, but when greatly rotated about the y-axis, the area the sign appears in what would be a square, 1:1.
 
 - **Negative images** : Images that do not contain your object of interest. 
                     A rule of thumb is to not choose purely random pictures as negatives, but images that represent backgrounds/environments in which the model will or may be used in.
@@ -76,12 +80,12 @@ Provided are two simple helper Python scripts for image preprocessing (commands 
 - **batchRename.py** : Copies, then renames and resizes all images within a given directory, saving these new images in a separate directory.
 
 - **feedSaver.py** : Using a camera feed, it saves a specified number of frames from the feed as images, within a specified directory. 
-                    Use the letter 'e' key to start saving frames from the feed, and 'ESC' to quit the stream.
+                    Use the letter `e` key to start saving frames from the feed, and `ESC` to quit the stream.
                     By default saves the images as .png, but can be changed to other image formats (ex. **.jpg**).
 
 ### Choosing ML parameters
 
-For both the Histogram of Gradients (HOG) and Support Vector Machine (SVM), there are several parameters to be chosen to optimize your integrated model.
+For both the Histogram of Oriented Gradients (HOG) and Support Vector Machine (SVM), there are several parameters to be chosen to optimize your integrated model.
 
 For HOG (line 131, parameter in `hog.compute()`, in **TrainHOG.cpp**):
 
@@ -132,7 +136,7 @@ For model detection (line 113, parameter in `HOGDescriptor.detectMultiscale()`, 
 ### Training data
  
 Once there is a positive and negative dataset formatted, we can compile our model via the single C++ file - TrainHOG.cpp.
-Compilation is more complicated Windows, requiring separate software from Microsoft called `MSVC` (an IDE). We recommend the people in the group with Mac OS X and Native Linux machines to compile the C++ code. Check if the machines have `g++` installed, though most machines have it by default.
+Compilation is more complicated Windows, requiring separate software from Microsoft called `MSVC` (an IDE). We recommend group members with Mac OS X and Native Linux machines to compile the C++ code. Check if the machines have `g++` installed, though most machines have it by default.
 
 #### MAC OS and Linux
 
@@ -150,7 +154,7 @@ For training on Windows (if no members use Mac OS or Linux):
 
 1. `scp` your **hog-svm** folder over to the racecar.
 
-2. `ssh` into the racecar (we compile on the car as it has g++). 
+2. `ssh` into the racecar (we compile on the car as it has `g++`). 
 
 3. Follow the instructions below (starting with `make`), and if a **Gtk-WARNING **: cannot open display**** error appears:
 
