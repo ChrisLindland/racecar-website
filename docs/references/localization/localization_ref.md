@@ -42,7 +42,7 @@ Since compiling with cuda fails, we do regular compiling. Thankfully, this does 
 </li>
 <li> Then download this zip file <a href="https://drive.google.com/file/d/1n4dGdirW0J5r6NKri8jONzLk8GGCK_cX/view?usp=sharing">here on Google Drive</a> onto your computer and extract its contents. Then use <code>scp</code> to dump it onto the car into someplace logical (like the Downloads folder):
 ```bash
-  scp -r &#60;path_to_my_computers_downloads_folder&#62;/particle_filter_files racecar@192.168.1.&#60;car_number&#62;:~/Downloads/
+  scp -r <path_to_my_computers_downloads_folder>/particle_filter_files racecar@192.168.1.<car_number>:~/Downloads/
 ```
 Then on the racecar, <code>cd</code> into the resulting "particle_filter_files" folder, and copy the files over into the following paths within "localization" (note that these files come from [this repo](https://github.com/mit-racecar/particle_filter)):
 ```bash
