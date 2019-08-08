@@ -5,13 +5,13 @@
 ```
 2. Make sure your car's router is plugged into wifi.
 3. `ssh` into the car `cd` to the "racecar_cartographer_installation" folder
-4. Run Matt's first shell script. (This replaces "Install Google Cartographer"):
+4. Run the first shell script. (This replaces "Install Google Cartographer"):
 ```bash
   bash cartographer_install.sh
 ```
 Warning: this will take a long time ~ roughly 20-30 minutes.
 
-5. Run Matt's second shell script. (This replaces "Install MIT Racecar stuff"):
+5. Run the second shell script. (This replaces "Install MIT Racecar stuff"):
 ```bash
   bash racecar_cartographer_install.sh
 ```
