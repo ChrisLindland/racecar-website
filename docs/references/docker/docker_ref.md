@@ -129,7 +129,9 @@ docker run -ti --net=host -v /c/Users/YOUR_USERANME/mount:/mnt fishberg/racecar
 In "racecar_ws",<br>
 <code>
 catkin_make
+    
 catkin_make #not a typo; do it twice
+
 source devel/setup.bash
     </code>
 In a different Powershell, run <br>
@@ -153,15 +155,18 @@ Windows error: "...A connection attempt failed because the connected party did n
 <li>
 If an instructor deems it necessary, you may also try re-building the "fishberg/racecar" image from scratch.<br>
 To build the image from scratch, run:<br>
-```sh
+<code>
 git clone https://github.com/fishberg/racecar-docker.git
+    
 cd racecar-docker
+
 sudo docker build -t racecar
-```
+
+    </code>
 Then run with:
-```sh
+<code>
 sudo docker run -ti --net=host -v ~/mount:/mnt racecar
-```
+    </code>
 </li>
 </ul>
 </details>
