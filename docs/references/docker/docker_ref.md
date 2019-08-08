@@ -106,36 +106,36 @@ The car number is the last part of the car's IP address (the IP should be of the
 <li>
 Error something along the lines of "[] is not a launch file nor a package..."
   <ul>
-  <li>Remake the catkin space (see <a href=insert_link>step 3</a>); make sure you are in the racecar_ws. It may throw an error about `cmake`, but just try it again. If you then get a similar but different error...</li>
+  <li>Remake the catkin space (see <a href=insert_link>step 3</a>); make sure you are in the racecar_ws. It may throw an error about <code>cmake</code>, but just try it again. If you then get a similar but different error...</li>
   <li>Try recloning the code (see <a href=insert_link>step 3</a>) and <code>catkin_make</code> again.</li>
   <li> Ubuntu: you might need to install some extra packages. Run<br>
-```sh
+<code>
 apt-get install -y \
     ros-melodic-tf2-geometry-msgs \
     ros-melodic-ackermann-msgs \
     ros-melodic-joy \
     ros-melodic-map-server \
     build-essential
-```
+      </code>
   </li>
   </ul>
 </li>
 
 <li>
 Windows: try running one docker image for building spaces, and one for running launch files. In one Powershell, run
-```sh
+<code>
 docker run -ti --net=host -v /c/Users/YOUR_USERANME/mount:/mnt fishberg/racecar
-```
+    </code>
 In "racecar_ws",<br>
-```sh
+<code>
 catkin_make
 catkin_make #not a typo; do it twice
 source devel/setup.bash
-```
+    </code>
 In a different Powershell, run <br>
-```
+<code>
 docker run -ti --net=host -v /c/Users/YOUR_USERNAME/mount/racecar_ws:/racecar_ws/src fishberg/racecar
-```
+    </code>
 In <b>this</b> docker image, you can run any roslaunch commands you need to.
 </li>
 
