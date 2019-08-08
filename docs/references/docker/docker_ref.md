@@ -26,7 +26,7 @@ Create a folder to connect your Docker image to:
 
 ```sh
 # Windows (using Powershell)
-    <a href="https://en.wikipedia.org/wiki/Mkdir">mkdir</a> C:\Users\YOUR_USER_NAME\mount
+    mkdir C:\Users\YOUR_USER_NAME\mount
     mkdir C:\Users\YOUR_USER_NAME\mount\racecar_ws
 
 # MacOS
