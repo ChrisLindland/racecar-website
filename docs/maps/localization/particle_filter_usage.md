@@ -60,14 +60,19 @@ Want to know where you are in this world while you're writing your code? Subscri
 <details><summary><h3>Google Cartographer Localization</h3></summary>
 To run localization in Google Cartographer, you won't need an image and an ".yaml" file, but rather this file structure called a ".pbstream". Here's how you get this thing:
   
-(1). `cd` into the folder you want your ".pbstream" stored.<br>
+(1). `cd` into the folder you want your ".pbstream" stored.
+<br>
 (2). Run `roslaunch cartographer_ros offline_racecar_2d.launch bag_filenames:=${HOME}/bagfiles/<your_rosbag_name>.bag`<br>
-&ensp; Warning: this will pull up an rviz window, so whoops if you're ssh-ed in.<br>
-(3). Wait for the bag to finish playing, then watch the terminal and wait until it's done "optimizing".<br>
-Now you wanna localize. Here's how you do something like that (though it also tries to make another map, which is concerning; maybe you need to modify one of the config files to include `max_submaps_to_keep = 3`, as the [Google Cartographer website](https://google-cartographer-ros.readthedocs.io/en/latest/going_further.html) suggests).<br>
-(4). Run the localization by entering the following `roslaunch cartographer_ros demo_racecar_2d_localization.launch \ load_state_filename:=${HOME}/<path_to_file>/<my_file_name>.pbstream`.<br>
-(5). We don't really know where to get pose data. And if you wanted to give the program pose estimated, good stinkin' luck, buddy. The best we can offer is intercepting stuff sent across the "tf" topic. While the localization is running, enter `rostopic echo tf`. The "base_link" frame may have relevant data.<br>
-
+&ensp; Warning: this will pull up an rviz window, so whoops if you're ssh-ed in.
+<br>
+(3). Wait for the bag to finish playing, then watch the terminal and wait until it's done "optimizing".
+<br>
+Now you wanna localize. Here's how you do something like that (though it also tries to make another map, which is concerning; maybe you need to modify one of the config files to include `max_submaps_to_keep = 3`, as the [Google Cartographer website](https://google-cartographer-ros.readthedocs.io/en/latest/going_further.html) suggests).
+<br>
+(4). Run the localization by entering the following `roslaunch cartographer_ros demo_racecar_2d_localization.launch \ load_state_filename:=${HOME}/<path_to_file>/<my_file_name>.pbstream`.
+<br>
+(5). We don't really know where to get pose data. And if you wanted to give the program pose estimated, good stinkin' luck, buddy. The best we can offer is intercepting stuff sent across the "tf" topic. While the localization is running, enter `rostopic echo tf`. The "base_link" frame may have relevant data.
+<br>
 <h4> Change log (how did we concoct some of those launch and configuration files):</h4>
 (1). Copy the launch file demo_backpack_2d_localization.launch and rename it by entering `cp demo_backpack_2d_localization.launch demo_racecar_2d_localization.launch`.<br>
 &ensp; Within this new file change robot_description to "$(find xacro)/xacro '$(find racecar_description)/urdf/racecar.xacro'")"<br>
