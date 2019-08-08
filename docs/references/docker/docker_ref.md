@@ -187,6 +187,8 @@ The visual interface has two buttons that launch a terminal and RViz respectivel
 By default, clicking on the terminal button when a terminal is already open minimizes that window.
 To open multiple terminals, type <kbd>CTRL</kbd> and then click on the terminal icon.
 
+Be sure to check the troubleshooting section if it doesn't work.
+
 <details>
 <summary><b>Running the Racecar Simulator</b></summary>
 
