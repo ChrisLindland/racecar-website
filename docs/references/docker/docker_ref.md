@@ -52,9 +52,9 @@ Make a `src` folder in your `racecar_ws`:
 # MacOS/GNU/Linux
     mkdir -p ~/mount/racecar_ws/src
     
-```sh
-Clone the racecar code:
 ```
+Clone the racecar code:
+```sh
 cd ~/mount/racecar_ws/src
 git clone https://github.com/mit-racecar/racecar_simulator.git
 ```
@@ -109,35 +109,36 @@ Error something along the lines of "[] is not a launch file nor a package..."
   <li>Remake the catkin space (see <a href=insert_link>step 3</a>); make sure you are in the racecar_ws. It may throw an error about <code>cmake</code>, but just try it again. If you then get a similar but different error...</li>
   <li>Try recloning the code (see <a href=insert_link>step 3</a>) and <code>catkin_make</code> again.</li>
   <li> Ubuntu: you might need to install some extra packages. Run<br>
-<code>
+      
+```sh
 apt-get install -y \
     ros-melodic-tf2-geometry-msgs \
     ros-melodic-ackermann-msgs \
     ros-melodic-joy \
     ros-melodic-map-server \
     build-essential
-      </code>
+```
   </li>
   </ul>
 </li>
 
 <li>
 Windows: try running one docker image for building spaces, and one for running launch files. In one Powershell, run
-<code>
-docker run -ti --net=host -v /c/Users/YOUR_USERANME/mount:/mnt fishberg/racecar
-    </code>
-In "racecar_ws",<br>
-<code>
-catkin_make
     
-catkin_make #not a typo; do it twice
+```sh
+docker run -ti --net=host -v /c/Users/YOUR_USERANME/mount:/mnt fishberg/racecar
+```
+In "racecar_ws",<br>
 
+```sh
+catkin_make
+catkin_make #not a typo; do it twice
 source devel/setup.bash
-    </code>
+```
 In a different Powershell, run <br>
-<code>
+```sh
 docker run -ti --net=host -v /c/Users/YOUR_USERNAME/mount/racecar_ws:/racecar_ws/src fishberg/racecar
-    </code>
+```
 In <b>this</b> docker image, you can run any roslaunch commands you need to.
 </li>
 
@@ -155,18 +156,16 @@ Windows error: "...A connection attempt failed because the connected party did n
 <li>
 If an instructor deems it necessary, you may also try re-building the "fishberg/racecar" image from scratch.<br>
 To build the image from scratch, run:<br>
-<code>
-git clone https://github.com/fishberg/racecar-docker.git
-    
+
+```sh
+git clone https://github.com/fishberg/racecar-docker.git   
 cd racecar-docker
-
 sudo docker build -t racecar
-
-    </code>
+```
 Then run with:
-<code>
+```sh
 sudo docker run -ti --net=host -v ~/mount:/mnt racecar
-    </code>
+```
 </li>
 </ul>
 </details>
