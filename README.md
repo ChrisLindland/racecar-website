@@ -1,4 +1,7 @@
-This github contains all the labs the 2019 TAs wrote for the BWSI Racecar program.
+HERE IS THE ASSOCIATED WEBSITE:  
+[http://bwsi-racecar.com/](http://bwsi-racecar.com/)
+
+This github repo contains all the labs the 2019 TAs wrote for the BWSI Racecar program.
 
 THE PROGRAMS, HOWEVER ARE IN ANOTHER REPO (cause you know, kids, public repo, solution code...). For any given lab, the associated starter code and/or solution code (when applicable) should be on the [2019-BWSI github repo](https://github.mit.edu/2019-BWSI/Writeups) in the corresponding directory within the "labs_programs" folder.
 
