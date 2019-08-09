@@ -32,6 +32,7 @@ nav:
         - Localization: references/localization/localization_ref.md
         - Rosbags: references/rosbag/rosbag_ref.md
         - Docker: references/docker/docker_ref.md
+        - General Troubleshooting: references/generalTroubleshooting.md
         - Collaboration: references/collab/collab_ref.md
         - Router Setup: references/routerSetup.md
 theme: readthedocs
