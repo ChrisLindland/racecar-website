@@ -30,6 +30,7 @@ nav:
         - Native ROS Install: references/native_ros_install/native_ros_install_ref.md
         - Cartographer: references/cartographer/cartographer_ref.md
         - Localization: references/localization/localization_ref.md
+        - Rosbags: references/rosbag/rosbag_ref.md
         - Docker: references/docker/docker_ref.md
         - Collaboration: references/collab/collab_ref.md
         - Router Setup: references/routerSetup.md
