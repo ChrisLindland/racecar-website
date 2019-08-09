@@ -9,9 +9,9 @@ The labs are located in 4 phases. They are derived from the weeks of the BWSI co
 
 The resources folder contains installation instructions and cheatsheets from other years. We have brief writeups on hardware like the ZED camera, lidar, and the speakers. We also have installation and usage instructions on cartographer, arTags, and localization. Finally, there is a full docker setup writeup for running the racecar simulator.
 
-## Recommended work for future work for future instructors / TAs
-* @Eyassu : get some TA's to come in before the class starts!!! Not only will they need to learn the racecars, but this is not a final product. I mean, it's much more of a final product that anything that preceded it, but I know for a fact that there are some broken links in here, and there may be some even broken-er stuff too. So do what you need to do. Hire through Lincoln if necessary.
-* @TA's : 
+## Recommended work for future work for future instructors / TAs (from POV of a current TA)
+* @Eyassu: get some TA's to come in before the class starts!!! Not only will they need to learn the racecars, but this is not a final product. I mean, it's much more of a final product that anything that preceded it, but I know for a fact that there are some broken links in here, and there may be some even broken-er stuff too. So do what you need to do. Hire through Lincoln if necessary.
+* @TA's: 
   * do all the labs
   * look for extra documents in the repo that are not on the website and see if they are helpful
   * if you feel good about everything and have some extra time, try to take a look at ros packages and launch files maybe (would it make sense to use these to launch things more efficiently?)
