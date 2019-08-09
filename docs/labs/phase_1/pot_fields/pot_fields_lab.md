@@ -26,6 +26,7 @@ We can implement this by adjusting each raw distance by some factor such that sh
 Think about why we might prefer potential fields over wall following for this racetrack; if there are still walls, how could potential fields work better?
 
 Functions to write:
+
 * `convertPoints`: Convert points to cartesian coordinates
 * `calcFinalVector`: Calculate final drive vector
 * `drive_callback`: Publish the update speed and angle of the drive vector
