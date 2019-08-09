@@ -4,8 +4,8 @@ nav:
     - "Phase 1 Labs: Intros and Controllers": 
         - "RACECAR Hardware Intro": labs/phase_1/hardware_intro/hardware_intro_lab.md
         - "Intro to Terminal & ROS": labs/phase_1/ros_intro/ros_intro_lab.md
-        - "Proportional Control": labs/phase_1/wall-follower/proportional.md
-        - "Wall Follower": labs/phase_1/wall-follower/wallFollowingLab.md
+        - "Proportional Control": labs/phase_1/proportional_controller/proportional_controller_lab.md
+        - "Wall Follower": labs/phase_1/wall_follower/wall_follower_lab.md
         - "Safety Controller": labs/phase_1/safety_controller/safety_controller_lab.md
         - "Potential Fields Controller": labs/phase_1/pot_fields/pot_fields_lab.md
     - "Phase 2 Labs: Computer Vision":
