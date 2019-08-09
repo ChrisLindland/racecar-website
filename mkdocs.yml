@@ -23,7 +23,6 @@ nav:
     - Cheatsheets:
         - Python: cheatsheets/python.md
         - OpenCV: cheatsheets/opencv.md
-        - Racecar: cheatsheets/racecar.md
         - ROS Terminal Commands: cheatsheets/ros.md
         - ROS Topics and Messages: cheatsheets/ros-topics-msgs.md
     - References:
