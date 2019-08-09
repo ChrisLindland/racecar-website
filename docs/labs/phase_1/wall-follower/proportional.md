@@ -1,5 +1,5 @@
 <center>
-<h1>Proportional Control</h1>
+<h1>Lab: Proportional Control</h1>
 Let's make the car autonomously react to its environment!
 </center>
 <hr/>
