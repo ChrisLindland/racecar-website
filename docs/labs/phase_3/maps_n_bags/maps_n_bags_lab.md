@@ -4,11 +4,11 @@ For this challenge, you are going to mimic a rideshare program with your car! Th
 
 You are picking up three "customers": 1, 2, and 5 (this is the number the AR tag returns when read). These will be randomly given to you at the pickup point (one at a time) and they have to be returned to their "houses". The order of the houses, from left to right, is 1 -> 2 -> 5 (2 is the corner spot). After you have dropped off the last customer, have your robot return to the pickup spot and stop.
 
-The topic you will need for the lab is `/pf/viz/inferred_pose`.
+The topic you will need for the lab is `/pf/viz/inferred_pose`. The way to get the x and y location is (your input for the pose callback function).pose.position.x/y.
 
 There will also be obstacles in the track, so you will have to integrate your Potential Field control as well.
 
-THERE IS NO STARTER CODE FOR THIS LAB - flex those coding muscles! ᕙ〳 ʘ – ʘ 〵ᕗ
+There's only minimal starter code for this lab - flex those coding muscles! ᕙ〳 ʘ – ʘ 〵ᕗ
 
 ## Securing the Bag
 Navigate to the [Installation: Google Cartographer](http://bwsi-racecar.com/maps/cartographer/cartographer_installation/) on our website and follow the *new* instructions there. Once you have done this, you will need to record a map. You can find instructions for how to do this in *References*, in the **Cartographer** section under ["Running off of a Rosbag"](http://bwsi-racecar.com/maps/cartographer/cartographer_usage/).
