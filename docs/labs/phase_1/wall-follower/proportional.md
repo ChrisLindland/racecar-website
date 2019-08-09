@@ -4,8 +4,8 @@ Let's make the car autonomously react to its environment!
 </center>
 <hr/>
 
-## Mission Statement
-**The racecar's goal will be to maintain a certain distance away from an object in front of it. We will use proportional control to implement this behavior.**
+## Probem Statement
+The racecar's goal will be to maintain a certain distance away from an object in front of it. We will use proportional control to implement this behavior.
 
 <center>
 ![](../Resources/ProportionalControl.gif)
