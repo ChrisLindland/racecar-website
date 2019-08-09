@@ -19,7 +19,7 @@ Of course, as the car drives you will need to find new points, and thus new pred
 * Start off just looking for a wall on one side of the car; once this side works, implement it for the other side as well. You can map the left and right walls to different button (ex. 'A' activates the left wall follower, and 'B' activates the right wall follower). All the joystick buttons correspond to an integer in its ROS message; check the joystick callback function for hints on how to map buttons. 
 * Convert LIDAR points to cartesian points to calculate their resulting line. Make a separate function to do this.
 
-__Challenge__: Make the car autonomously decide which wall it should follow. You might base this off of factors like the distance or the accuracy of the predicted wall. If you also complete this, you could try to make your wall follower more robust, or try to implement a [PID](https://github.mit.edu/2019-BWSI/Writeups/blob/master/week1/endOfWeek/PIDInstructionAndExample.md) to make it smoother and more accurate.
+__Challenge__: Make the car autonomously decide which wall it should follow. You might base this off of factors like the distance or the accuracy of the predicted wall. If you also complete this, you could try to make your wall follower more robust, or try to implement a [PID](https://en.wikipedia.org/wiki/PID_controller) to make it smoother and more accurate.
 
 To keep your code organized and efficient, we've set up empty functions for you. I recommend only using `drive_callback` to set the driving speed and angle and putting everything else in other function. If there is too much code in a callback, it will become too slow and the car won't drive smoothly.
 
