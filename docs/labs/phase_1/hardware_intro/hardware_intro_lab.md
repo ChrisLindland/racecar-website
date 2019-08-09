@@ -55,6 +55,7 @@ Keep in mind that these are expensive piece of equipment; always be aware of you
 
 #### Common Errors
 If your car doesn't drive with the controller...
+
 * Check `teleop` for any errors. There should be a "force feedback" error for the joystick, but everything else should run fine.
 * If there is a vesc error, quit teleop, wait a minute or two and try again. This often happens if you try to run teleop immediately after turning on the car or pluggin in the traxxis battery, since it takes a minute for the vesc to actually start running.
 * If you get individual errors for the Hokuyo or IMU, check that these are properly plugged into the USB hub. For the Hokuyo, check that the ethernet is plugged in as well, and for the IMU, check the blue light is turned on on the IMU. If it isn't check that the mini USB is plugged in.
