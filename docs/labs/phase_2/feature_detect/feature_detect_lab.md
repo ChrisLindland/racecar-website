@@ -28,10 +28,10 @@ python turnRectStarter.py -i ./images/oneway.jpg -l "One-Way-Sign" -s 0
 -s tells them the source of camera, just like slider_colorSegmentation.py
 
 Here is what our orb\_det returns when seeing a right way sign:
-[rway.png]()
+[Right-way](rway.png)
 
 Here is what our orb\_det returns when seeing a left way sign:
-[lway.png]()
+[Left-way](lway.png)
 
 ### Changing turnRectStarter.py and driveNode.py to work with ROS
 The images from the Zed camera and openCV images sadly do not work too well with each other. That means we will have to change some stuff so that it works with ROS. 
