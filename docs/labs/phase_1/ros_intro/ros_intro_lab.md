@@ -1,5 +1,5 @@
 <center><h1>
-Lab 1: Intro to Terminal & ROS
+Lab: Intro to Terminal & ROS
 </h1></center>
 <font color=#A0A0A0 size=2>
 *Personal note: We realize some of you may find this a bit slow/pedantic, but please know that we aren’t doing this just to annoy you. Knowledge being what it is, it is often necessary to learn a language before trying to write with it. And if you do enjoy the language itself, that’s cool beans too!*
