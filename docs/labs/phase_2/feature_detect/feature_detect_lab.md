@@ -28,18 +28,22 @@ python turnRectStarter.py -i ./images/oneway.jpg -l "One-Way-Sign" -s 0
 -s tells them the source of camera, just like slider_colorSegmentation.py
 
 Here is what our orb\_det returns when seeing a right way sign:
-![Right-way]()
+![rway.png]()
 
 Here is what our orb\_det returns when seeing a left way sign:
-![Left-way]()
+![lway.png]()
 
 ### Changing turnRectStarter.py and driveNode.py to work with ROS
 The images from the Zed camera and openCV images sadly do not work too well with each other. That means we will have to change some stuff so that it works with ROS. 
 
 * First, we have to get rid of the cv2 source code inside *turnRectStarter.py* (the code that takes in images from the camera). We can delete any cv2.VideoCapture() function within the code. You can also delete any part that has the cam.read() function (including the loop it is in) and set "frame" to be a passed-in image (that means you need to alter the function to take in an extra parameter "source")
+
 * Then, you can delete any cv2.imshow(), cam.release, cv2.destroyAllWindows(), and cv2.waitKey(), since ssh'ing does not allow these windows to pop up. You will need to delete the while loop and need to pop out all the code within the loop (ie change the indentation to be in-line with the outside code)
+
 * Change any "continue" to a pass and comment out the parts with ap (such as ap.argparse, ap.add\_argument, etc.) Then, delete the if __main__: part of the lab (bottom two lines)
+
 * Go to the line that has label and remove the if/else statement. Then, remove the cv2.putText() line since the robot really doesn't need that
+
 * Finally, make a variable for your two bounding boxes, which the function will now return. Find the two instances of cv2.rectangle(), which will key you in to what the bounding box coordinates are and where they are stored, and set your bounding box variable equal to these coordinates
 
 We will now look at driveNode.py to see how the images are passed in. Go into your __init__ function and find the self.camera_data variable. That variable holds the camera data from the Zed camera. Looking further down at the callback function, you can see that cd_color_segmentation takes in self.camera_data.cv_image. This is the Zed image that has been molded to work with openCV, so that is what you will be passing into orb\_det() as your source image. Notice that orb\_det takes in an image apart from the source(the one way sign image in this case) so make sure you pass in the location of the one-way image into the orb\_det function.
