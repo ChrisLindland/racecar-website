@@ -6,7 +6,6 @@ nav:
         - "Intro to Terminal & ROS": labs/phase_1/ros_intro/ros_intro_lab.md
         - "Proportional Control": labs/phase_1/wall-follower/proportional.md
         - "Wall Follower": labs/phase_1/wall-follower/wallFollowingLab.md
-        - "PID Controller": labs/phase_1/pot_fields/PIDController.md
         - "Safety Controller": labs/phase_1/safety_controller/safety_controller_lab.md
         - "Potential Fields Controller": labs/phase_1/pot_fields/pot_fields_lab.md
     - "Phase 2 Labs: Computer Vision":
