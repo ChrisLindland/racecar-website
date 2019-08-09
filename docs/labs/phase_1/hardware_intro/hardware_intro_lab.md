@@ -50,7 +50,7 @@ Make sure everyone on your team is able to do this before moving on!
 ## SCP'ing
 
 **The `scp` command allows you to copy files back and forth from a remote machine.**  
-The format is:  
+
 From local to remote (i.e. upload to car):  
 `scp <LOCAL_FILE_PATH> <REMOTE_USERNAME>@<IP>:<REMOTE_FILE_PATH>`  
 From remote to local (i.e. download from car):  
