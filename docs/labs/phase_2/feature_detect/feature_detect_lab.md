@@ -21,7 +21,9 @@ This is good and all *but* a right one-way sign does not have that many differen
 In order for template matching to work, the sign needs to be approached at the same angle as your template image *and* traditionally has to be the same size (how can this be worked around?) while pixel counting is less consistent and could be thrown off more easily. Its up to you to implement an algorithm that fits your situation.
 
 Here is an example run of turnRectStarter:
+```bash
 python turnRectStarter.py -i ./images/oneway.jpg -l "One-Way-Sign" -s 0
+```
 
 -i tells the program what image to get
 -l is a lowercase l that tells what to label the detected object
